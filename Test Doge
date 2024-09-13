@@ -1,0 +1,1732 @@
+<?xml version="1.0"?>
+<TriggernometryExport PluginVersion="1.2.0.705">
+  <ExportedFolder Id="01fb1b1e-8bbb-46fa-a077-d4014b13834d" Name="塞口的狗测试V2" Enabled="true">
+    <Folders>
+      <Folder Id="7ca99c60-ed70-4b83-a601-42cfb882f55f" Name="通用依赖功能" Enabled="true">
+        <Folders>
+          <Folder Id="fa689dc6-f9e3-443d-8157-04ba5b60dc74" Name="小队初始化[测试功能DLC]" Enabled="true">
+            <Folders>
+              <Folder Id="83b92f28-9c71-477b-8cbd-a716a493447b" Name="依赖功能" Enabled="true">
+                <Folders />
+                <Triggers>
+                  <Trigger Enabled="true" Name="字幕提示（游戏ID初始化兼容空格）" Id="a2093e89-6eff-473e-b381-2d117653afb5" RegularExpression="^AT_Subtitle:(?&lt;text&gt;[^:]+):(?&lt;time&gt;[0-9][^:]+):(?&lt;offset_x&gt;[^:]+):(?&lt;offset_y&gt;[^:]+):(?&lt;id&gt;[^:]+)">
+                    <Actions>
+                      <Action OrderNumber="1" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="${var:Souma_Team_Role}" TextAuraEffect="Bold" TextAuraFontSize="18" TextAuraForeground="Red" TextAuraName="AT_Subtitle_${id}" TextAuraExpression="${text}" TextAuraXIniExpression="0.5*(${_screenwidth}-1000)+${offset_x}" TextAuraYIniExpression="0.5*(${_screenwidth}-1000)+${offset_y}" TextAuraWIniExpression="1000" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${time}*1000-${_sincems}" TextAuraFontName="微软雅黑" ActionType="TextAura" Asynchronous="False">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Trigger>
+                  <Trigger Enabled="true" Name="字幕提示（倒计时）" Id="dbb86617-70b4-457b-8470-a49fcc2eb0bc" RegularExpression="Tip_Subtitle:(?&lt;text&gt;\S+):(?&lt;time&gt;[\d\.]+):(?&lt;offset_x&gt;[\d\.-]+):(?&lt;offset_y&gt;[\d\.-]+):(?&lt;id&gt;\S+)">
+                    <Actions>
+                      <Action OrderNumber="1" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="${var:Souma_Team_Role}" TextAuraEffect="Bold" TextAuraFontSize="18" TextAuraForeground="Red" TextAuraName="Tip_Subtitle_${id}" TextAuraExpression="${text}" TextAuraXIniExpression="0.5*(${_screenwidth}-1000)+${offset_x}" TextAuraYIniExpression="0.5*(${_screenheight}-100)+${offset_y}" TextAuraWIniExpression="1000" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${time}*1000-${_sincems}" TextAuraFontName="微软雅黑" ActionType="TextAura" Asynchronous="False">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Trigger>
+                  <Trigger Enabled="true" Name="字幕提示（初始用小队位置）" Id="d0d0de00-776c-4e28-aa3a-9b3cdf33eac7" RegularExpression="Tip_Subtitle:(?&lt;text&gt;\S+):(?&lt;time&gt;[\d\.]+):(?&lt;offset_x&gt;[\d\.-]+):(?&lt;offset_y&gt;[\d\.-]+):(?&lt;id&gt;\S+)">
+                    <Actions>
+                      <Action OrderNumber="1" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="${var:Souma_Team_Role}" TextAuraAlignment="BottomCenter" TextAuraEffect="Bold" TextAuraFontSize="18" TextAuraForeground="Red" TextAuraName="Tip_Subtitle_${id}" TextAuraExpression="${text}" TextAuraXIniExpression="0.5*(${_screenwidth}-1000)+${offset_x}" TextAuraYIniExpression="0.5*(${_screenheight}-100)+${offset_y}" TextAuraWIniExpression="1000" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${time}*1000-${_sincems}" TextAuraFontName="微软雅黑" ActionType="TextAura" Asynchronous="False">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Trigger>
+                </Triggers>
+              </Folder>
+              <Folder Id="e3d900c3-b6ae-48ac-a586-93b14bba35f2" ZoneFilterRegularExpression="巴哈姆特绝境战" Name="职能位置" Enabled="true">
+                <Folders />
+                <Triggers>
+                  <Trigger Enabled="false" Name="发送职能初始化（新）" Id="d0d29a20-c6cd-4080-9220-c3aa5ab8c762" RegularExpression="^.{14} (?:\w+ )00:(000[ae]:[\ue090]?(?&lt;name&gt;.+?)|(?&lt;num&gt;0038))(:|):(?&lt;role&gt;[sSmMhHdD][tT1-4])$" Description="在/s或/p喊话：&#xD;&#xA;&#xD;&#xA;你是D1就喊话D1&#xD;&#xA;你是D2就喊话D2&#xD;&#xA;你是D3就喊话D3&#xD;&#xA;你是D4就喊话D4&#xD;&#xA;你是H1就喊话H1&#xD;&#xA;你是H2就喊话H2&#xD;&#xA;你是MT就喊话MT&#xD;&#xA;你是ST就喊话ST&#xD;&#xA;&#xD;&#xA;设置成功会有字幕提醒&#xD;&#xA;&#xD;&#xA;字母仅限英文半角，全角不可以">
+                    <Actions>
+                      <Action OrderNumber="1" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="${name}" VariableOp="SetString" VariableName="AT_Team_Role" VariableExpression="${role}" ActionType="Variable" Asynchronous="False">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                      <Action OrderNumber="2" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="${name}" VariableOp="SetNumeric" VariableName="AT_Team" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                      <Action OrderNumber="3" LogMessageText="AT_Subtitle:已设置${func:toupper:${var:AT_Team_Role}}:3.00:0:-370:jobpos" LogProcess="True" SoundRouting="None" TTSRouting="None" ActionType="LogMessage">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                      <Action OrderNumber="4" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/e 神兵初始化：h1:3:&lt;3&gt;,h2:4:&lt;4&gt;,d1:5:&lt;5&gt;,d2:6:&lt;6&gt;,d3:7:&lt;7&gt;,d4:8:&lt;8&gt;,st:2:&lt;2&gt;,mt:1:&lt;1&gt;然后完毕" NamedCallbackName="command" NamedCallbackParam="/e 龙诗初始化：h1:3,h2:4,d1:5,d2:6,d3:7,d4:8,st:2,mt:1然后完毕" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback" ExecutionDelayExpression="1000">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:AT_Team_Role}" ExpressionTypeL="String" ExpressionR="MT" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="5" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/e 神兵初始化：h1:3:&lt;3&gt;,h2:4:&lt;4&gt;,d1:5:&lt;5&gt;,d2:6:&lt;6&gt;,d3:7:&lt;7&gt;,d4:8:&lt;8&gt;,st:1:&lt;1&gt;,mt:2:&lt;2&gt;然后完毕" NamedCallbackName="command" NamedCallbackParam="/e 龙诗初始化：h1:3,h2:4,d1:5,d2:6,d3:7,d4:8,st:1,mt:2然后完毕" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:AT_Team_Role}" ExpressionTypeL="String" ExpressionR="ST" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="6" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/e 神兵初始化：h1:4:&lt;4&gt;,h2:5:&lt;5&gt;,d1:1:&lt;1&gt;,d2:6:&lt;6&gt;,d3:7:&lt;7&gt;,d4:8:&lt;8&gt;,st:3:&lt;3&gt;,mt:2:&lt;2&gt;然后完毕" NamedCallbackName="command" NamedCallbackParam="/e 龙诗初始化：h1:4,h2:5,d1:1,d2:6,d3:7,d4:8,st:3,mt:2然后完毕" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:AT_Team_Role}" ExpressionTypeL="String" ExpressionR="D1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="7" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/e 神兵初始化：h1:4:&lt;4&gt;,h2:5:&lt;5&gt;,d1:6:&lt;6&gt;,d2:1:&lt;1&gt;,d3:7:&lt;7&gt;,d4:8:&lt;8&gt;,st:3:&lt;3&gt;,mt:2:&lt;2&gt;然后完毕" NamedCallbackName="command" NamedCallbackParam="/e 龙诗初始化：h1:4,h2:5,d1:6,d2:1,d3:7,d4:8,st:3,mt:2然后完毕" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:AT_Team_Role}" ExpressionTypeL="String" ExpressionR="D2" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="8" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/e 神兵初始化：h1:4:&lt;4&gt;,h2:5:&lt;5&gt;,d1:6:&lt;6&gt;,d2:7:&lt;7&gt;,d3:1:&lt;1&gt;,d4:8:&lt;8&gt;,st:3:&lt;3&gt;,mt:2:&lt;2&gt;然后完毕" NamedCallbackName="command" NamedCallbackParam="/e 龙诗初始化：h1:4,h2:5,d1:6,d2:7,d3:1,d4:8,st:3,mt:2然后完毕" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:AT_Team_Role}" ExpressionTypeL="String" ExpressionR="D3" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="9" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/e 神兵初始化：h1:4:&lt;4&gt;,h2:5:&lt;5&gt;,d1:6:&lt;6&gt;,d2:7:&lt;7&gt;,d3:8:&lt;8&gt;,d4:1:&lt;1&gt;,st:3:&lt;3&gt;,mt:2:&lt;2&gt;然后完毕" NamedCallbackName="command" NamedCallbackParam="/e 龙诗初始化：h1:4,h2:5,d1:6,d2:7,d3:8,d4:1,st:3,mt:2然后完毕" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:AT_Team_Role}" ExpressionTypeL="String" ExpressionR="D4" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="10" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/e 神兵初始化：h1:1:&lt;1&gt;,h2:4:&lt;4&gt;,d1:5:&lt;5&gt;,d2:6:&lt;6&gt;,d3:7:&lt;7&gt;,d4:8:&lt;8&gt;,st:3:&lt;3&gt;,mt:2:&lt;2&gt;然后完毕" NamedCallbackName="command" NamedCallbackParam="/e 龙诗初始化：h1:1,h2:4,d1:5,d2:6,d3:7,d4:8,st:3,mt:2然后完毕" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:AT_Team_Role}" ExpressionTypeL="String" ExpressionR="H1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="11" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/e 神兵初始化：h1:4:&lt;4&gt;,h2:1:&lt;1&gt;,d1:5:&lt;5&gt;,d2:6:&lt;6&gt;,d3:7:&lt;7&gt;,d4:8:&lt;8&gt;,st:3:&lt;3&gt;,mt:2:&lt;2&gt;然后完毕" NamedCallbackName="command" NamedCallbackParam="/e 龙诗初始化：h1:4,h2:1,d1:5,d2:6,d3:7,d4:8,st:3,mt:2然后完毕" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:AT_Team_Role}" ExpressionTypeL="String" ExpressionR="H2" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                      <ConditionSingle Enabled="true" ExpressionL="${num}" ExpressionTypeL="Numeric" ExpressionR="0038" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Trigger>
+                  <Trigger Enabled="true" Name="切换职业" Id="d7160496-430a-409e-96db-6cdd352c59fb" RegularExpression="^.{14} (?:\w+ )00:0839::((?&lt;name&gt;.+?)?(的职业转换成了“|は「)(?&lt;class&gt;.+?)(”|」にチェンジした。)|(?&lt;isyou&gt;[Yy]ou) change to (?&lt;class2&gt;.+?)\.)">
+                    <Actions>
+                      <Action OrderNumber="1" LogMessageText="AT_Subtitle:职业变动，${func:toupper:${var:AT_Team_Role}}取消:3.00:0:-370:jobpos" LogProcess="True" SoundRouting="None" TTSRouting="None" ActionType="LogMessage">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:AT_Team}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" VariableName="AT_Team_Role" ActionType="Variable" ExecutionDelayExpression="500" Asynchronous="False">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                      <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" VariableName="AT_Team" ActionType="Variable" Asynchronous="False">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                      <ConditionSingle Enabled="true" ExpressionL="${isyou}" ExpressionTypeL="String" ExpressionR="you" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Trigger>
+                  <Trigger Enabled="true" Name="发送职能初始化（旧）" Id="5f49e9f7-d322-41c2-8f03-82677699e75e" RegularExpression="^.{14} (?:\w+ )00:(000[ae]:[\ue090]?(?&lt;name&gt;.+?)|(?&lt;num&gt;0038))(:|):(?&lt;role&gt;[sSmMhHdD][tT1-4])$" Description="在/s或/p喊话：&#xD;&#xA;&#xD;&#xA;你是D1就喊话D1&#xD;&#xA;你是D2就喊话D2&#xD;&#xA;你是D3就喊话D3&#xD;&#xA;你是D4就喊话D4&#xD;&#xA;你是H1就喊话H1&#xD;&#xA;你是H2就喊话H2&#xD;&#xA;你是MT就喊话MT&#xD;&#xA;你是ST就喊话ST&#xD;&#xA;&#xD;&#xA;设置成功会有字幕提醒&#xD;&#xA;&#xD;&#xA;字母仅限英文半角，全角不可以">
+                    <Actions>
+                      <Action OrderNumber="1" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="${name}" VariableOp="SetString" VariableName="AT_Team_Role" VariableExpression="${role}" ActionType="Variable" Asynchronous="False">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                      <Action OrderNumber="2" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="${name}" VariableOp="SetNumeric" VariableName="AT_Team" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                      <Action OrderNumber="3" LogMessageText="AT_Subtitle:已设置${func:toupper:${var:AT_Team_Role}}:3.00:0:-370:jobpos" LogProcess="True" SoundRouting="None" TTSRouting="None" ActionType="LogMessage">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                      <Action OrderNumber="4" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/e 神兵初始化：h1:3:&lt;3&gt;,h2:4:&lt;4&gt;,d1:5:&lt;5&gt;,d2:6:&lt;6&gt;,d3:7:&lt;7&gt;,d4:8:&lt;8&gt;,st:2:&lt;2&gt;,mt:1:&lt;1&gt;然后完毕" NamedCallbackName="command" NamedCallbackParam="/e 零式初始化：h1:3:&lt;3&gt;,h2:4:&lt;4&gt;,d1:5:&lt;5&gt;,d2:6:&lt;6&gt;,d3:7:&lt;7&gt;,d4:8:&lt;8&gt;,st:2:&lt;2&gt;,mt:1:&lt;1&gt;然后完毕" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback" ExecutionDelayExpression="1000">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:AT_Team_Role}" ExpressionTypeL="String" ExpressionR="MT" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="5" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/e 神兵初始化：h1:3:&lt;3&gt;,h2:4:&lt;4&gt;,d1:5:&lt;5&gt;,d2:6:&lt;6&gt;,d3:7:&lt;7&gt;,d4:8:&lt;8&gt;,st:1:&lt;1&gt;,mt:2:&lt;2&gt;然后完毕" NamedCallbackName="command" NamedCallbackParam="/e 零式初始化：h1:3:&lt;3&gt;,h2:4:&lt;4&gt;,d1:5:&lt;5&gt;,d2:6:&lt;6&gt;,d3:7:&lt;7&gt;,d4:8:&lt;8&gt;,st:1:&lt;1&gt;,mt:2:&lt;2&gt;然后完毕" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:AT_Team_Role}" ExpressionTypeL="String" ExpressionR="ST" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="6" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/e 神兵初始化：h1:4:&lt;4&gt;,h2:5:&lt;5&gt;,d1:1:&lt;1&gt;,d2:6:&lt;6&gt;,d3:7:&lt;7&gt;,d4:8:&lt;8&gt;,st:3:&lt;3&gt;,mt:2:&lt;2&gt;然后完毕" NamedCallbackName="command" NamedCallbackParam="/e 零式初始化：h1:4:&lt;4&gt;,h2:5:&lt;5&gt;,d1:1:&lt;1&gt;,d2:6:&lt;6&gt;,d3:7:&lt;7&gt;,d4:8:&lt;8&gt;,st:3:&lt;3&gt;,mt:2:&lt;2&gt;然后完毕" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:AT_Team_Role}" ExpressionTypeL="String" ExpressionR="D1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="7" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/e 神兵初始化：h1:4:&lt;4&gt;,h2:5:&lt;5&gt;,d1:6:&lt;6&gt;,d2:1:&lt;1&gt;,d3:7:&lt;7&gt;,d4:8:&lt;8&gt;,st:3:&lt;3&gt;,mt:2:&lt;2&gt;然后完毕" NamedCallbackName="command" NamedCallbackParam="/e 零式初始化：h1:4:&lt;4&gt;,h2:5:&lt;5&gt;,d1:6:&lt;6&gt;,d2:1:&lt;1&gt;,d3:7:&lt;7&gt;,d4:8:&lt;8&gt;,st:3:&lt;3&gt;,mt:2:&lt;2&gt;然后完毕" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:AT_Team_Role}" ExpressionTypeL="String" ExpressionR="D2" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="8" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/e 神兵初始化：h1:4:&lt;4&gt;,h2:5:&lt;5&gt;,d1:6:&lt;6&gt;,d2:7:&lt;7&gt;,d3:1:&lt;1&gt;,d4:8:&lt;8&gt;,st:3:&lt;3&gt;,mt:2:&lt;2&gt;然后完毕" NamedCallbackName="command" NamedCallbackParam="/e 零式初始化：h1:4:&lt;4&gt;,h2:5:&lt;5&gt;,d1:6:&lt;6&gt;,d2:7:&lt;7&gt;,d3:1:&lt;1&gt;,d4:8:&lt;8&gt;,st:3:&lt;3&gt;,mt:2:&lt;2&gt;然后完毕" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:AT_Team_Role}" ExpressionTypeL="String" ExpressionR="D3" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="9" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/e 神兵初始化：h1:4:&lt;4&gt;,h2:5:&lt;5&gt;,d1:6:&lt;6&gt;,d2:7:&lt;7&gt;,d3:8:&lt;8&gt;,d4:1:&lt;1&gt;,st:3:&lt;3&gt;,mt:2:&lt;2&gt;然后完毕" NamedCallbackName="command" NamedCallbackParam="/e 零式初始化：h1:4:&lt;4&gt;,h2:5:&lt;5&gt;,d1:6:&lt;6&gt;,d2:7:&lt;7&gt;,d3:8:&lt;8&gt;,d4:1:&lt;1&gt;,st:3:&lt;3&gt;,mt:2:&lt;2&gt;然后完毕" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:AT_Team_Role}" ExpressionTypeL="String" ExpressionR="D4" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="10" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/e 神兵初始化：h1:1:&lt;1&gt;,h2:4:&lt;4&gt;,d1:5:&lt;5&gt;,d2:6:&lt;6&gt;,d3:7:&lt;7&gt;,d4:8:&lt;8&gt;,st:3:&lt;3&gt;,mt:2:&lt;2&gt;然后完毕" NamedCallbackName="command" NamedCallbackParam="/e 零式初始化：h1:1:&lt;1&gt;,h2:4:&lt;4&gt;,d1:5:&lt;5&gt;,d2:6:&lt;6&gt;,d3:7:&lt;7&gt;,d4:8:&lt;8&gt;,st:3:&lt;3&gt;,mt:2:&lt;2&gt;然后完毕" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:AT_Team_Role}" ExpressionTypeL="String" ExpressionR="H1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="11" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/e 神兵初始化：h1:4:&lt;4&gt;,h2:1:&lt;1&gt;,d1:5:&lt;5&gt;,d2:6:&lt;6&gt;,d3:7:&lt;7&gt;,d4:8:&lt;8&gt;,st:3:&lt;3&gt;,mt:2:&lt;2&gt;然后完毕" NamedCallbackName="command" NamedCallbackParam="/e 零式初始化：h1:4:&lt;4&gt;,h2:1:&lt;1&gt;,d1:5:&lt;5&gt;,d2:6:&lt;6&gt;,d3:7:&lt;7&gt;,d4:8:&lt;8&gt;,st:3:&lt;3&gt;,mt:2:&lt;2&gt;然后完毕" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:AT_Team_Role}" ExpressionTypeL="String" ExpressionR="H2" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                      <ConditionSingle Enabled="true" ExpressionL="${num}" ExpressionTypeL="Numeric" ExpressionR="0038" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Trigger>
+                </Triggers>
+              </Folder>
+            </Folders>
+            <Triggers>
+              <Trigger Enabled="false" Sequential="True" Name="获取小队构成（通用，国际服新）" Id="6b910c53-6765-45e7-89f7-c63a50b3f18f" RegularExpression="^.{14} (?:\w+ )00:0038::零式初始化：h1:(?&lt;Order1&gt;[^:]*),h2:(?&lt;Order2&gt;[^:]*),d1:(?&lt;Order3&gt;[^:]*),d2:(?&lt;Order4&gt;[^:]*),d3:(?&lt;Order5&gt;[^:]*),d4:(?&lt;Order6&gt;[^:]*),st:(?&lt;Order7&gt;[^:]*),mt:(?&lt;Order8&gt;[^:]*)然后完毕">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="h1_name" VariableExpression="${_ffxivparty[${Order1}].name}" ActionType="Variable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="h2_name" VariableExpression="${_ffxivparty[${Order2}].name}" ActionType="Variable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="d1_name" VariableExpression="${_ffxivparty[${Order3}].name}" ActionType="Variable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="4" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="d2_name" VariableExpression="${_ffxivparty[${Order4}].name}" ActionType="Variable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="5" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="d3_name" VariableExpression="${_ffxivparty[${Order5}].name}" ActionType="Variable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="6" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="d4_name" VariableExpression="${_ffxivparty[${Order6}].name}" ActionType="Variable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="7" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="st_name" VariableExpression="${_ffxivparty[${Order7}].name}" ActionType="Variable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="8" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="mt_name" VariableExpression="${_ffxivparty[${Order8}].name}" ActionType="Variable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="9" SoundRouting="None" TTSRouting="None" TriggerId="f8cbb823-9c75-40f9-bf43-edc30dc7bb00" TriggerText="!selfGet" ActionType="Trigger">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="10" SoundRouting="None" TTSRouting="None" TriggerId="ad8d9105-ac84-40b6-9c46-0e875fdc5127" TriggerText="!order:{${Order1},${Order2},${Order3},${Order4},${Order5},${Order6},${Order7},${Order8}}" ActionType="Trigger">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="11" NamedCallbackName="command" NamedCallbackParam="/e 初始化成功&lt;se.1&gt;！『H1:${ptvarrl:job_list[${_ffxiventity[${var:h1_name}].jobid}][7]},H2:${ptvarrl:job_list[${_ffxiventity[${var:h2_name}].jobid}][7]},D1:${ptvarrl:job_list[${_ffxiventity[${var:d1_name}].jobid}][7]},D2:${ptvarrl:job_list[${_ffxiventity[${var:d2_name}].jobid}][7]},D3:${ptvarrl:job_list[${_ffxiventity[${var:d3_name}].jobid}][7]},D4:${ptvarrl:job_list[${_ffxiventity[${var:d4_name}].jobid}][7]},ST:${ptvarrl:job_list[${_ffxiventity[${var:st_name}].jobid}][7]},MT:${ptvarrl:job_list[${_ffxiventity[${var:mt_name}].jobid}][7]}』 本触发器免费更新，失效请关注Bilibili莫灵喵" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="12" NamedCallbackName="command" NamedCallbackParam="/e 1：${_ffxivparty[1].name},2：${_ffxivparty[2].name},3：${_ffxivparty[3].name},4：${_ffxivparty[4].name},5：${_ffxivparty[5].name},6：${_ffxivparty[6].name},7：${_ffxivparty[7].name},8：${_ffxivparty[8].name}" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="13" SoundRouting="None" TTSRouting="None" TriggerId="d0d0de00-776c-4e28-aa3a-9b3cdf33eac7" TriggerText="Tip_Subtitle:1：${_ffxivparty[1].name},2：${_ffxivparty[2].name},3：${_ffxivparty[3].name},4：${_ffxivparty[4].name},5：${_ffxivparty[5].name},6：${_ffxivparty[6].name},7：${_ffxivparty[7].name},8：${_ffxivparty[8].name}:20:0:-240:checkList" Enabled="False" ActionType="Trigger">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="false" Grouping="Or" />
+              </Trigger>
+              <Trigger Enabled="true" Name="获取小队列表顺序（通用备用）" Id="ad8d9105-ac84-40b6-9c46-0e875fdc5127" RegularExpression="!order:{(?&lt;Order1&gt;.+?),(?&lt;Order2&gt;.+?),(?&lt;Order3&gt;.+?),(?&lt;Order4&gt;.+?),(?&lt;Order5&gt;.+?),(?&lt;Order6&gt;.+?),(?&lt;Order7&gt;.+?),(?&lt;Order8&gt;.+?)}">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="${var:h1_name}_no" VariableExpression="${Order1}" ActionType="Variable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="${var:h2_name}_no" VariableExpression="${Order2}" ActionType="Variable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="${var:d1_name}_no" VariableExpression="${Order3}" ActionType="Variable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="4" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="${var:d2_name}_no" VariableExpression="${Order4}" ActionType="Variable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="5" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="${var:d3_name}_no" VariableExpression="${Order5}" ActionType="Variable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="6" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="${var:d4_name}_no" VariableExpression="${Order6}" ActionType="Variable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="7" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="${var:st_name}_no" VariableExpression="${Order7}" ActionType="Variable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="8" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="${var:mt_name}_no" VariableExpression="${Order8}" ActionType="Variable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="9" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="小队列表顺序获取成功" ActionType="UseTTS">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="false" Grouping="Or" />
+              </Trigger>
+              <Trigger Enabled="true" Sequential="True" Name="获取自己的优先级" Id="f8cbb823-9c75-40f9-bf43-edc30dc7bb00" RegularExpression="!selfGet">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="p_self" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:mt_name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="p_self" VariableExpression="2" ActionType="Variable" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:st_name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="p_self" VariableExpression="3" ActionType="Variable" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:h1_name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="4" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="p_self" VariableExpression="4" ActionType="Variable" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:h2_name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="5" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="p_self" VariableExpression="5" ActionType="Variable" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:d1_name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="6" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="p_self" VariableExpression="6" ActionType="Variable" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:d2_name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="7" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="p_self" VariableExpression="7" ActionType="Variable" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:d3_name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="8" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="p_self" VariableExpression="8" ActionType="Variable" Asynchronous="False">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:d4_name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="9" SoundRouting="None" TTSRouting="None" TriggerId="ca4edeaa-9023-41ad-9f14-41e82149aab6" TriggerText="!partyShow" ActionType="Trigger">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="false" Grouping="Or" />
+              </Trigger>
+              <Trigger Enabled="true" Name="打开小队显示" Id="ca4edeaa-9023-41ad-9f14-41e82149aab6" RegularExpression="!partyShow">
+                <Actions>
+                  <Action OrderNumber="1" LogMessageText="AT_Subtitle:自己：${_ffxivplayer}，优先级：第${var:p_self}位:20:0:-613:selfShow" LogProcess="True" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="${func:substring(${numeric:${var:safe_zone}*5},5):A右A右 逼上逼上 逼下逼下 C右C右 C左C左 低下低下 低上低上 A左A左 }" UseTTSRateExpression="2" ActionType="LogMessage" RefireRequeue="False">
+                    <Condition Enabled="false" Grouping="And" />
+                  </Action>
+                  <Action OrderNumber="2" LogMessageText="AT_Subtitle:小队优先级：${ptvarrl:job_list[${_ffxiventity[${var:mt_name}].jobid}][7]}，${ptvarrl:job_list[${_ffxiventity[${var:st_name}].jobid}][7]}，${ptvarrl:job_list[${_ffxiventity[${var:h1_name}].jobid}][7]}，${ptvarrl:job_list[${_ffxiventity[${var:h2_name}].jobid}][7]}，${ptvarrl:job_list[${_ffxiventity[${var:d1_name}].jobid}][7]}，${ptvarrl:job_list[${_ffxiventity[${var:d2_name}].jobid}][7]}，${ptvarrl:job_list[${_ffxiventity[${var:d3_name}].jobid}][7]}，${ptvarrl:job_list[${_ffxiventity[${var:d4_name}].jobid}][7]}:20:0:-660:partyShow" LogProcess="True" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="${func:substring(${numeric:${var:safe_zone}*5},5):A右A右 逼上逼上 逼下逼下 C右C右 C左C左 低下低下 低上低上 A左A左 }" UseTTSRateExpression="2" ActionType="LogMessage" RefireRequeue="False">
+                    <Condition Enabled="false" Grouping="And" />
+                  </Action>
+                  <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" TriggerId="0f31bfa3-4fcd-4c71-b129-5a912c512363" TriggerText="!小队显示剩余时间倒计时:21:" ActionType="Trigger">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="4" SoundRouting="None" TTSRouting="None" TriggerId="d0d0de00-776c-4e28-aa3a-9b3cdf33eac7" TriggerText="Tip_Subtitle:h1：在小队第${var:${var:h1_name}_no}位,h2：在小队第${var:${var:h2_name}_no}位,d1：在小队第${var:${var:d1_name}_no}位,d2：在小队第${var:${var:d2_name}_no}位,d3：在小队第${var:${var:d3_name}_no}位,d4：在小队第${var:${var:d4_name}_no}位,st：在小队第${var:${var:st_name}_no}位,mt：在小队第${var:${var:mt_name}_no}位:20:0:-240:checkList" ActionType="Trigger">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="false" Grouping="Or" />
+              </Trigger>
+              <Trigger Enabled="true" Name="小队显示剩余时间倒计时" Id="0f31bfa3-4fcd-4c71-b129-5a912c512363" RegularExpression="!小队显示剩余时间倒计时:(?&lt;Num&gt;.+?):" Scheduling="FromLastAction">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="time_tmp" VariableExpression="${Num}-1" ActionType="Variable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" TriggerId="dbb86617-70b4-457b-8470-a49fcc2eb0bc" TriggerText="Tip_Subtitle:请确认小队优先级是否正确，该提示将于${var:time_tmp}s后消失:${var:time_tmp}:0:-270:checkTip" ActionType="Trigger">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="time_tmp" VariableExpression="${Num}-1" TriggerId="0f31bfa3-4fcd-4c71-b129-5a912c512363" TriggerText="!小队显示剩余时间倒计时:${var:time_tmp}:" ActionType="Trigger" ExecutionDelayExpression="1000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${Num}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="自动初始化目前支持国服四个大区以及支持国际服mana大区，国际服其他大区参考B站视频教程6.0更新后补充分P" Id="c7ffa922-c517-43f6-93da-b03f587778f4" RegularExpression="^.{14} (?:\w+ )00:0039::(进入了休息区|You have entered a sanctuary|レストエリアに入った)">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName="(?&lt;role&gt;[sSmMhHdD][tT1-4])_name" ActionType="Variable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName="_no" ActionType="Variable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="false" Grouping="Or" />
+              </Trigger>
+              <Trigger Enabled="true" Sequential="True" Name="TTS职业" Id="6cccf0fb-3e87-4048-b32b-35dbb1be90e2" RegularExpression="^AT_Job:(?&lt;name&gt;.+)" Scheduling="FromRefirePeriod" RefirePeriodExpression="500">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="暗" UseTTSRateExpression="-2" ActionType="UseTTS">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="Drk" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="2" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="战" UseTTSRateExpression="-2" ActionType="UseTTS">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="War" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="3" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="枪" UseTTSRateExpression="-2" ActionType="UseTTS">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="Gnb" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="4" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="骑" UseTTSRateExpression="-2" ActionType="UseTTS">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="Pld" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="5" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="白" UseTTSRateExpression="-2" ActionType="UseTTS">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="Whm" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="6" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="詹" UseTTSRateExpression="-2" ActionType="UseTTS">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="Ast" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="7" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="贤" UseTTSRateExpression="-2" ActionType="UseTTS">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="Sge" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="8" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="穴" UseTTSRateExpression="-2" ActionType="UseTTS">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="Sch" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="9" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="龙" UseTTSRateExpression="-2" ActionType="UseTTS">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="Drg" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="10" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="僧" UseTTSRateExpression="-2" ActionType="UseTTS">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="Mnk" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="11" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="侍" UseTTSRateExpression="-2" ActionType="UseTTS">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="Sam" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="12" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="忍" UseTTSRateExpression="-2" ActionType="UseTTS">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="Nin" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="13" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="镰" UseTTSRateExpression="-2" ActionType="UseTTS">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="Rpr" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="14" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="赤" UseTTSRateExpression="-2" ActionType="UseTTS">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="Rdm" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="15" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="诗" UseTTSRateExpression="-2" ActionType="UseTTS">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="Brd" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="16" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="机" UseTTSRateExpression="-2" ActionType="UseTTS">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="Mch" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="17" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="舞" UseTTSRateExpression="-2" ActionType="UseTTS">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="Dnc" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="18" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="黑" UseTTSRateExpression="-2" ActionType="UseTTS">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="Blm" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="19" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="召" UseTTSRateExpression="-2" ActionType="UseTTS">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="Smn" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                </Actions>
+                <Condition Enabled="false" Grouping="Or" />
+              </Trigger>
+              <Trigger Enabled="true" Sequential="True" Name="测试鲶鱼精是否正常运行" Id="1fbc061e-edd4-45a3-997f-a689990c87b8" RegularExpression="^.{14} (?:\w+ )00:0038::测试$">
+                <Actions>
+                  <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/e 未小队初始化，请输入/e 你的职位 来进行小队初始化，例如/e d3" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:AT_Team}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/e 已小队初始化，mtID：『${var:mt_name}』、stID：『${var:st_name}』、h1ID：『${var:h1_name}』、h2ID：『${var:h2_name}』、d1ID：『${var:d1_name}』、d2ID：『${var:d2_name}』、d3ID：『${var:d3_name}』、d4ID：『${var:d4_name}』。请保证位置和ID是对应的" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:AT_Team}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/e 位置对于职业test，MT：『${ptvarrl:job_list[${_ffxiventity[${var:mt_name}].jobid}][7]}』、ST：『${ptvarrl:job_list[${_ffxiventity[${var:st_name}].jobid}][7]}』、H1：『${ptvarrl:job_list[${_ffxiventity[${var:h1_name}].jobid}][7]}』、H2：『${ptvarrl:job_list[${_ffxiventity[${var:h2_name}].jobid}][7]}』、D1：『${ptvarrl:job_list[${_ffxiventity[${var:d1_name}].jobid}][7]}』、D2：『${ptvarrl:job_list[${_ffxiventity[${var:d2_name}].jobid}][7]}』、D3：『${ptvarrl:job_list[${_ffxiventity[${var:d3_name}].jobid}][7]}』、D4：『${ptvarrl:job_list[${_ffxiventity[${var:d4_name}].jobid}][7]}』。请保证位置和职业是对应的" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:AT_Team}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="4" NamedCallbackName="command" NamedCallbackParam="/e 头顶标记ID获取情况：[mt:${_ffxiventity[${var:mt_name}].id}][st:${_ffxiventity[${var:st_name}].id}][h1:${_ffxiventity[${var:h1_name}].id}][h2:${_ffxiventity[${var:h2_name}].id}][d1:${_ffxiventity[${var:d1_name}].id}][d2:${_ffxiventity[${var:d2_name}].id}][d3:${_ffxiventity[${var:d3_name}].id}][d4:${_ffxiventity[${var:d4_name}].id}]" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:AT_Team}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="5" NamedCallbackName="command" NamedCallbackParam="/mk stop1 &lt;${var:${var:mt_name}_no}&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="6" NamedCallbackName="command" NamedCallbackParam="/mk stop2 &lt;${var:${var:st_name}_no}&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="7" NamedCallbackName="command" NamedCallbackParam="/mk ignore1 &lt;${var:${var:mt_name}_no}&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="8" NamedCallbackName="command" NamedCallbackParam="/mk ignore2 &lt;${var:${var:st_name}_no}&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="9" NamedCallbackName="command" NamedCallbackParam="/mk bind1 &lt;${var:${var:h1_name}_no}&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="10" NamedCallbackName="command" NamedCallbackParam="/mk bind2 &lt;${var:${var:h2_name}_no}&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="11" NamedCallbackName="command" NamedCallbackParam="/mk attack1 &lt;${var:${var:d1_name}_no}&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="12" NamedCallbackName="command" NamedCallbackParam="/mk attack2 &lt;${var:${var:d2_name}_no}&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="13" NamedCallbackName="command" NamedCallbackParam="/mk attack3 &lt;${var:${var:d3_name}_no}&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="14" NamedCallbackName="command" NamedCallbackParam="/mk attack4 &lt;${var:${var:d4_name}_no}&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="15" NamedCallbackName="command" NamedCallbackParam="/mk stop1 &lt;stop1&gt;" SoundRouting="None" TTSRouting="None" TriggerId="34d59b88-37ce-488f-8b99-762aa5ad7fd7" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="8000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="16" NamedCallbackName="command" NamedCallbackParam="/e 请确认test标记是否正确，MTST为红色禁止12,，H1H2为紫色锁链12，D1234为黄色攻击1234" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="false" Grouping="Or" />
+              </Trigger>
+              <Trigger Enabled="true" Name="副本内防T" Id="a03e21c5-810d-4d23-99fd-a00075814de3" RegularExpression="^.{14} (?:\w+ )00:0039::(已经.{1}分钟没有进行任何操作，超过10分钟会被强制退出任务。|操作がない状態になってから|.+?IntegerParameter)" PrevActionsRefire="Deny" PeriodRefire="Deny" RefirePeriodExpression="60000">
+                <Actions>
+                  <Action OrderNumber="1" KeypressType="WindowMessage" KeyPressExpression="${var:防击退快捷键}" KeyPressCode="32" KeyPressWindow="最终幻想XIV" SoundRouting="None" TTSRouting="None" ActionType="KeyPress">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="2" KeypressType="WindowMessage" KeyPressExpression="${var:防击退快捷键}" KeyPressCode="32" KeyPressWindow="FINAL FANTASY XIV" SoundRouting="None" TTSRouting="None" ActionType="KeyPress">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="false" Grouping="Or" />
+              </Trigger>
+              <Trigger Enabled="true" Sequential="True" Name="获取小队构成（通用，国服旧）" Id="67cceeb7-b7a0-4f0c-a5f6-3cf5b9c132a1" RegularExpression="^.{14} (?:\w+ )00:0038::零式初始化：h1:(?&lt;Order1&gt;.+?):(?&lt;Name1&gt;.+?)(红玉海|神意之地|拉诺西亚|幻影群岛|萌芽池|宇宙和音|沃仙曦染|晨曦王座|白银乡|白金幻象|神拳痕|潮风亭|旅人栈桥|拂晓之间|龙巢神殿|梦羽宝境|紫水栈桥|延夏|静语庄园|摩杜纳|海猫茶屋|柔风海湾|琥珀原|水晶塔|银泪湖|伊修加德|太阳海岸|红茶川|Aegis|Atomos|Carbuncle|Garuda|Gungnir|Kujata|Tonberry|Typhon|Alexander|Bahamut|Durandal|Fenrir|Ifrit|Ridill|Tiamat|Ultima|Anima|Asura|Chocobo|Hades|Ixion||Masamune|Pandaemonium|Titan|Belias|Mandragora|Ramuh|Shinryu|Unicorn|Valefor|Yojimbo|Zeromus|),h2:(?&lt;Order2&gt;.+?):(?&lt;Name2&gt;.+?)(红玉海|神意之地|拉诺西亚|幻影群岛|萌芽池|宇宙和音|沃仙曦染|晨曦王座|白银乡|白金幻象|神拳痕|潮风亭|旅人栈桥|拂晓之间|龙巢神殿|梦羽宝境|紫水栈桥|延夏|静语庄园|摩杜纳|海猫茶屋|柔风海湾|琥珀原|水晶塔|银泪湖|伊修加德|太阳海岸|红茶川|Aegis|Atomos|Carbuncle|Garuda|Gungnir|Kujata|Tonberry|Typhon|Alexander|Bahamut|Durandal|Fenrir|Ifrit|Ridill|Tiamat|Ultima|Anima|Asura|Chocobo|Hades|Ixion||Masamune|Pandaemonium|Titan|Belias|Mandragora|Ramuh|Shinryu|Unicorn|Valefor|Yojimbo|Zeromus|),d1:(?&lt;Order3&gt;.+?):(?&lt;Name3&gt;.+?)(红玉海|神意之地|拉诺西亚|幻影群岛|萌芽池|宇宙和音|沃仙曦染|晨曦王座|白银乡|白金幻象|神拳痕|潮风亭|旅人栈桥|拂晓之间|龙巢神殿|梦羽宝境|紫水栈桥|延夏|静语庄园|摩杜纳|海猫茶屋|柔风海湾|琥珀原|水晶塔|银泪湖|伊修加德|太阳海岸|红茶川|Aegis|Atomos|Carbuncle|Garuda|Gungnir|Kujata|Tonberry|Typhon|Alexander|Bahamut|Durandal|Fenrir|Ifrit|Ridill|Tiamat|Ultima|Anima|Asura|Chocobo|Hades|Ixion||Masamune|Pandaemonium|Titan|Belias|Mandragora|Ramuh|Shinryu|Unicorn|Valefor|Yojimbo|Zeromus|),d2:(?&lt;Order4&gt;.+?):(?&lt;Name4&gt;.+?)(红玉海|神意之地|拉诺西亚|幻影群岛|萌芽池|宇宙和音|沃仙曦染|晨曦王座|白银乡|白金幻象|神拳痕|潮风亭|旅人栈桥|拂晓之间|龙巢神殿|梦羽宝境|紫水栈桥|延夏|静语庄园|摩杜纳|海猫茶屋|柔风海湾|琥珀原|水晶塔|银泪湖|伊修加德|太阳海岸|红茶川|Aegis|Atomos|Carbuncle|Garuda|Gungnir|Kujata|Tonberry|Typhon|Alexander|Bahamut|Durandal|Fenrir|Ifrit|Ridill|Tiamat|Ultima|Anima|Asura|Chocobo|Hades|Ixion||Masamune|Pandaemonium|Titan|Belias|Mandragora|Ramuh|Shinryu|Unicorn|Valefor|Yojimbo|Zeromus|),d3:(?&lt;Order5&gt;.+?):(?&lt;Name5&gt;.+?)(红玉海|神意之地|拉诺西亚|幻影群岛|萌芽池|宇宙和音|沃仙曦染|晨曦王座|白银乡|白金幻象|神拳痕|潮风亭|旅人栈桥|拂晓之间|龙巢神殿|梦羽宝境|紫水栈桥|延夏|静语庄园|摩杜纳|海猫茶屋|柔风海湾|琥珀原|水晶塔|银泪湖|伊修加德|太阳海岸|红茶川|Aegis|Atomos|Carbuncle|Garuda|Gungnir|Kujata|Tonberry|Typhon|Alexander|Bahamut|Durandal|Fenrir|Ifrit|Ridill|Tiamat|Ultima|Anima|Asura|Chocobo|Hades|Ixion||Masamune|Pandaemonium|Titan|Belias|Mandragora|Ramuh|Shinryu|Unicorn|Valefor|Yojimbo|Zeromus|),d4:(?&lt;Order6&gt;.+?):(?&lt;Name6&gt;.+?)(红玉海|神意之地|拉诺西亚|幻影群岛|萌芽池|宇宙和音|沃仙曦染|晨曦王座|白银乡|白金幻象|神拳痕|潮风亭|旅人栈桥|拂晓之间|龙巢神殿|梦羽宝境|紫水栈桥|延夏|静语庄园|摩杜纳|海猫茶屋|柔风海湾|琥珀原|水晶塔|银泪湖|伊修加德|太阳海岸|红茶川|Aegis|Atomos|Carbuncle|Garuda|Gungnir|Kujata|Tonberry|Typhon|Alexander|Bahamut|Durandal|Fenrir|Ifrit|Ridill|Tiamat|Ultima|Anima|Asura|Chocobo|Hades|Ixion||Masamune|Pandaemonium|Titan|Belias|Mandragora|Ramuh|Shinryu|Unicorn|Valefor|Yojimbo|Zeromus|),st:(?&lt;Order7&gt;.+?):(?&lt;Name7&gt;.+?)(红玉海|神意之地|拉诺西亚|幻影群岛|萌芽池|宇宙和音|沃仙曦染|晨曦王座|白银乡|白金幻象|神拳痕|潮风亭|旅人栈桥|拂晓之间|龙巢神殿|梦羽宝境|紫水栈桥|延夏|静语庄园|摩杜纳|海猫茶屋|柔风海湾|琥珀原|水晶塔|银泪湖|伊修加德|太阳海岸|红茶川|Aegis|Atomos|Carbuncle|Garuda|Gungnir|Kujata|Tonberry|Typhon|Alexander|Bahamut|Durandal|Fenrir|Ifrit|Ridill|Tiamat|Ultima|Anima|Asura|Chocobo|Hades|Ixion||Masamune|Pandaemonium|Titan|Belias|Mandragora|Ramuh|Shinryu|Unicorn|Valefor|Yojimbo|Zeromus|),mt:(?&lt;Order8&gt;.+?):(?&lt;Name8&gt;.+?)(红玉海|神意之地|拉诺西亚|幻影群岛|萌芽池|宇宙和音|沃仙曦染|晨曦王座|白银乡|白金幻象|神拳痕|潮风亭|旅人栈桥|拂晓之间|龙巢神殿|梦羽宝境|紫水栈桥|延夏|静语庄园|摩杜纳|海猫茶屋|柔风海湾|琥珀原|水晶塔|银泪湖|伊修加德|太阳海岸|红茶川|Aegis|Atomos|Carbuncle|Garuda|Gungnir|Kujata|Tonberry|Typhon|Alexander|Bahamut|Durandal|Fenrir|Ifrit|Ridill|Tiamat|Ultima|Anima|Asura|Chocobo|Hades|Ixion||Masamune|Pandaemonium|Titan|Belias|Mandragora|Ramuh|Shinryu|Unicorn|Valefor|Yojimbo|Zeromus|)然后完毕">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="h1_name" VariableExpression="${Name1}" ActionType="Variable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="h2_name" VariableExpression="${Name2}" ActionType="Variable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="d1_name" VariableExpression="${Name3}" ActionType="Variable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="4" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="d2_name" VariableExpression="${Name4}" ActionType="Variable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="5" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="d3_name" VariableExpression="${Name5}" ActionType="Variable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="6" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="d4_name" VariableExpression="${Name6}" ActionType="Variable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="7" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="st_name" VariableExpression="${Name7}" ActionType="Variable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="8" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="mt_name" VariableExpression="${Name8}" ActionType="Variable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="9" SoundRouting="None" TTSRouting="None" TriggerId="f8cbb823-9c75-40f9-bf43-edc30dc7bb00" TriggerText="!selfGet" ActionType="Trigger">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="10" SoundRouting="None" TTSRouting="None" TriggerId="ad8d9105-ac84-40b6-9c46-0e875fdc5127" TriggerText="!order:{${Order1},${Order2},${Order3},${Order4},${Order5},${Order6},${Order7},${Order8}}" ActionType="Trigger">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="11" NamedCallbackName="command" NamedCallbackParam="/e 初始化成功&lt;se.1&gt;！" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="12" NamedCallbackName="command" NamedCallbackParam="/e 『MT:[${ptvarrl:job_list[${_ffxiventity[${var:mt_name}].jobid}][7]}]${var:mt_name}』 " SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="13" NamedCallbackName="command" NamedCallbackParam="/e 『ST:[${ptvarrl:job_list[${_ffxiventity[${var:st_name}].jobid}][7]}]${var:st_name}』 " SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="14" NamedCallbackName="command" NamedCallbackParam="/e 『H1:[${ptvarrl:job_list[${_ffxiventity[${var:h1_name}].jobid}][7]}]${var:h1_name}』 " SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="15" NamedCallbackName="command" NamedCallbackParam="/e 『H2:[${ptvarrl:job_list[${_ffxiventity[${var:h2_name}].jobid}][7]}]${var:h2_name}』 " SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="16" NamedCallbackName="command" NamedCallbackParam="/e 『D1:[${ptvarrl:job_list[${_ffxiventity[${var:d1_name}].jobid}][7]}]${var:d1_name}』 " SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="17" NamedCallbackName="command" NamedCallbackParam="/e 『D2:[${ptvarrl:job_list[${_ffxiventity[${var:d2_name}].jobid}][7]}]${var:d2_name}』 " SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="18" NamedCallbackName="command" NamedCallbackParam="/e 『D3:[${ptvarrl:job_list[${_ffxiventity[${var:d3_name}].jobid}][7]}]${var:d3_name}』 " SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="19" NamedCallbackName="command" NamedCallbackParam="/e 『D4:[${ptvarrl:job_list[${_ffxiventity[${var:d4_name}].jobid}][7]}]${var:d4_name}』 " SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="20" NamedCallbackName="command" NamedCallbackParam="/e 本触发器免费更新，失效请关注Bilibili莫灵喵" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="false" Grouping="Or" />
+              </Trigger>
+            </Triggers>
+          </Folder>
+        </Folders>
+        <Triggers>
+          <Trigger Enabled="true" Sequential="True" Name="倒计时初始" Id="05b49018-445a-48e7-973a-4a7e1be30ca9" RegularExpression="战斗开始|戦闘開始|Battle commencing in|戰鬥開始" PeriodRefire="Deny" RefirePeriodExpression="30000">
+            <Actions>
+              <Action OrderNumber="1" DiskFileOp="ReadCSVIntoTableVariable" DiskFileOpName="https://momo-1255907292.cos.ap-nanjing.myqcloud.com/job.csv" DiskFileOpVar="job_list" DiskPersist="True" SoundRouting="None" TTSRouting="None" ActionType="DiskFile">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${eptvar:job_list}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="2" SystemBeepFreqExpression="2000" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="111">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="3" SystemBeepFreqExpression="1500" PlaySoundFileExpression="C:\Users\Administrator\Desktop\act轮椅\nyan.wav" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="111" ExecutionDelayExpression="200">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="4" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="111" ExecutionDelayExpression="200">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="5" FolderOp="DisableFolder" FolderId="3efcc32a-e2f8-4408-958c-7212a66481a3" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="刘雪AOE" UseTTSRateExpression="2" VariableOp="SetNumeric" VariableName="fanshi" VariableExpression="${var:fanshi}+1" ActionType="Folder">
+                <Condition Enabled="false" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="0" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="6" ListVariableOp="Insert" ListVariableName="p12s_fenshen" ListVariableExpression="1" ListVariableIndex="1" SoundRouting="None" TTSRouting="None" ActionType="ListVariable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="7" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="去左边踩上2塔" UseTTSRateExpression="2" VariableName="二轮踩塔" VariableExpression="1" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="8" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="9" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="8" ListVariableOp="Insert" ListVariableName="p12s_fenshen" ListVariableExpression="1" ListVariableIndex="2" SoundRouting="None" TTSRouting="None" ActionType="ListVariable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="9" ListVariableOp="Insert" ListVariableName="p12s_fenshen" ListVariableExpression="1" ListVariableIndex="3" SoundRouting="None" TTSRouting="None" ActionType="ListVariable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="10" ListVariableOp="Insert" ListVariableName="p12s_fenshen" ListVariableExpression="1" ListVariableIndex="4" SoundRouting="None" TTSRouting="None" ActionType="ListVariable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="11" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="Bloodrake" VariableExpression="0" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="12" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="bfc81970-02cb-4a5d-91a5-855963d0075e" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="13" SoundRouting="None" TTSRouting="None" VariableName="光炎监狱" VariableExpression="1" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="14" SoundRouting="None" TTSRouting="None" VariableName="储存台词" VariableExpression="分摊" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="15" SoundRouting="None" TTSRouting="None" TriggerOp="EnableTrigger" TriggerId="fc7a00ea-565c-4463-853a-a0d302689924" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="16" SoundRouting="None" TTSRouting="None" VariableName="p4s_marker_offset" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="17" SoundRouting="None" TTSRouting="None" VariableName="火D" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="18" SoundRouting="None" TTSRouting="None" TriggerOp="EnableTrigger" TriggerId="fb27b1d0-d994-4b60-8acf-7efca76bceb2" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="19" SoundRouting="None" TTSRouting="None" TriggerOp="EnableTrigger" TriggerId="2d9cb40e-a353-4337-9603-ffe358ac6d5c" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="20" SoundRouting="None" TTSRouting="None" TriggerOp="EnableTrigger" TriggerId="dcf4e11d-895c-45db-9833-4af341093649" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="21" SoundRouting="None" TTSRouting="None" VariableName="line" VariableExpression="0" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="false" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="69DE" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:p4sta}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="22" SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName=".+?_id" VariableExpression="0" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="false" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="69DE" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:p4sta}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="23" SoundRouting="None" TTSRouting="None" VariableName="poison" VariableExpression="0" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="false" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="69DE" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:p4sta}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="24" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="c786da32-3694-42ba-9253-3d22c3fbbe00" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="25" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="049478c5-8968-41ea-a413-9eb9827998b1" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="26" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="4a60c7d4-cfff-47b3-9961-d65ae657d13f" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="27" SoundRouting="None" TTSRouting="None" TriggerOp="EnableTrigger" TriggerId="fa24218f-bc75-426c-8931-24b16af05d8c" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="28" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="c03430f6-ff27-4fec-a10e-ac43c127d96e" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="29" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="a7cbb600-9ee0-4006-afbe-f2825a6ba875" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="30" SoundRouting="None" TTSRouting="None" TriggerId="98d06820-a6cb-491b-a1aa-597079bf0186" TriggerForce="regexp,conditions" Enabled="False" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="31" SoundRouting="None" TTSRouting="None" TriggerOp="EnableTrigger" TriggerId="4f790051-e2c7-4ddf-8a47-f33ba9634e59" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="32" SoundRouting="None" TTSRouting="None" VariableName="two_sport_count" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="33" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="0386c410-004d-4011-901d-82cd2b8c0814" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="34" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="bc6a002f-91e5-40cc-8b3b-93ceec742af4" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="35" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="9b72befd-fb04-43ba-856f-6aad25b5d796" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="36" SoundRouting="None" TTSRouting="None" VariableName="第二次安全点" VariableExpression="0" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="false" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="69DE" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:p4sta}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="37" SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName=".+?池" VariableExpression="0" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="false" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="69DE" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:p4sta}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="38" SoundRouting="None" TTSRouting="None" VariableName="times" VariableExpression="0" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="39" SoundRouting="None" TTSRouting="None" VariableName="changdi" VariableExpression="0" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="false" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="69DE" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:p4sta}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="40" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="b3e9bad0-2921-4075-8c7c-a67ec9330712" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="41" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="ec1b2ce7-a3c0-48fe-8c36-96a366998e8d" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="42" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="bcc32e97-9eea-49b2-91b0-1c0312115c39" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="43" ListVariableExpressionType="Numeric" ListVariableName="格子" ListVariableExpression="3" ListVariableIndex="${numeric:hex2dec(${index})+1}" SoundRouting="None" TTSRouting="None" ActionType="ListVariable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="44" SoundRouting="None" TTSRouting="None" VariableName="P1S_组合技" VariableExpression="1" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="45" SoundRouting="None" TTSRouting="None" VariableName="惩罚击" VariableExpression="1" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="46" SoundRouting="None" TTSRouting="None" TriggerOp="EnableTrigger" TriggerId="bac307cf-5400-47b3-a144-8e00b629d2d3" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="47" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="dde2cbd2-f9ba-47f1-9c5c-64d6dd4f3ad7" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="48" SoundRouting="None" TTSRouting="None" VariableName="香波" VariableExpression="四边" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="49" ListVariableName="p8enrage" SoundRouting="None" TTSRouting="None" ActionType="ListVariable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="50" ListVariableName="inverseCast" SoundRouting="None" TTSRouting="None" ActionType="ListVariable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="51" SoundRouting="None" TTSRouting="None" VariableName="biansnake" VariableExpression="${var:biansnake}+1" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="52" SoundRouting="None" TTSRouting="None" VariableName="分摊标记" VariableExpression="一" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="53" FolderOp="DisableFolder" FolderId="9c71ee0d-d5ca-470b-a6b1-8b3e62b1123a" SoundRouting="None" TTSRouting="None" TriggerOp="EnableTrigger" ActionType="Folder">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="54" FolderOp="DisableFolder" FolderId="8461de63-31d1-4d96-b3cc-6218e70934c2" SoundRouting="None" TTSRouting="None" TriggerOp="EnableTrigger" ActionType="Folder">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="55" FolderOp="DisableFolder" FolderId="79705f96-5aab-4abb-8020-003b1bac9b19" SoundRouting="None" TTSRouting="None" ActionType="Folder">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="56" ListVariableName="P8s_四人移动塔坐标" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                <Condition Enabled="false" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${lvar:P8s_四人移动塔坐标.size}" ExpressionTypeL="String" ExpressionR="4" ExpressionTypeR="String" ConditionType="NumericEqual" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="57" SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName=".{2}_易伤" VariableExpression="0" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${Name}" ExpressionTypeL="String" ExpressionR="${var:d1_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="58" ListVariableName="p8s_易伤标记" SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName=".{2}_死宣" VariableExpression="0" ActionType="ListVariable">
+                <Condition Enabled="false" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${Name}" ExpressionTypeL="String" ExpressionR="${var:d1_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="59" SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName=".{2}_无buff" VariableExpression="0" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${Name}" ExpressionTypeL="String" ExpressionR="${var:d1_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="60" ListVariableName="p8s_无点名标记" SoundRouting="None" TTSRouting="None" ActionType="ListVariable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="61" SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName=".{2}_毒" VariableExpression="0" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${Name}" ExpressionTypeL="String" ExpressionR="${var:d1_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="62" FolderOp="DisableFolder" FolderId="6ecae8ba-bc27-4b99-a70f-ee2004d5aca7" SoundRouting="None" TTSRouting="None" ActionType="Folder">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="63" SoundRouting="None" TTSRouting="None" TriggerOp="EnableTrigger" TriggerId="7fd876f4-6b2a-4db8-9c0c-4e46c844e085" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="64" SoundRouting="None" TTSRouting="None" TriggerOp="EnableTrigger" TriggerId="c6fab990-b9d2-4e30-9e28-aa5d4bb7eb90" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="机制字幕提示（可diy修改文字样式，不用可以不勾）" Id="4ff28dd6-13c3-4ee7-b194-8d72eda8843b" RegularExpression="Tip_Subtitle:(?&lt;text&gt;\S+):(?&lt;time&gt;[\d\.]+):(?&lt;offset_x&gt;[\d\.-]+):(?&lt;offset_y&gt;[\d\.-]+):(?&lt;id&gt;\S+)" Description="1">
+            <Actions>
+              <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="${var:Souma_Team_Role}" TextAuraEffect="Bold" TextAuraFontSize="26.25" TextAuraForeground="White" TextAuraOutline="Fuchsia" TextAuraName="Tip_Subtitle_${id}" TextAuraExpression="${text}" TextAuraXIniExpression="1100" TextAuraYIniExpression="290" TextAuraWIniExpression="400" TextAuraHIniExpression="200" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${time}*1000-${_sincems}" TextAuraFontName="微软雅黑" ActionType="TextAura" Asynchronous="False">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="图片字幕设置 - 显示坐标" Id="969afdab-9f6f-4e3b-b345-d4ebca02ec8c" RegularExpression="\[" PeriodRefire="Deny" RefirePeriodExpression="9999999" EditAutofire="True">
+            <Actions>
+              <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="_AT_字幕X坐标" VariableExpression="1654" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="_AT_字幕Y坐标" VariableExpression="348" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="网络仓库地址" VariableExpression="https://yoyokity.diemoe.net/FFXIV6.0RaidTriggernometry/FFXIV6.0_raid科技合集/" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="4" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="UseTTS" Description="关于设置坐标：请双击或选中编辑下方的“激活命中正则表达式 xxxxxxx (测试获取坐标用)”" DescriptionOverride="True">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="5" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="UseTTS" Description="打开编辑页面后鼠标滚轮或拖到最下面点“使用即时设置”" DescriptionOverride="True">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="6" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="UseTTS" Description="在新弹出的文字设置拖动到你想要的地方，然后右键“保存更改”" DescriptionOverride="True">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="7" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="UseTTS" Description="就可以获取到刚才设置的X坐标与Y坐标，填入最上方的“设置变量”表达式的值" DescriptionOverride="True">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="8" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="UseTTS" Description="最后点test开启显示触发器勾选一下即可" DescriptionOverride="True">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="9" AuraImageMode="CenterImage" AuraName="测试获取坐标用" AuraImage="https://i0.hdslb.com/bfs/album/8530587143969936c87f1d34bbafc5c9055107ff.png" AuraXIniExpression="1541" AuraYIniExpression="642" AuraWIniExpression="152" AuraHIniExpression="28" AuraOIniExpression="100" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="48" TextAuraForeground="White" TextAuraOutline="Fuchsia" TextAuraName="测试获取坐标用" TextAuraExpression="1号  ←" TextAuraXIniExpression="1877" TextAuraYIniExpression="322" TextAuraWIniExpression="400" TextAuraHIniExpression="200" TextAuraOIniExpression="100" TextAuraFontName="微软雅黑" Enabled="False" ActionType="TextAura" Asynchronous="False">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="10" AuraOp="DeactivateAura" AuraName="测试获取坐标用" AuraImage="https://i0.hdslb.com/bfs/album/8530587143969936c87f1d34bbafc5c9055107ff.png" AuraXIniExpression="841" AuraYIniExpression="663" AuraWIniExpression="152" AuraHIniExpression="28" AuraOIniExpression="100" SoundRouting="None" TTSRouting="None" TextAuraOp="DeactivateAura" TextAuraFontSize="9" TextAuraName="测试获取坐标用" TextAuraFontName="宋体" ActionType="TextAura" Asynchronous="False">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="团灭初始" Id="ac51181e-e243-4cf6-a3d5-e2d8c8229e79" RegularExpression="^.{14} (?:\w+ )21:.{8}:400000(03|1[026]|05)|任务结束了。|has ended\.|「[^:]*」の攻略を終了した。">
+            <Actions>
+              <Action OrderNumber="1" DiskFileOp="ReadCSVIntoTableVariable" DiskFileOpName="https://momo-1255907292.cos.ap-nanjing.myqcloud.com/job.csv" DiskFileOpVar="job_list" DiskPersist="True" SoundRouting="None" TTSRouting="None" ActionType="DiskFile">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${eptvar:job_list}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="2" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="${var:Souma_Team_Role}" TextAuraOp="DeactivateAuraRegex" TextAuraEffect="Bold" TextAuraFontSize="18" TextAuraForeground="Red" TextAuraName="AT_Subtitle_.+" TextAuraExpression="${text}" TextAuraXIniExpression="0.5*(${_screenwidth}-1000)+${offset_x}" TextAuraYIniExpression="0.5*(${_screenwidth}-1000)+${offset_y}" TextAuraWIniExpression="1000" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${time}*1000-${_sincems}" TextAuraFontName="微软雅黑" ActionType="TextAura" Asynchronous="False">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="3" FolderOp="DisableFolder" FolderId="0fc53e4d-a900-46cf-b455-62af94bb17ba" SoundRouting="None" TTSRouting="None" ActionType="Folder">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="4" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="二二分摊" UseTTSRateExpression="2" VariableName="蜜蜂" VariableExpression="分散" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="4" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="5" ListVariableName="p12s_fenshen" SoundRouting="None" TTSRouting="None" ActionType="ListVariable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="6" SoundRouting="None" TTSRouting="None" VariableName="time" VariableExpression="${var:time}+1" ActionType="Variable">
+                <Condition Enabled="false" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="7" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="去左边踩上2塔" UseTTSRateExpression="2" VariableName="二轮踩塔" VariableExpression="1" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="8" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="9" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="8" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="二二分摊" UseTTSRateExpression="2" VariableOp="UnsetRegex" VariableName="z3s_(上|下|左|右)" VariableExpression="1" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="107.95:100.00" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="9" FolderOp="DisableFolder" FolderId="3efcc32a-e2f8-4408-958c-7212a66481a3" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="刘雪AOE" UseTTSRateExpression="2" VariableOp="SetNumeric" VariableName="fanshi" VariableExpression="${var:fanshi}+1" ActionType="Folder">
+                <Condition Enabled="false" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="0" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="10" SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName=".{2}_(暗|光)点名" VariableExpression="1" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d4_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="11" SoundRouting="None" TTSRouting="None" VariableName="p2s_marker_offset" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="12" ListVariableExpressionType="Numeric" ListVariableName="格子" ListVariableExpression="3" ListVariableIndex="${numeric:hex2dec(${index})+1}" SoundRouting="None" TTSRouting="None" ActionType="ListVariable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="13" ListVariableName="蛇位置" ListVariableExpression="右上" SoundRouting="None" TTSRouting="None" ActionType="ListVariable">
+                <Condition Enabled="false" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${numeric:abs(${x}-110.61)}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="String" ConditionType="NumericLessEqual" />
+                  <ConditionSingle Enabled="true" ExpressionL="${numeric:abs(${y}-89.39)}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="String" ConditionType="NumericLessEqual" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="14" SoundRouting="None" TTSRouting="None" VariableName="Bloodrake" VariableExpression="0" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="15" SoundRouting="None" TTSRouting="None" VariableName="第二次安全点" VariableExpression="0" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="false" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="69DE" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:p4sta}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="16" SoundRouting="None" TTSRouting="None" VariableName="概念支配" VariableExpression="${var:概念支配}+1" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="17" SoundRouting="None" TTSRouting="None" VariableName="颜色点名" VariableExpression="1" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="18" SoundRouting="None" TTSRouting="None" VariableName="分摊标记" VariableExpression="一" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="19" SoundRouting="None" TTSRouting="None" VariableName="光炎监狱" VariableExpression="1" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="20" ListVariableName="四连车" ListVariableExpression="冲锋击退" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="去两鞭" UseTTSRateExpression="2" VariableOp="SetString" VariableName="四连车" VariableExpression="冲锋击退" ActionType="ListVariable">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="B" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="21" SoundRouting="None" TTSRouting="None" VariableName="silianche" VariableExpression="${var:silianche}+1" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="22" ListVariableName="四连车" ListVariableExpression="大跳击退" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="去两鞭" UseTTSRateExpression="2" VariableOp="SetString" VariableName="四连车" VariableExpression="冲锋击退" ActionType="ListVariable">
+                <Condition Enabled="false" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="C" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="23" SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName=".+?池" VariableExpression="0" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="false" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="69DE" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:p4sta}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="24" SoundRouting="None" TTSRouting="None" VariableName="changdi" VariableExpression="0" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="false" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="69DE" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:p4sta}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="25" SoundRouting="None" TTSRouting="None" VariableName="惩罚击" VariableExpression="1" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="26" SoundRouting="None" TTSRouting="None" TriggerOp="EnableTrigger" TriggerId="bac307cf-5400-47b3-a144-8e00b629d2d3" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="27" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="dde2cbd2-f9ba-47f1-9c5c-64d6dd4f3ad7" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="28" SoundRouting="None" TTSRouting="None" VariableName="P1S_组合技" VariableExpression="1" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="29" SoundRouting="None" TTSRouting="None" VariableName="储存台词" VariableExpression="分摊" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="30" SoundRouting="None" TTSRouting="None" VariableName="times" VariableExpression="${var:times}+1" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="31" FolderOp="DisableFolder" FolderId="8461de63-31d1-4d96-b3cc-6218e70934c2" SoundRouting="None" TTSRouting="None" TriggerOp="EnableTrigger" ActionType="Folder">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="32" FolderOp="DisableFolder" FolderId="9c71ee0d-d5ca-470b-a6b1-8b3e62b1123a" SoundRouting="None" TTSRouting="None" TriggerOp="EnableTrigger" ActionType="Folder">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="33" FolderOp="DisableFolder" FolderId="cdeb1e3f-f00c-4630-81b9-fd25acc612a9" SoundRouting="None" TTSRouting="None" TriggerOp="EnableTrigger" ActionType="Folder">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="34" FolderOp="DisableFolder" FolderId="4b08cd6d-dd51-490e-b3f4-aea2c9dc56c0" SoundRouting="None" TTSRouting="None" TriggerOp="EnableTrigger" ActionType="Folder">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="35" ListVariableName="p8enrage" SoundRouting="None" TTSRouting="None" ActionType="ListVariable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="36" ListVariableName="p8hw2" SoundRouting="None" TTSRouting="None" ActionType="ListVariable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="37" ListVariableName="inverseCast" SoundRouting="None" TTSRouting="None" ActionType="ListVariable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="38" SoundRouting="None" TTSRouting="None" VariableName="biansnake" VariableExpression="${var:biansnake}+1" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="39" SoundRouting="None" TTSRouting="None" TriggerOp="CancelTrigger" TriggerId="49b0594c-68a0-4e7c-b2c7-4e3261c3799d" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="40" SoundRouting="None" TTSRouting="None" TriggerOp="CancelTrigger" TriggerId="6c6f0d16-16f2-4655-a49d-be7035832ed5" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="41" SoundRouting="None" TTSRouting="None" TriggerOp="CancelTrigger" TriggerId="4c4a94b2-4483-493b-a233-b818b2683aec" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="42" SoundRouting="None" TTSRouting="None" TriggerOp="CancelTrigger" TriggerId="07fb5a30-ffdc-4d8a-a08e-1b64fffc13cb" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="43" SoundRouting="None" TTSRouting="None" TriggerOp="CancelTrigger" TriggerId="cada3f32-b8d7-41db-ad72-dab337e04d57" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="44" SoundRouting="None" TTSRouting="None" TriggerOp="CancelTrigger" TriggerId="7c51b84e-4e1f-414e-a908-0f6459ddafe1" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="45" SoundRouting="None" TTSRouting="None" TriggerOp="CancelTrigger" TriggerId="11907f1b-f443-47d6-a59c-676041f5675a" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="46" SoundRouting="None" TTSRouting="None" TriggerOp="CancelTrigger" TriggerId="5629078c-b892-4a06-9806-f91e54cb7062" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="47" SoundRouting="None" TTSRouting="None" TriggerOp="CancelTrigger" TriggerId="7215a737-b8f3-4d1f-95af-30bfe49a7154" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="48" SoundRouting="None" TTSRouting="None" TriggerOp="CancelTrigger" TriggerId="f7f49884-59af-44a3-b34d-5c2941c98f3c" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="49" SoundRouting="None" TTSRouting="None" TriggerOp="CancelTrigger" TriggerId="2bf0d242-c3d3-4a84-8a16-1a3b961f88fe" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="50" SoundRouting="None" TTSRouting="None" TriggerOp="CancelTrigger" TriggerId="56cb9e84-10d4-44c7-a801-22e86cd56bbd" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="51" SoundRouting="None" TTSRouting="None" TriggerOp="CancelTrigger" TriggerId="7fd876f4-6b2a-4db8-9c0c-4e46c844e085" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="52" SoundRouting="None" TTSRouting="None" TriggerOp="CancelTrigger" TriggerId="171493bd-d88d-4515-9d46-8763e7232171" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="53" SoundRouting="None" TTSRouting="None" TriggerOp="CancelTrigger" TriggerId="c6fab990-b9d2-4e30-9e28-aa5d4bb7eb90" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="54" SoundRouting="None" TTSRouting="None" TriggerOp="CancelTrigger" TriggerId="3d92b7fa-8ab3-4b18-b027-0e4503227334" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="55" SoundRouting="None" TTSRouting="None" TriggerOp="CancelTrigger" TriggerId="d7da6b97-f339-4fce-b93d-4a0f67aff2cd" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="56" ListVariableName="P8s_四人移动塔坐标" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                <Condition Enabled="false" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${lvar:P8s_四人移动塔坐标.size}" ExpressionTypeL="String" ExpressionR="4" ExpressionTypeR="String" ConditionType="NumericEqual" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="57" NamedCallbackName="command" NamedCallbackParam="/p TH第一次分散，DPS分摊" SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName="sifeng.{1}" VariableExpression="T奶分散,DPS分摊" ActionType="Variable">
+                <Condition Enabled="false" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="40" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${playerId}].role}" ExpressionTypeL="String" ExpressionR="Tank|Heal" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="58" NamedCallbackName="command" NamedCallbackParam="/p TH第一次分散，DPS分摊" SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName="erfeng.{1}" VariableExpression="T奶分散,DPS分摊" ActionType="Variable">
+                <Condition Enabled="false" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="40" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${playerId}].role}" ExpressionTypeL="String" ExpressionR="Tank|Heal" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="59" FolderOp="DisableFolder" FolderId="79705f96-5aab-4abb-8020-003b1bac9b19" SoundRouting="None" TTSRouting="None" ActionType="Folder">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="60" AuraOp="DeactivateAura" AuraImageMode="Zoom" AuraName="yundonghui1" AuraImage="https://i0.hdslb.com/bfs/new_dyn/1fe9a95807e04780162f30f5472a1a72220756407.png" AuraXIniExpression="2135" AuraYIniExpression="309" AuraWIniExpression="370" AuraHIniExpression="270" AuraOIniExpression="100" SoundRouting="None" TTSRouting="None" ActionType="Aura">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="61" AuraOp="DeactivateAura" AuraImageMode="Zoom" AuraName="yundonghui2" AuraImage="https://i0.hdslb.com/bfs/new_dyn/1fe9a95807e04780162f30f5472a1a72220756407.png" AuraXIniExpression="2135" AuraYIniExpression="309" AuraWIniExpression="370" AuraHIniExpression="270" AuraOIniExpression="100" SoundRouting="None" TTSRouting="None" ActionType="Aura">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="62" AuraOp="DeactivateAura" AuraImageMode="Zoom" AuraName="yundonghui3" AuraImage="https://i0.hdslb.com/bfs/new_dyn/1fe9a95807e04780162f30f5472a1a72220756407.png" AuraXIniExpression="2135" AuraYIniExpression="309" AuraWIniExpression="370" AuraHIniExpression="270" AuraOIniExpression="100" SoundRouting="None" TTSRouting="None" ActionType="Aura">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="63" SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName=".{2}_易伤" VariableExpression="0" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${Name}" ExpressionTypeL="String" ExpressionR="${var:d1_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="64" FolderOp="DisableFolder" FolderId="6ecae8ba-bc27-4b99-a70f-ee2004d5aca7" SoundRouting="None" TTSRouting="None" ActionType="Folder">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="65" SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName=".{2}_无buff" VariableExpression="0" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${Name}" ExpressionTypeL="String" ExpressionR="${var:d1_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="66" ListVariableOp="UnsetRegex" ListVariableName="p8s_.+" SoundRouting="None" TTSRouting="None" ActionType="ListVariable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="67" SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName=".{2}_毒" VariableExpression="0" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${Name}" ExpressionTypeL="String" ExpressionR="${var:d1_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="68" AuraOp="DeactivateAuraRegex" AuraImageMode="Zoom" AuraName=".{1}画图" AuraImage="https://momo-1255907292.cos.ap-nanjing.myqcloud.com/%E5%86%B0%E7%81%AB/D1D2%E5%86%B0.jpg" AuraXIniExpression="${var:_AT_图片X坐标}" AuraYIniExpression="${var:_AT_图片Y坐标}" AuraWIniExpression="300" AuraHIniExpression="150" AuraOIniExpression="90" SoundRouting="None" TTSRouting="None" ActionType="Aura">
+                <Condition Enabled="false" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:d1_毒}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:d2_毒}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="69" OBSEndPoint="" SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName=".{2}_毒" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="70" OBSEndPoint="" SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName=".{2}_石化" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="71" OBSEndPoint="" SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName=".{2}_炸蛇" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="72" OBSEndPoint="" SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName=".{2}_石化眼" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="73" ListVariableOp="UnsetRegex" ListVariableName="p9s_.+" ListVariableExpression="${name}" SoundRouting="None" TTSRouting="None" ActionType="ListVariable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="74" SoundRouting="None" TTSRouting="None" TriggerOp="EnableTrigger" TriggerId="c6fab990-b9d2-4e30-9e28-aa5d4bb7eb90" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="75" ListVariableOp="UnsetRegex" ListVariableName="p10s_.+" ListVariableExpression="${name}" SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName="p10s_.+" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="76" ListVariableName="p10s_44职业" ListVariableExpression="${ptvarrl:job_list[${_ffxiventity[${name}].jobid}][7]}" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="攻击1" VariableExpression="${ptvarrl:job_list[${_ffxiventity[${name}].jobid}][7]}" ActionType="ListVariable">
+                <Condition Enabled="false" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="E70" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="77" ListVariableOp="UnsetRegex" ListVariableName="p10s_.+" ListVariableExpression="${name}" SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName="p12s_.+" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="78" ListVariableOp="UnsetRegex" ListVariableName="p10s_.+" ListVariableExpression="${name}" SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName="z4s_.+" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="79" ListVariableOp="UnsetRegex" ListVariableName="p12s_.+?" ListVariableExpression="${ptvarrl:job_list[${_ffxiventity[${name}].jobid}][7]}" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="攻击1" VariableExpression="${ptvarrl:job_list[${_ffxiventity[${name}].jobid}][7]}" ActionType="ListVariable">
+                <Condition Enabled="false" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="E70" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="80" ListVariableOp="UnsetRegex" ListVariableName="p10s_.+" ListVariableExpression="${name}" SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName="P12s[12]_.+" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="81" ListVariableOp="UnsetRegex" ListVariableName="P12s[12]_.+?" ListVariableExpression="${ptvarrl:job_list[${_ffxiventity[${name}].jobid}][7]}" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="攻击1" VariableExpression="${ptvarrl:job_list[${_ffxiventity[${name}].jobid}][7]}" ActionType="ListVariable">
+                <Condition Enabled="false" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="E70" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="82" FolderOp="DisableFolder" FolderId="6f339efd-8cf7-484b-8702-208efbfebb3d" SoundRouting="None" TTSRouting="None" ActionType="Folder">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="83" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="7b675cbb-29ce-45ec-a72d-4ee00caf3806" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="84" SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName=".{2}_(火分摊|风分散)点名" VariableExpression="1" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d4_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="85" SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName=".{2}_(火|风)标记点名" VariableExpression="1" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d4_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="86" SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName="temp_.+?" VariableExpression="1" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d4_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="87" ListVariableOp="UnsetRegex" ListVariableName="(.{2}_Debuff1)" SoundRouting="None" TTSRouting="None" ActionType="ListVariable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="88" SoundRouting="None" TTSRouting="None" TriggerOp="EnableTrigger" TriggerId="fc7a00ea-565c-4463-853a-a0d302689924" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="89" SoundRouting="None" TTSRouting="None" ActionType="ActInteraction" ExecutionDelayExpression="3000">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="字幕提示2（兼容空格）" Id="62d7f1ed-363e-4b3e-9162-4f493182673f" RegularExpression="^AT_Subtitle:(?&lt;text&gt;[^:]+):(?&lt;time&gt;[0-9][^:]+):(?&lt;offset_x&gt;[^:]+):(?&lt;offset_y&gt;[^:]+):(?&lt;id&gt;[^:]+)">
+            <Actions>
+              <Action OrderNumber="1" SoundRouting="None" TTSRouting="Triggernometry" UseTTSTextExpression="${var:Souma_Team_Role}" TextAuraEffect="Bold" TextAuraFontSize="18" TextAuraForeground="Red" TextAuraName="AT_Subtitle_${id}" TextAuraExpression="${text}" TextAuraXIniExpression="0.5*(${_screenwidth}-1000)+${offset_x}" TextAuraYIniExpression="0.5*(${_screenwidth}-1000)+${offset_y}" TextAuraWIniExpression="1000" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${time}*1000-${_sincems}" TextAuraFontName="微软雅黑" ActionType="TextAura" Asynchronous="False">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Sequential="True" Name="1B转录" Id="7066cb4d-7a2d-4e08-b366-cc9aa131605a" RegularExpression="^.{14} (?:\w+ )(?&lt;left&gt;1B:.{8}:.+?:.{4}:.{4}):(?&lt;id&gt;.{4}):(?&lt;right&gt;.{14})" RefirePeriodExpression="1000">
+            <Actions>
+              <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="双死刑" UseTTSRateExpression="2" VariableOp="SetNumeric" VariableName="p4s_marker_offset" VariableExpression="hex2dec(${id})-hex2dec(00DA)" ActionType="Variable">
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${evar:p4s_marker_offset}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="2" LogMessageText="${left}:${numeric:hex2dec(${id})-${var:p4s_marker_offset}}:${right}" LogProcess="True" LogLevel="Info" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="双死刑" UseTTSRateExpression="2" VariableOp="SetNumeric" VariableName="marker_offset" VariableExpression="hex2dec(${id})-hex2dec(00DA)" ActionType="LogMessage" ExecutionDelayExpression="50">
+                <Condition Enabled="false" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${evar:p4s_marker_offset}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="222" VariableExpression="${left}:${numeric:hex2dec(${id})-${var:p4s_marker_offset}}:${right}" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="1B清空" Id="31dd1dba-de46-4fd3-8fd5-34dbca205bd5" RegularExpression="任务结束了。|has ended\.|の攻略を終了した。|限制时间已到">
+            <Actions>
+              <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" VariableName="p3s_marker_offset" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" VariableName="p4s_marker_offset" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" VariableName="p12_marker_offset" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="获取版本号" Id="01549d74-753b-4794-963e-f18e781608a3" RegularExpression="^." PeriodRefire="Deny" RefirePeriodExpression="86400000" EditAutofire="True">
+            <Actions>
+              <Action OrderNumber="1" DiskFileOpName="https://momo-1255907292.cos.ap-nanjing.myqcloud.com/6.0bb" DiskFileOpVar="零式版本" SoundRouting="None" TTSRouting="None" ActionType="DiskFile">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="2" MessageBoxText="${var:零式版本}" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="MessageBox" ExecutionDelayExpression="5000">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="清除所有标记" Id="350e9468-7718-4efb-9ea0-3f6ae3955213" RegularExpression="" Description="/marking off &lt;1&gt;&#xD;/marking off &lt;2&gt;&#xD;/marking off &lt;3&gt;&#xD;/marking off &lt;4&gt;&#xD;/marking off &lt;5&gt;&#xD;/marking off &lt;6&gt;&#xD;/marking off &lt;7&gt;&#xD;/marking off &lt;8&gt;">
+            <Actions>
+              <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/marking off &lt;1&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/marking off &lt;2&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/marking off &lt;3&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="4" NamedCallbackName="command" NamedCallbackParam="/marking off &lt;4&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="5" NamedCallbackName="command" NamedCallbackParam="/marking off &lt;5&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="6" NamedCallbackName="command" NamedCallbackParam="/marking off &lt;6&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="7" NamedCallbackName="command" NamedCallbackParam="/marking off &lt;7&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="8" NamedCallbackName="command" NamedCallbackParam="/marking off &lt;8&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+        </Triggers>
+      </Folder>
+      <Folder Id="a776f698-9f3d-4660-a4a1-9ee6a02adbb7" Name="狗测试" Enabled="true">
+        <Folders>
+          <Folder Id="94aee5f5-ca2b-44eb-a9e7-e0c84497a9b8" Name="复杂机制：相同buff 职能站位" Enabled="true">
+            <Folders />
+            <Triggers>
+              <Trigger Enabled="true" Name="Buff 获取" Id="09c79f23-25d0-428d-8a57-94cbe46f6e60" RegularExpression="^.{14} StatusAdd 1A:(\w)*:[^:]*ctric[^:]*:(?&lt;type&gt;22|42).*:[^:]*:[^:]*:.{8}:(?&lt;name&gt;[^:]*)">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="一变量" VariableExpression="变量一形态" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="XXX" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="一变量" VariableExpression="变量二形态" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="YYY" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                </Actions>
+                <Condition Enabled="false" Grouping="Or" />
+              </Trigger>
+              <Trigger Enabled="true" Name="播报" Id="e2cfd14a-9687-4084-9843-3eace584e61d" RegularExpression="^.{14} (?:\w+ )14:.{8}:[^:]*:(5654):">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="TH一变量二形态去哪里" ActionType="UseTTS">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:一变量}" ExpressionTypeL="String" ExpressionR="变量二形态" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${_ffxivplayer}].role}" ExpressionTypeL="String" ExpressionR="Tank|Healer" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="DPS一变量一形态去哪里" ActionType="UseTTS">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:一变量}" ExpressionTypeL="String" ExpressionR="变量一形态" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${_ffxivplayer}].role}" ExpressionTypeL="String" ExpressionR="DPS" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="TH一变量一形态去哪里" ActionType="UseTTS">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:一变量}" ExpressionTypeL="String" ExpressionR="变量一形态" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${_ffxivplayer}].role}" ExpressionTypeL="String" ExpressionR="Tank|Healer" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="DPS一变量二形态去哪里" ActionType="UseTTS">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:一变量}" ExpressionTypeL="String" ExpressionR="变量二形态" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${_ffxivplayer}].role}" ExpressionTypeL="String" ExpressionR="DPS" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                </Actions>
+                <Condition Enabled="false" Grouping="Or" />
+              </Trigger>
+            </Triggers>
+          </Folder>
+          <Folder Id="f3303921-9d65-449f-ade9-84dd8887e6a9" Name="雷点名" Enabled="true">
+            <Folders />
+            <Triggers>
+              <Trigger Enabled="true" Name="清除标记" Id="9022e6e7-c5fe-4a8f-91c9-9156317ce873" RegularExpression="^.{14} (?:\w+ )1A:B11:[^:]*:(?&lt;second&gt;[^:]*):.{8}:[^:]*:(?&lt;pid&gt;1.{7}):(?&lt;name&gt;[^:]*):" PeriodRefire="Deny" RefirePeriodExpression="1000" Description="原地 AC3&#xD;&#xA;正对boss AC4&#xD;&#xA;背对boss AC5">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TriggerId="350e9468-7718-4efb-9ea0-3f6ae3955213" TriggerForce="regexp,conditions" ActionType="Trigger" ExecutionDelayExpression="17000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:指挥模式}" ExpressionTypeL="String" ExpressionR="开启" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="雷点名提醒" Id="660389b2-2f3d-4e96-91eb-2c8a5085f0a7" RegularExpression="^.{14} (?:\w+ )1A:B11:[^:]*:(?&lt;second&gt;[^:]*):.{8}:[^:]*:(?&lt;pid&gt;1.{7}):(?&lt;name&gt;[^:]*):" Description="原地 AC3&#xD;&#xA;正对boss AC4&#xD;&#xA;背对boss AC5">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="雷雷雷" UseTTSRateExpression="2" ActionType="UseTTS">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="雷雷雷" UseTTSRateExpression="2" ActionType="UseTTS" ExecutionDelayExpression="${numeric:${second}-3}*1000">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" TriggerId="4ff28dd6-13c3-4ee7-b194-8d72eda8843b" TriggerText="Tip_Subtitle:雷雷雷:5:0:0:main" ActionType="Trigger">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="雷点名记录" Id="bf5465ee-32ca-4d6e-be6d-75fbbe680338" RegularExpression="^.{14} (?:\w+ )1A:B11:[^:]*:(?&lt;second&gt;[^:]*):.{8}:[^:]*:(?&lt;pid&gt;1.{7}):(?&lt;name&gt;[^:]*):">
+                <Actions>
+                  <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" ListVariableOp="Push" ListVariableName="p2_蓝标" ListVariableExpression="${ptvarrl:job_list[${_ffxivparty[${var:h1_name}].jobid}][6]}" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:h1_name}_no}&gt;" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="${ptvarrl:job_list[${_ffxivparty[${var:h1_name}].jobid}][6]}" UseTTSRateExpression="2" VariableOp="SetNumeric" VariableName="h1_雷" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:h1_name}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" ListVariableOp="Push" ListVariableName="p2_蓝标" ListVariableExpression="${ptvarrl:job_list[${_ffxivparty[${var:h1_name}].jobid}][6]}" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:h1_name}_no}&gt;" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="${ptvarrl:job_list[${_ffxivparty[${var:h1_name}].jobid}][6]}" UseTTSRateExpression="2" VariableOp="SetNumeric" VariableName="h2_雷" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:h2_name}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="3" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" ListVariableOp="Push" ListVariableName="p2_蓝标" ListVariableExpression="${ptvarrl:job_list[${_ffxivparty[${var:h1_name}].jobid}][6]}" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:h1_name}_no}&gt;" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="${ptvarrl:job_list[${_ffxivparty[${var:h1_name}].jobid}][6]}" UseTTSRateExpression="2" VariableOp="SetNumeric" VariableName="d1_雷" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d1_name}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="4" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" ListVariableOp="Push" ListVariableName="p2_蓝标" ListVariableExpression="${ptvarrl:job_list[${_ffxivparty[${var:h1_name}].jobid}][6]}" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:h1_name}_no}&gt;" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="${ptvarrl:job_list[${_ffxivparty[${var:h1_name}].jobid}][6]}" UseTTSRateExpression="2" VariableOp="SetNumeric" VariableName="d2_雷" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d2_name}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="5" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" ListVariableOp="Push" ListVariableName="p2_蓝标" ListVariableExpression="${ptvarrl:job_list[${_ffxivparty[${var:h1_name}].jobid}][6]}" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:h1_name}_no}&gt;" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="${ptvarrl:job_list[${_ffxivparty[${var:h1_name}].jobid}][6]}" UseTTSRateExpression="2" VariableOp="SetNumeric" VariableName="d3_雷" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d3_name}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="6" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" ListVariableOp="Push" ListVariableName="p2_蓝标" ListVariableExpression="${ptvarrl:job_list[${_ffxivparty[${var:h1_name}].jobid}][6]}" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:h1_name}_no}&gt;" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="${ptvarrl:job_list[${_ffxivparty[${var:h1_name}].jobid}][6]}" UseTTSRateExpression="2" VariableOp="SetNumeric" VariableName="d4_雷" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d4_name}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="7" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" ListVariableOp="Push" ListVariableName="p2_蓝标" ListVariableExpression="${ptvarrl:job_list[${_ffxivparty[${var:h1_name}].jobid}][6]}" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:h1_name}_no}&gt;" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="${ptvarrl:job_list[${_ffxivparty[${var:h1_name}].jobid}][6]}" UseTTSRateExpression="2" VariableOp="SetNumeric" VariableName="st_雷" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:st_name}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="8" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" ListVariableOp="Push" ListVariableName="p2_蓝标" ListVariableExpression="${ptvarrl:job_list[${_ffxivparty[${var:h1_name}].jobid}][6]}" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:h1_name}_no}&gt;" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="${ptvarrl:job_list[${_ffxivparty[${var:h1_name}].jobid}][6]}" UseTTSRateExpression="2" VariableOp="SetNumeric" VariableName="mt_雷" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:mt_name}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                    </Condition>
+                  </Action>
+                </Actions>
+                <Condition Enabled="false" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:指挥模式}" ExpressionTypeL="String" ExpressionR="开启" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Sequential="True" Name="雷标记非英文端(要初始化)" Id="16ba857d-c515-4684-afb8-953d1f84498a" RegularExpression="^.{14} (?:\w+ )1A:B11:[^:]*:(?&lt;second&gt;[^:]*):.{8}:[^:]*:(?&lt;pid&gt;1.{7}):(?&lt;name&gt;[^:]*):" PeriodRefire="Deny" RefirePeriodExpression="5000">
+                <Actions>
+                  <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:mt_name}_no}&gt;" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="○" VariableExpression="1" ActionType="NamedCallback" ExecutionDelayExpression="700">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:mt_雷}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:st_name}_no}&gt;" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="○" VariableExpression="2" ActionType="NamedCallback">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:st_雷}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:h1_name}_no}&gt;" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="○" VariableExpression="3" ActionType="NamedCallback">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:h1_雷}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="4" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:h2_name}_no}&gt;" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="○" VariableExpression="4" ActionType="NamedCallback" Description="H2">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:h2_雷}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="5" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:d1_name}_no}&gt;" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="○" VariableExpression="5" ActionType="NamedCallback">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:d1_雷}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="6" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:d2_name}_no}&gt;" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="○" VariableExpression="6" ActionType="NamedCallback" Description="D2">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:d2_雷}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="7" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:d3_name}_no}&gt;" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="○" VariableExpression="7" ActionType="NamedCallback">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:d3_雷}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="8" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:d4_name}_no}&gt;" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="○" VariableExpression="8" ActionType="NamedCallback">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:d4_雷}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:指挥模式}" ExpressionTypeL="String" ExpressionR="开启" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Sequential="True" Name="雷标记英文端(要初始化)" Id="72bc82b6-6edf-452f-bfb3-ed1982405218" RegularExpression="^.{14} (?:\w+ )1A:B11:[^:]*:(?&lt;second&gt;[^:]*):.{8}:[^:]*:(?&lt;pid&gt;1.{7}):(?&lt;name&gt;[^:]*):" PeriodRefire="Deny" RefirePeriodExpression="5000">
+                <Actions>
+                  <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${var:${var:mt_name}_no}&gt;" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="○" VariableExpression="1" ActionType="NamedCallback" ExecutionDelayExpression="700">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:mt_雷}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${var:${var:st_name}_no}&gt;" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="○" VariableExpression="2" ActionType="NamedCallback">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:st_雷}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${var:${var:h1_name}_no}&gt;" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="○" VariableExpression="3" ActionType="NamedCallback">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:h1_雷}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="4" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${var:${var:h2_name}_no}&gt;" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="○" VariableExpression="4" ActionType="NamedCallback" Description="H2">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:h2_雷}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="5" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${var:${var:d1_name}_no}&gt;" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="○" VariableExpression="5" ActionType="NamedCallback">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:d1_雷}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="6" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${var:${var:d2_name}_no}&gt;" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="○" VariableExpression="6" ActionType="NamedCallback" Description="D2">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:d2_雷}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="7" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${var:${var:d3_name}_no}&gt;" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="○" VariableExpression="7" ActionType="NamedCallback">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:d3_雷}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="8" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${var:${var:d4_name}_no}&gt;" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="○" VariableExpression="8" ActionType="NamedCallback">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:d4_雷}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:指挥模式}" ExpressionTypeL="String" ExpressionR="开启" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Sequential="True" Name="雷标记复盘发送(要初始化)" Id="a71e514d-0dc0-4f48-ba83-4febd14d294f" RegularExpression="^.{14} (?:\w+ )1A:B11:[^:]*:(?&lt;second&gt;[^:]*):.{8}:[^:]*:(?&lt;pid&gt;1.{7}):(?&lt;name&gt;[^:]*):" PeriodRefire="Deny" RefirePeriodExpression="5000">
+                <Actions>
+                  <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/e mt雷已标记" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="○" VariableExpression="1" ActionType="NamedCallback" ExecutionDelayExpression="700">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:mt_雷}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/e st雷已标记" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="○" VariableExpression="1" ActionType="NamedCallback">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:st_雷}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/e h1雷已标记" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="○" VariableExpression="1" ActionType="NamedCallback">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:h1_雷}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="4" NamedCallbackName="command" NamedCallbackParam="/e h2雷已标记" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="○" VariableExpression="1" ActionType="NamedCallback">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:h2_雷}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="5" NamedCallbackName="command" NamedCallbackParam="/e d1雷已标记" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="○" VariableExpression="1" ActionType="NamedCallback">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:d1_雷}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="6" NamedCallbackName="command" NamedCallbackParam="/e d2雷已标记" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="○" VariableExpression="1" ActionType="NamedCallback">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:d2_雷}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="7" NamedCallbackName="command" NamedCallbackParam="/e d3雷已标记" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="○" VariableExpression="1" ActionType="NamedCallback">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:d3_雷}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="8" NamedCallbackName="command" NamedCallbackParam="/e d4雷已标记" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="○" VariableExpression="1" ActionType="NamedCallback">
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:d4_雷}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                </Actions>
+                <Condition Enabled="false" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:指挥模式}" ExpressionTypeL="String" ExpressionR="开启" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Trigger>
+            </Triggers>
+          </Folder>
+          <Folder Id="483496e7-9985-4d6f-b2ff-95064d437a3d" Name="无职能Buff优先级标记" Enabled="true">
+            <Folders />
+            <Triggers>
+              <Trigger Enabled="true" Name="Dot Buff 变量标记" Id="11ac2730-3a97-40cc-8a9f-de30645a4f95" RegularExpression="正则表达式">
+                <Actions>
+                  <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:mt_name}_no}&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback" ExecutionDelayExpression="500">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="(MT_Debuff1)" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:st_name}_no}&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback" ExecutionDelayExpression="100">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="(ST_Debuff1)" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:h1_name}_no}&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback" ExecutionDelayExpression="100">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="(H1_Debuff1)" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="4" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:h2_name}_no}&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback" ExecutionDelayExpression="100">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="(H2_Debuff1)" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="5" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:d1_name}_no}&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback" ExecutionDelayExpression="100">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="(D1_Debuff1)" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="6" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:d2_name}_no}&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback" ExecutionDelayExpression="100">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="(D2_Debuff1)" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="7" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:d3_name}_no}&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback" ExecutionDelayExpression="100">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="(D3_Debuff1)" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="8" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:d4_name}_no}&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback" ExecutionDelayExpression="100">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="(D4_Debuff1)" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Action>
+                </Actions>
+                <Condition Enabled="false" Grouping="Or" />
+              </Trigger>
+              <Trigger Enabled="true" Name="Dot Buff设置变量" Id="be234769-4b04-4304-9765-ebe7e4512826" RegularExpression="^.{14} (?:\w+ ).{2}:.[^:]*:(\w *)*:9620:[^:]*:[^:]{8}:(?&lt;name&gt;[^:]*):">
+                <Actions>
+                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="(MT_Debuff1)" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:mt_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="(ST_Debuff1)" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:st_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="(H1_Debuff1)" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:h1_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="4" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="(H2_Debuff1)" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:h2_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="5" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="(D1_Debuff1)" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d1_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="6" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="(D2_Debuff1)" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d2_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="7" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="(D3_Debuff1)" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d3_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="8" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="(D4_Debuff1)" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d4_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                </Actions>
+                <Condition Enabled="false" Grouping="Or" />
+              </Trigger>
+              <Trigger Enabled="true" Name="没buff 标记" Id="08d2f9fc-7028-49ec-91e4-f2b97bfce04e" RegularExpression="^.{14} (?:\w+ ).{2}:.[^:]*:(\w *)*:9620:[^:]*:[^:]{8}:(?&lt;name&gt;[^:]*):">
+                <Actions>
+                  <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:mt_name}_no}&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback" ExecutionDelayExpression="500">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="(MT_Debuff1)" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="StringNotEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:st_name}_no}&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback" ExecutionDelayExpression="100">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="(ST_Debuff1)" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="StringNotEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:h1_name}_no}&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback" ExecutionDelayExpression="100">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="(H1_Debuff1)" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="StringNotEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="4" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:h2_name}_no}&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback" ExecutionDelayExpression="100">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="(H2_Debuff1)" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="StringNotEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="5" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:d1_name}_no}&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback" ExecutionDelayExpression="100">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="(D1_Debuff1)" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="StringNotEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="6" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:d2_name}_no}&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback" ExecutionDelayExpression="100">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="(D2_Debuff1)" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="StringNotEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="7" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:d3_name}_no}&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback" ExecutionDelayExpression="100">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="(D3_Debuff1)" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="StringNotEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="8" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:d4_name}_no}&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback" ExecutionDelayExpression="100">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="(D4_Debuff1)" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="StringNotEqualNocase" />
+                    </Condition>
+                  </Action>
+                </Actions>
+                <Condition Enabled="false" Grouping="Or" />
+              </Trigger>
+            </Triggers>
+          </Folder>
+        </Folders>
+        <Triggers>
+          <Trigger Enabled="true" Name="AOE" Id="81df7870-2ca2-4569-961b-37d658d84bef" RegularExpression="正则表达式">
+            <Actions>
+              <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="AOE" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/p 上海公0偏M，找主找固泡有意+Q920666416 &lt;se.7&gt;&lt;se.7&gt;&lt;se.7&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/p 已找到 &lt;se.7&gt;&lt;se.7&gt;&lt;se.7&gt;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback" ExecutionDelayExpression="5000">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="字幕提示" Id="11d44603-0137-40df-b62f-76e77ad83e1c" RegularExpression="123">
+            <Actions>
+              <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TriggerId="4ff28dd6-13c3-4ee7-b194-8d72eda8843b" TriggerText="Tip_Subtitle:测试用:5:0:0:main" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="点特殊人的特殊机制" Id="7734ab2b-f6e4-4b85-969e-31987f3fb56e" RegularExpression="">
+            <Actions>
+              <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" UseTTSTextExpression="特殊点名点自己" UseTTSRateExpression="3" ActionType="UseTTS">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" TriggerId="902e3504-b9ca-4d78-93b9-05369c444d2c" TriggerText="Tip_Subtitle:连线拉对角:5:0:0:main" Enabled="False" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Trigger>
+        </Triggers>
+      </Folder>
+    </Folders>
+    <Triggers />
+  </ExportedFolder>
+</TriggernometryExport>
