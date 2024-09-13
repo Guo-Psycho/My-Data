@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.705">
-  <ExportedFolder Id="01fb1b1e-8bbb-46fa-a077-d4014b13834d" Name="塞口的狗测试V2" Enabled="true">
+  <ExportedFolder Id="01fb1b1e-8bbb-46fa-a077-d4014b13834d" Name="01塞口的狗测试V2" Enabled="true">
     <Folders>
       <Folder Id="7ca99c60-ed70-4b83-a601-42cfb882f55f" Name="通用依赖功能" Enabled="true">
         <Folders>
