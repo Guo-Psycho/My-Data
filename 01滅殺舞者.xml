@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<TriggernometryExport PluginVersion="1.2.0.712">
+  <ExportedFolder Id="d343f7be-b85e-41b4-9250-4158773da402" Name="01滅殺舞者" Enabled="false">
+    <Folders>
+      <Folder Id="44d7622f-4c08-492c-96f8-ff8e1819ae0b" Name="舞者滅杀" Enabled="true">
+        <Folders />
+        <Triggers>
+          <Trigger Enabled="true" Name="滅殺标准舞步结束代码" Id="2fb1bd61-1c20-4c86-bd7c-46fe471b5dd2" RegularExpression="^.{14} StatusAdd 1A:71D:[^:]*[^:]*.*:[^:]*:[^:]*:.{8}:(.*Psycho):">
+            <Actions>
+              <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/e 滅殺成功" ActionType="NamedCallback" />
+              <Action OrderNumber="2" KeyPressExpression="{F4}" NamedCallbackName="command" NamedCallbackParam="/statusoff Standard Finish" ActionType="KeyPress" ExecutionDelayExpression="100" />
+            </Actions>
+          </Trigger>
+          <Trigger Enabled="true" Name="滅殺进攻之探戈代码" Id="4f759643-f084-45e0-a925-79c9dcd47420" RegularExpression="^.{14} StatusAdd 1A:721:[^:]*[^:]*.*:[^:]*:[^:]*:.{8}:(.*Psycho):">
+            <Actions>
+              <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/e 滅殺成功" ActionType="NamedCallback" />
+              <Action OrderNumber="2" KeyPressExpression="{F4}" NamedCallbackName="command" NamedCallbackParam="/statusoff Standard Finish" ActionType="KeyPress" ExecutionDelayExpression="100" />
+            </Actions>
+          </Trigger>
+        </Triggers>
+      </Folder>
+      <Folder Id="fc95b22d-6374-43f3-aebe-ce0453deb463" Name="撕碎卡片" Enabled="true">
+        <Folders />
+        <Triggers>
+          <Trigger Enabled="true" Name="撕碎太阳神代码" Id="84fac567-47c4-439a-b74e-6bf9bc093f6f" RegularExpression="^.{14} StatusAdd 1A:F2F:[^:]*[^:]*.*:[^:]*:[^:]*:.{8}:(.*Psycho):">
+            <Actions>
+              <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/e 撕碎卡片" ActionType="NamedCallback" />
+              <Action OrderNumber="2" KeyPressExpression="{F5}" NamedCallbackName="command" NamedCallbackParam="/statusoff Standard Finish" ActionType="KeyPress" ExecutionDelayExpression="100" />
+            </Actions>
+          </Trigger>
+          <Trigger Enabled="true" Name="撕碎战争神代码" Id="18f386df-84f1-4a4b-8bb0-6c590fcf97f9" RegularExpression="^.{14} StatusAdd 1A:F31:[^:]*[^:]*.*:[^:]*:[^:]*:.{8}:(.*Psycho):">
+            <Actions>
+              <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/e 撕碎卡片" ActionType="NamedCallback" />
+              <Action OrderNumber="2" KeyPressExpression="{F5}" NamedCallbackName="command" NamedCallbackParam="/statusoff Standard Finish" ActionType="KeyPress" ExecutionDelayExpression="100" />
+            </Actions>
+          </Trigger>
+        </Triggers>
+      </Folder>
+    </Folders>
+    <Triggers />
+  </ExportedFolder>
+</TriggernometryExport>
