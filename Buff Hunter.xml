@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<TriggernometryExport PluginVersion="1.2.0.712">
+  <ExportedFolder Id="28b1746e-4f9a-4f74-8db3-3ac490dc4fda" Name="01Hock Hunter" Enabled="false">
+    <Folders />
+    <Triggers>
+      <Trigger Enabled="true" Name="Buff Hunter" Id="cbb00fed-49bb-4905-b764-fe71054900aa" RegularExpression="^.{14} StatusAdd 1A:(?&lt;BuffID&gt;[^:]*):(?&lt;BuffName&gt;[^:]*):[^:]*:[^:]*:｛BOSS的名字｝:.{8}:(?&lt;BuffTarget&gt;[^:]*)">
+        <Actions>
+          <Action OrderNumber="1" LogMessageText="[18:24:36.855] StatusAdd 1A:828:出血:15.00:40000486:绝命战士:103BBAA7:Psycho:00:183753:16210388" LogProcess="True" Enabled="False" ActionType="LogMessage" />
+          <Action OrderNumber="2" VariableOp="SetString" VariableName="BossName2" VariableExpression="${BossName2}" Enabled="False" ActionType="Variable" />
+          <Action OrderNumber="3" VariableOp="SetString" VariableName="BuffID" VariableExpression="${BuffID}" ActionType="Variable" />
+          <Action OrderNumber="4" VariableOp="SetString" VariableName="BuffName" VariableExpression="${BuffName}" ActionType="Variable" />
+          <Action OrderNumber="5" VariableOp="SetString" VariableName="BuffTarget" VariableExpression="${BuffTarget}" ActionType="Variable" />
+          <Action OrderNumber="6" NamedCallbackName="command" NamedCallbackParam="/e Buff Hunter标量获取成功 BuffName &lt;${var:BuffName}&gt;  Buff ID：&lt;${var:BuffID}&gt; To:&lt;${var:BuffTarget}&gt;" ActionType="NamedCallback">
+            <Condition Enabled="false" Grouping="Or">
+              <ConditionSingle Enabled="false" ExpressionL="${var:BossName}" ExpressionTypeL="String" ExpressionR="${var:BossName2}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="7" LogMessageText="Skill Hunter标量获取成功" LogProcess="True" VariableName="BuffID" ActionType="Variable" ExecutionDelayExpression="100" />
+          <Action OrderNumber="8" LogMessageText="Skill Hunter标量获取成功" LogProcess="True" VariableName="BuffName" ActionType="Variable" />
+          <Action OrderNumber="9" LogMessageText="Skill Hunter标量获取成功" LogProcess="True" VariableName="BuffTarget" ActionType="Variable" />
+        </Actions>
+      </Trigger>
+      <Trigger Enabled="true" Name="Skill Hunter" Id="beb354b9-ab5d-4873-816f-dd33159e4f01" RegularExpression="^.{14} (?:\w+ )14:.{8}:(?&lt;BossName1&gt;[^:]*):(?&lt;SkillID&gt;[^:]*):(?&lt;SkillName&gt;[^:]*):">
+        <Actions>
+          <Action OrderNumber="1" LogMessageText="[19:23:26.719] StartsCasting 14:4000D7BD:绝命战士:5666:元素破:4000D7BD:绝命战士:6.200:100.18:104.91:0.00:-0.01" LogProcess="True" Enabled="False" ActionType="LogMessage" />
+          <Action OrderNumber="2" VariableOp="SetString" VariableName="BossName1" VariableExpression="${BossName1}" ActionType="Variable" />
+          <Action OrderNumber="3" VariableOp="SetString" VariableName="SkillID" VariableExpression="${SkillID}" ActionType="Variable" />
+          <Action OrderNumber="4" VariableOp="SetString" VariableName="SkillName" VariableExpression="${SkillName}" ActionType="Variable" />
+          <Action OrderNumber="5" NamedCallbackName="command" NamedCallbackParam="/e Skill Hunter标量获取成功 BossName &lt;${var:BossName1}&gt; Skill Name：&lt;${var:SkillName}&gt; Skill ID：&lt;${var:SkillID}&gt;" ActionType="NamedCallback">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${var:BossName}" ExpressionTypeL="String" ExpressionR="${var:BossName1}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="6" LogMessageText="Skill Hunter标量获取成功" LogProcess="True" VariableName="SkillID" ActionType="Variable" ExecutionDelayExpression="100" />
+          <Action OrderNumber="7" LogMessageText="Skill Hunter标量获取成功" LogProcess="True" VariableName="SkillName" ActionType="Variable" />
+          <Action OrderNumber="8" LogMessageText="Skill Hunter标量获取成功" LogProcess="True" VariableName="BossName1" ActionType="Variable" />
+        </Actions>
+      </Trigger>
+      <Trigger Enabled="true" Name="BossName Hunter" Id="0a260f0e-b89b-4d17-8edf-4b091640d289" RegularExpression="SBCYW">
+        <Actions>
+          <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/e BossName Hunter Success! BossName:&lt;t&gt;!" ActionType="NamedCallback" />
+        </Actions>
+      </Trigger>
+      <Trigger Enabled="true" Name="BossName 标量建立" Id="07da4323-ef0a-403b-a3f0-87c04666d81d" RegularExpression="BossName Hunter Success! BossName:(?&lt;BossName&gt;[^:]*)!">
+        <Actions>
+          <Action OrderNumber="1" VariableOp="SetString" VariableName="BossName" VariableExpression="${BossName}" ActionType="Variable" />
+        </Actions>
+      </Trigger>
+    </Triggers>
+  </ExportedFolder>
+</TriggernometryExport>
