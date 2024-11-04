@@ -1276,31 +1276,31 @@
                   <Folder Id="4135cbbf-5869-4021-a637-af130dab8bb0" Name="连线处理" Enabled="true">
                     <Folders />
                     <Triggers>
-                      <Trigger Enabled="true" Name="光连线" Id="8db23a4e-afaa-41db-8046-f9359a023d76" RegularExpression="^.{14} (?:\w+ )23:.{8}:[^:]*:.{8}:(?&lt;guangname&gt;[^:]*):.{4}:.{4}:0011:">
+                      <Trigger Enabled="true" Name="光连线" Id="8db23a4e-afaa-41db-8046-f9359a023d76" RegularExpression="^.{14} (?:\w+ )23:.{8}:[^:]*:.{8}:(?&lt;guangxianname&gt;[^:]*):.{4}:.{4}:0011:">
                         <Actions>
                           <Action OrderNumber="1" UseTTSTextExpression="光连线 远离" UseTTSRateExpression="3" ActionType="UseTTS" />
                           <Action OrderNumber="2" TriggerId="6a468a21-8391-42cb-8c9b-489be1cdd7ce" TriggerText="Tip_Subtitle:光连线_远离:5:0:0:main" ActionType="Trigger" />
                         </Actions>
                         <Condition Enabled="true" Grouping="Or">
-                          <ConditionSingle Enabled="true" ExpressionL="${guangname}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${guangxianname}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
                       </Trigger>
-                      <Trigger Enabled="true" Name="火连线" Id="945f6236-5660-4599-8a0a-477c4fb269d6" RegularExpression="^.{14} (?:\w+ )23:.{8}:[^:]*:.{8}:(?&lt;huoname&gt;[^:]*):.{4}:.{4}:0011:">
+                      <Trigger Enabled="true" Name="火连线" Id="945f6236-5660-4599-8a0a-477c4fb269d6" RegularExpression="^.{14} (?:\w+ )23:.{8}:[^:]*:.{8}:(?&lt;huoxianname&gt;[^:]*):.{4}:.{4}:0011:">
                         <Actions>
                           <Action OrderNumber="1" UseTTSTextExpression="火连线 分摊" UseTTSRateExpression="3" ActionType="UseTTS" />
                           <Action OrderNumber="2" TriggerId="6a468a21-8391-42cb-8c9b-489be1cdd7ce" TriggerText="Tip_Subtitle:火连线_分摊:5:0:0:main" ActionType="Trigger" />
                         </Actions>
                         <Condition Enabled="true" Grouping="Or">
-                          <ConditionSingle Enabled="true" ExpressionL="${huoname}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${huoxianname}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
                       </Trigger>
-                      <Trigger Enabled="true" Name="雷连线" Id="ac1e6b56-aafb-4468-860c-25db449df44c" RegularExpression="^.{14} (?:\w+ )23:.{8}:[^:]*:.{8}:(?&lt;leiname&gt;[^:]*):.{4}:.{4}:0011:">
+                      <Trigger Enabled="true" Name="雷连线" Id="ac1e6b56-aafb-4468-860c-25db449df44c" RegularExpression="^.{14} (?:\w+ )23:.{8}:[^:]*:.{8}:(?&lt;leixianname&gt;[^:]*):.{4}:.{4}:0011:">
                         <Actions>
                           <Action OrderNumber="1" UseTTSTextExpression="雷连线 找坦克" UseTTSRateExpression="3" ActionType="UseTTS" />
                           <Action OrderNumber="2" TriggerId="6a468a21-8391-42cb-8c9b-489be1cdd7ce" TriggerText="Tip_Subtitle:雷连线_找坦克:5:0:0:main" ActionType="Trigger" />
                         </Actions>
                         <Condition Enabled="true" Grouping="Or">
-                          <ConditionSingle Enabled="true" ExpressionL="${leiname}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${leixianname}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
                       </Trigger>
                     </Triggers>
@@ -1317,7 +1317,7 @@
                           <ConditionSingle Enabled="true" ExpressionL="${var:指挥模式}" ExpressionTypeL="String" ExpressionR="开启" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
                       </Trigger>
-                      <Trigger Enabled="true" Name="火连线标记" Id="7bddf03a-4df5-4323-86a4-9396b7fe946f" RegularExpression="^.{14} (?:\w+ )23:.{8}:[^:]*:.{8}:(?&lt;huoname&gt;[^:]*):.{4}:.{4}:0011:">
+                      <Trigger Enabled="true" Name="火连线标记" Id="7bddf03a-4df5-4323-86a4-9396b7fe946f" RegularExpression="^.{14} (?:\w+ )23:.{8}:[^:]*:.{8}:(?&lt;huoname&gt;[^:]*):.{4}:.{4}:0012:">
                         <Actions>
                           <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/mk circle &lt;${huoname}&gt;" ActionType="NamedCallback" />
                         </Actions>
@@ -1325,13 +1325,25 @@
                           <ConditionSingle Enabled="true" ExpressionL="${var:指挥模式}" ExpressionTypeL="String" ExpressionR="开启" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
                       </Trigger>
-                      <Trigger Enabled="true" Name="雷连线标记" Id="468dbd5b-54fa-45c4-bccf-8176b8661415" RegularExpression="^.{14} (?:\w+ )23:.{8}:[^:]*:.{8}:(?&lt;leiname&gt;[^:]*):.{4}:.{4}:0011:">
+                      <Trigger Enabled="true" Name="雷连线标记" Id="468dbd5b-54fa-45c4-bccf-8176b8661415" RegularExpression="^.{14} (?:\w+ )23:.{8}:[^:]*:.{8}:(?&lt;leiname&gt;[^:]*):.{4}:.{4}:0013:">
                         <Actions>
                           <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/mk triangle &lt;${leiname}&gt;" ActionType="NamedCallback" />
                         </Actions>
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${var:指挥模式}" ExpressionTypeL="String" ExpressionR="开启" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
+                      </Trigger>
+                      <Trigger Enabled="true" Name="调试" Id="4ffc5a58-9b0e-48ca-a7a7-0da85732acca" RegularExpression="">
+                        <Actions>
+                          <Action OrderNumber="1" LogMessageText="[17:36:42.672] 261 105:Change:4000F337:Heading:0.0000:PosX:100.0000:PosY:155.0000:PosZ:0.0000:WeaponId:121" LogProcess="True" ActionType="LogMessage" />
+                          <Action OrderNumber="2" LogMessageText="[17:36:42.672] 261 105:Change:4000F335:Heading:-3.1416:PosX:100.0000:PosY:175.0000:PosZ:0.0000:WeaponId:33" LogProcess="True" ActionType="LogMessage" />
+                          <Action OrderNumber="3" LogMessageText="[17:36:42.672] 261 105:Change:4000F336:Heading:-1.5709:PosX:110.0000:PosY:165.0000:PosZ:0.0000:WeaponId:121" LogProcess="True" ActionType="LogMessage" />
+                          <Action OrderNumber="4" LogMessageText="[17:36:42.672] 261 105:Change:4000F334:Heading:1.5708:PosX:90.0000:PosY:165.0000:PosZ:0.0000:WeaponId:121" LogProcess="True" ActionType="LogMessage" />
+                          <Action OrderNumber="5" LogMessageText="[17:36:43.172] 273 111:4000F334:0197:11D8:0:0:0" LogProcess="True" ActionType="LogMessage" />
+                          <Action OrderNumber="6" LogMessageText="[17:36:43.172] 273 111:4000F335:0197:11D6:0:0:0" LogProcess="True" ActionType="LogMessage" />
+                          <Action OrderNumber="7" LogMessageText="[17:36:43.172] 273 111:4000F336:0197:11D9:0:0:0" LogProcess="True" ActionType="LogMessage" />
+                          <Action OrderNumber="8" LogMessageText="[17:36:43.172] 273 111:4000F337:0197:11D9:0:0:0" LogProcess="True" ActionType="LogMessage" />
+                        </Actions>
                       </Trigger>
                     </Triggers>
                   </Folder>
@@ -2254,6 +2266,18 @@
               <Trigger Enabled="false" Name="指挥模式开启(勾选此触发器)" Id="b9a740d5-2a17-452d-8648-2d970d2f07fd" RegularExpression="^.{14} (?:\w+ )00:0039::(戦闘開始！|Engage!|战斗开始！|戰鬥開始！)|“(绝欧米茄检证战|最终检测绝境战|絶オメガ検証戦)”任务开始。|「(絶オメガ検証戦|最终检测绝境战)」の攻略を開始した。|The Omega Protocol (Ultimate) has begun.">
                 <Actions>
                   <Action OrderNumber="1" VariableOp="SetString" VariableName="指挥模式" VariableExpression="开启" ActionType="Variable" RefireInterrupt="True" />
+                </Actions>
+              </Trigger>
+              <Trigger Enabled="true" Name="调试" Id="010849a8-d962-411b-8bf6-bdc7d4b97bf9" RegularExpression="">
+                <Actions>
+                  <Action OrderNumber="1" LogMessageText="[17:36:42.672] 261 105:Change:4000F337:Heading:0.0000:PosX:100.0000:PosY:155.0000:PosZ:0.0000:WeaponId:121" LogProcess="True" ActionType="LogMessage" />
+                  <Action OrderNumber="2" LogMessageText="[17:36:42.672] 261 105:Change:4000F335:Heading:-3.1416:PosX:100.0000:PosY:175.0000:PosZ:0.0000:WeaponId:33" LogProcess="True" ActionType="LogMessage" />
+                  <Action OrderNumber="3" LogMessageText="[17:36:42.672] 261 105:Change:4000F336:Heading:-1.5709:PosX:110.0000:PosY:165.0000:PosZ:0.0000:WeaponId:121" LogProcess="True" ActionType="LogMessage" />
+                  <Action OrderNumber="4" LogMessageText="[17:36:42.672] 261 105:Change:4000F334:Heading:1.5708:PosX:90.0000:PosY:165.0000:PosZ:0.0000:WeaponId:121" LogProcess="True" ActionType="LogMessage" />
+                  <Action OrderNumber="5" LogMessageText="[17:36:43.172] 273 111:4000F334:0197:11D8:0:0:0" LogProcess="True" ActionType="LogMessage" />
+                  <Action OrderNumber="6" LogMessageText="[17:36:43.172] 273 111:4000F335:0197:11D6:0:0:0" LogProcess="True" ActionType="LogMessage" />
+                  <Action OrderNumber="7" LogMessageText="[17:36:43.172] 273 111:4000F336:0197:11D9:0:0:0" LogProcess="True" ActionType="LogMessage" />
+                  <Action OrderNumber="8" LogMessageText="[17:36:43.172] 273 111:4000F337:0197:11D9:0:0:0" LogProcess="True" ActionType="LogMessage" />
                 </Actions>
               </Trigger>
             </Triggers>
