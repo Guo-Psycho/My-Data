@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.712">
-  <ExportedFolder Id="915487e0-b17e-44a4-9183-b7b9b2607703" Name="01塞口的狗测试11.4" Enabled="true">
+  <ExportedFolder Id="915487e0-b17e-44a4-9183-b7b9b2607703" Name="01塞口的狗测试11.7" Enabled="true">
     <Folders>
       <Folder Id="9d9e2f44-a06e-4dec-b579-891d140513e1" Name="通用依赖功能" Enabled="false">
         <Folders>
@@ -1230,6 +1230,319 @@
               </Trigger>
             </Triggers>
           </Folder>
+          <Folder Id="19514e97-044d-4905-97a3-82a51826bc5d" Name="2.5运头顶标记 优先级THD" Enabled="false">
+            <Folders>
+              <Folder Id="560601ea-9969-4580-b01b-f364fa969834" Name="分摊分散标记（指挥标记必须开指挥模式）" Enabled="true">
+                <Folders />
+                <Triggers>
+                  <Trigger Enabled="true" Sequential="True" Name="分散标记" Id="ff37054c-a843-4708-9784-635a9a9bf79a" RegularExpression="^.{14} (?:\w+ )1A:D61:[^:]*:(?&lt;second&gt;[^:]*):.{8}::(?&lt;pid&gt;.{8}):(?&lt;name&gt;[^:]*):" PeriodRefire="Deny" RefirePeriodExpression="9000" Description="原地 AC3&#xD;&#xA;正对boss AC4&#xD;&#xA;背对boss AC5">
+                    <Actions>
+                      <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:mt_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback" ExecutionDelayExpression="200">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:mt_暗点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:st_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:st_暗点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="3" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:h1_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:h1_暗点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="4" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:h2_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:h2_暗点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="5" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:d1_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d1_暗点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="6" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:d2_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d2_暗点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="7" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:d3_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d3_暗点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="8" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:d4_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d4_暗点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="9" VariableOp="UnsetRegex" VariableName=".{2}_暗点名" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="7000">
+                        <Condition Enabled="false" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d4_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:指挥模式}" ExpressionTypeL="String" ExpressionR="开启" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Trigger>
+                  <Trigger Enabled="true" Sequential="True" Name="分摊标记" Id="a721de36-3c9a-422a-b96a-7ad8a30b54a8" RegularExpression="^.{14} (?:\w+ )1A:D62:[^:]*:(?&lt;second&gt;[^:]*):.{8}::(?&lt;pid&gt;.{8}):(?&lt;name&gt;[^:]*):" PeriodRefire="Deny" RefirePeriodExpression="9000" Description="原地 AC3&#xD;&#xA;正对boss AC4&#xD;&#xA;背对boss AC5">
+                    <Actions>
+                      <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk bind &lt;${var:${var:mt_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback" ExecutionDelayExpression="200">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:mt_光点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk bind &lt;${var:${var:st_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:st_光点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="3" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk bind &lt;${var:${var:h1_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:h1_光点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="4" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk bind &lt;${var:${var:h2_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:h2_光点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="5" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk bind &lt;${var:${var:d1_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d1_光点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="6" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk bind &lt;${var:${var:d2_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d2_光点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="7" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk bind &lt;${var:${var:d3_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d3_光点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="8" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk bind &lt;${var:${var:d4_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d4_光点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="9" VariableOp="UnsetRegex" VariableName=".{2}_光点名" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="7000">
+                        <Condition Enabled="false" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d4_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:指挥模式}" ExpressionTypeL="String" ExpressionR="开启" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Trigger>
+                  <Trigger Enabled="true" Sequential="True" Name="无点名标记" Id="919643ea-1244-4704-ad96-51666fa79ecf" RegularExpression="^.{14} (?:\w+ )1A:D61:[^:]*:(?&lt;second&gt;[^:]*):.{8}::(?&lt;pid&gt;.{8}):(?&lt;name&gt;[^:]*):" PeriodRefire="Deny" RefirePeriodExpression="10000" Description="[16:54:05.623] StatusAdd 1A:AC7:_rsv_2759_-1_4_C0_0Status:23.00:E0000000::23333333:埃斯蒂尼安:00:62514:&#xD;&#xA;[16:54:05.623] StatusAdd 1A:AC7:_rsv_2758_-1_4_C0_0Status:23.00:E0000000::23333333:阿莉塞:00:62659:&#xD;&#xA;[16:54:05.623] StatusAdd 1A:AC6:_rsv_2758_-1_4_C0_0Status:23.00:E0000000::23333333:古·拉哈·提亚:00:90215:&#xD;&#xA;[16:54:05.623] StatusAdd 1A:AC6:_rsv_2758_-1_4_C0_0Status:23.00:E0000000::23333333:桑克瑞德:00:56391:&#xD;&#xA;[16:54:05.623] StatusAdd 1A:AC6:_rsv_2759_-1_4_C0_0Status:23.00:E0000000::23333333:于里昂热:00:56585:&#xD;&#xA;[16:54:05.623] StatusAdd 1A:AC6:_rsv_2758_-1_4_C0_0Status:23.00:E0000000::23333333:阿尔菲诺:00:62713:">
+                    <Actions>
+                      <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:mt_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback" ExecutionDelayExpression="800">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:mt_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:mt_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:st_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:st_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:st_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="3" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:h1_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:h1_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:h1_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="4" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:h2_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:h2_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:h2_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="5" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:d1_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d1_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d1_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="6" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:d2_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d2_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d2_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="7" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:d3_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d3_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d3_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="8" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:d4_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d4_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d4_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="9" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${var:${var:mt_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:mt_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:mt_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="10" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${var:${var:st_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:st_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:st_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="11" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${var:${var:h1_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:h1_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:h1_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="12" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${var:${var:h2_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:h2_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:h2_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="13" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${var:${var:d1_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d1_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d1_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="14" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${var:${var:d2_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d2_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d2_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="15" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${var:${var:d3_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d3_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d3_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="16" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${var:${var:d4_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d4_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d4_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:指挥模式}" ExpressionTypeL="String" ExpressionR="开启" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Trigger>
+                </Triggers>
+              </Folder>
+            </Folders>
+            <Triggers>
+              <Trigger Enabled="true" Name="分散标记设置变量" Id="927818cb-5131-48f4-a7c1-a18592f5d2f9" RegularExpression="^.{14} (?:\w+ )1A:D61:[^:]*:(?&lt;second&gt;[^:]*):.{8}::(?&lt;pid&gt;.{8}):(?&lt;name&gt;[^:]*):" Description="原地 AC3&#xD;&#xA;正对boss AC4&#xD;&#xA;背对boss AC5">
+                <Actions>
+                  <Action OrderNumber="1" ListVariableOp="Remove" ListVariableName="p6_id_list" ListVariableIndex="${lvar:p6_id_list.indexof(${pid})}" Enabled="False" ActionType="ListVariable" />
+                  <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="mt_暗点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:mt_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="3" VariableOp="SetNumeric" VariableName="st_暗点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:st_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="4" VariableOp="SetNumeric" VariableName="h1_暗点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:h1_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="5" VariableOp="SetNumeric" VariableName="h2_暗点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:h2_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="6" VariableOp="SetNumeric" VariableName="d1_暗点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d1_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="7" VariableOp="SetNumeric" VariableName="d2_暗点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d2_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="8" VariableOp="SetNumeric" VariableName="d3_暗点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d3_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="9" VariableOp="SetNumeric" VariableName="d4_暗点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d4_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                </Actions>
+                <Condition Enabled="false" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:指挥模式}" ExpressionTypeL="String" ExpressionR="开启" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="分摊标记设置变量" Id="d89b518e-9ff9-435b-ad8a-1a101075e4a3" RegularExpression="^.{14} (?:\w+ )1A:D62:[^:]*:(?&lt;second&gt;[^:]*):.{8}::(?&lt;pid&gt;.{8}):(?&lt;name&gt;[^:]*):" Description="原地 AC3&#xD;&#xA;正对boss AC4&#xD;&#xA;背对boss AC5">
+                <Actions>
+                  <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="mt_光点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:mt_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="st_光点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:st_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="3" VariableOp="SetNumeric" VariableName="h1_光点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:h1_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="4" VariableOp="SetNumeric" VariableName="h2_光点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:h2_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="5" VariableOp="SetNumeric" VariableName="d1_光点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d1_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="6" VariableOp="SetNumeric" VariableName="d2_光点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d2_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="7" VariableOp="SetNumeric" VariableName="d3_光点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d3_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="8" VariableOp="SetNumeric" VariableName="d4_光点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d4_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                </Actions>
+                <Condition Enabled="false" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:指挥模式}" ExpressionTypeL="String" ExpressionR="开启" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Trigger>
+            </Triggers>
+          </Folder>
         </Folders>
         <Triggers>
           <Trigger Enabled="true" Name="AOE" Id="675c64d4-1a70-44d1-a56d-029273a6810f" RegularExpression="正则表达式">
@@ -1244,7 +1557,7 @@
               <Action OrderNumber="1" TriggerId="33e48b4f-c175-4506-865b-585e97d6b4e9" TriggerText="Tip_Subtitle:测试用:5:0:0:main" ActionType="Trigger" />
             </Actions>
           </Trigger>
-          <Trigger Enabled="true" Name="点特殊人的特殊机制" Id="45308b05-6c71-4fe7-b541-3b216d98da22" RegularExpression="">
+          <Trigger Enabled="true" Name="点特殊人的特殊机制点到自己" Id="45308b05-6c71-4fe7-b541-3b216d98da22" RegularExpression="^.{14} (?:\w+ )1A:B11:[^:]*:(?&lt;second&gt;[^:]*):.{8}:[^:]*:(?&lt;pid&gt;1.{7}):(?&lt;name&gt;[^:]*):">
             <Actions>
               <Action OrderNumber="1" UseTTSTextExpression="特殊点名点自己" UseTTSRateExpression="3" ActionType="UseTTS" />
               <Action OrderNumber="2" TriggerId="902e3504-b9ca-4d78-93b9-05369c444d2c" TriggerText="Tip_Subtitle:连线拉对角:5:0:0:main" Enabled="False" ActionType="Trigger" />
@@ -1264,6 +1577,18 @@
               <Action OrderNumber="7" LogMessageText="[17:36:43.172] 273 111:4000F336:0197:11D9:0:0:0" LogProcess="True" ActionType="LogMessage" />
               <Action OrderNumber="8" LogMessageText="[17:36:43.172] 273 111:4000F337:0197:11D9:0:0:0" LogProcess="True" ActionType="LogMessage" />
             </Actions>
+          </Trigger>
+          <Trigger Enabled="true" Name="单人单BUFF标记" Id="3cb87c6f-bfbb-4c59-9017-b6723c873e84" RegularExpression="^.{14} (?:\w+ )1A:D72:[^:]*:(?&lt;second&gt;[^:]*):.{8}::(?&lt;pid&gt;.{8}):(?&lt;name&gt;[^:]*):">
+            <Actions>
+              <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="mark" NamedCallbackParam="{&quot;ActorID&quot;:0x${pid},&quot;MarkType&quot;:7}" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                <Condition Enabled="false" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:mt_分摊}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                </Condition>
+              </Action>
+            </Actions>
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:指挥模式}" ExpressionTypeL="String" ExpressionR="开启" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
           </Trigger>
         </Triggers>
       </Folder>
@@ -1852,13 +2177,13 @@
                       <Trigger Enabled="true" Name="光劈刀" Id="7716a09f-2bb1-41e9-b539-70307b70af36" RegularExpression="^.{14} (?:\w+ )(\d){2}:.{8}:[^:]*:(5654):">
                         <Actions>
                           <Action OrderNumber="1" UseTTSTextExpression="光劈刀" ActionType="UseTTS" />
-                          <Action OrderNumber="2" TriggerId="6a468a21-8391-42cb-8c9b-489be1cdd7ce" TriggerText="Tip_Subtitle:光劈刀:5:0:0:main" Enabled="False" ActionType="Trigger" />
+                          <Action OrderNumber="2" TriggerId="6a468a21-8391-42cb-8c9b-489be1cdd7ce" TriggerText="Tip_Subtitle:光劈刀:5:0:0:main" ActionType="Trigger" />
                         </Actions>
                       </Trigger>
                       <Trigger Enabled="true" Name="光八方" Id="87d2db30-3752-4374-9b1a-b1ae96385959" RegularExpression="^.{14} (?:\w+ )(\d){2}:.{8}:[^:]*:(5654):">
                         <Actions>
                           <Action OrderNumber="1" UseTTSTextExpression="光八方" ActionType="UseTTS" />
-                          <Action OrderNumber="2" TriggerId="6a468a21-8391-42cb-8c9b-489be1cdd7ce" TriggerText="Tip_Subtitle:光八方:5:0:0:main" Enabled="False" ActionType="Trigger" />
+                          <Action OrderNumber="2" TriggerId="6a468a21-8391-42cb-8c9b-489be1cdd7ce" TriggerText="Tip_Subtitle:光八方:5:0:0:main" ActionType="Trigger" />
                         </Actions>
                       </Trigger>
                     </Triggers>
@@ -2312,137 +2637,25 @@
             <Triggers>
               <Trigger Enabled="true" Sequential="True" Name="倒计时初始" Id="73085308-574e-4a9f-9a62-e30d0c7021b5" RegularExpression="战斗开始|戦闘開始|Battle commencing in|戰鬥開始" PeriodRefire="Deny" RefirePeriodExpression="30000">
                 <Actions>
-                  <Action OrderNumber="1" DiskFileOp="ReadCSVIntoTableVariable" DiskFileOpName="https://momo-1255907292.cos.ap-nanjing.myqcloud.com/job.csv" DiskFileOpVar="job_list" DiskPersist="True" ActionType="DiskFile">
+                  <Action OrderNumber="1" TriggerId="5058771f-ef48-4189-a17b-0fb16ef5ff28" ActionType="Trigger">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:指挥模式}" ExpressionTypeL="String" ExpressionR="开启" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="2" DiskFileOp="ReadCSVIntoTableVariable" DiskFileOpName="https://momo-1255907292.cos.ap-nanjing.myqcloud.com/job.csv" DiskFileOpVar="job_list" DiskPersist="True" ActionType="DiskFile">
                     <Condition Enabled="true" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${eptvar:job_list}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
                   </Action>
-                  <Action OrderNumber="2" SystemBeepFreqExpression="2000" UseTTSTextExpression="111" />
-                  <Action OrderNumber="3" SystemBeepFreqExpression="1500" PlaySoundFileExpression="C:\Users\Administrator\Desktop\act轮椅\nyan.wav" UseTTSTextExpression="111" ExecutionDelayExpression="200" />
-                  <Action OrderNumber="4" UseTTSTextExpression="111" ExecutionDelayExpression="200" />
-                  <Action OrderNumber="5" FolderOp="DisableFolder" FolderId="3efcc32a-e2f8-4408-958c-7212a66481a3" TTSRouting="Triggernometry" UseTTSTextExpression="刘雪AOE" UseTTSRateExpression="2" VariableOp="SetNumeric" VariableName="fanshi" VariableExpression="${var:fanshi}+1" ActionType="Folder">
+                  <Action OrderNumber="3" VariableOp="UnsetRegex" VariableName=".{2}_.{1}连线" VariableExpression="0" ActionType="Variable">
                     <Condition Enabled="false" Grouping="Or">
-                      <ConditionSingle Enabled="true" ExpressionL="0" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                      <ConditionSingle Enabled="true" ExpressionL="${HuoxianName}" ExpressionTypeL="String" ExpressionR="${var:d1_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
                   </Action>
-                  <Action OrderNumber="6" ListVariableOp="Insert" ListVariableName="p12s_fenshen" ListVariableExpression="1" ListVariableIndex="1" ActionType="ListVariable" />
-                  <Action OrderNumber="7" TTSRouting="Triggernometry" UseTTSTextExpression="去左边踩上2塔" UseTTSRateExpression="2" VariableName="二轮踩塔" VariableExpression="1" ActionType="Variable">
-                    <Condition Enabled="false" Grouping="Or">
-                      <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="8" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                      <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="9" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="8" ListVariableOp="Insert" ListVariableName="p12s_fenshen" ListVariableExpression="1" ListVariableIndex="2" ActionType="ListVariable" />
-                  <Action OrderNumber="9" ListVariableOp="Insert" ListVariableName="p12s_fenshen" ListVariableExpression="1" ListVariableIndex="3" ActionType="ListVariable" />
-                  <Action OrderNumber="10" ListVariableOp="Insert" ListVariableName="p12s_fenshen" ListVariableExpression="1" ListVariableIndex="4" ActionType="ListVariable" />
-                  <Action OrderNumber="11" VariableOp="SetNumeric" VariableName="Bloodrake" VariableExpression="0" ActionType="Variable" Asynchronous="False" />
-                  <Action OrderNumber="12" TriggerOp="DisableTrigger" TriggerId="bfc81970-02cb-4a5d-91a5-855963d0075e" ActionType="Trigger" />
-                  <Action OrderNumber="13" VariableName="光炎监狱" VariableExpression="1" ActionType="Variable" />
-                  <Action OrderNumber="14" VariableName="储存台词" VariableExpression="分摊" ActionType="Variable" />
-                  <Action OrderNumber="15" TriggerOp="EnableTrigger" TriggerId="fc7a00ea-565c-4463-853a-a0d302689924" ActionType="Trigger" />
-                  <Action OrderNumber="16" VariableName="p4s_marker_offset" ActionType="Variable" />
-                  <Action OrderNumber="17" VariableName="火D" ActionType="Variable" />
-                  <Action OrderNumber="18" TriggerOp="EnableTrigger" TriggerId="fb27b1d0-d994-4b60-8acf-7efca76bceb2" ActionType="Trigger" />
-                  <Action OrderNumber="19" TriggerOp="EnableTrigger" TriggerId="2d9cb40e-a353-4337-9603-ffe358ac6d5c" ActionType="Trigger" />
-                  <Action OrderNumber="20" TriggerOp="EnableTrigger" TriggerId="dcf4e11d-895c-45db-9833-4af341093649" ActionType="Trigger" />
-                  <Action OrderNumber="21" VariableName="line" VariableExpression="0" ActionType="Variable" Asynchronous="False">
-                    <Condition Enabled="false" Grouping="And">
-                      <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="69DE" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                      <ConditionSingle Enabled="true" ExpressionL="${var:p4sta}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="22" VariableOp="UnsetRegex" VariableName=".+?_id" VariableExpression="0" ActionType="Variable" Asynchronous="False">
-                    <Condition Enabled="false" Grouping="And">
-                      <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="69DE" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                      <ConditionSingle Enabled="true" ExpressionL="${var:p4sta}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="23" VariableName="poison" VariableExpression="0" ActionType="Variable" Asynchronous="False">
-                    <Condition Enabled="false" Grouping="And">
-                      <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="69DE" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                      <ConditionSingle Enabled="true" ExpressionL="${var:p4sta}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="24" TriggerOp="DisableTrigger" TriggerId="c786da32-3694-42ba-9253-3d22c3fbbe00" ActionType="Trigger" />
-                  <Action OrderNumber="25" TriggerOp="DisableTrigger" TriggerId="049478c5-8968-41ea-a413-9eb9827998b1" ActionType="Trigger" />
-                  <Action OrderNumber="26" TriggerOp="DisableTrigger" TriggerId="4a60c7d4-cfff-47b3-9961-d65ae657d13f" ActionType="Trigger" />
-                  <Action OrderNumber="27" TriggerOp="EnableTrigger" TriggerId="fa24218f-bc75-426c-8931-24b16af05d8c" ActionType="Trigger" />
-                  <Action OrderNumber="28" TriggerOp="DisableTrigger" TriggerId="c03430f6-ff27-4fec-a10e-ac43c127d96e" ActionType="Trigger" />
-                  <Action OrderNumber="29" TriggerOp="DisableTrigger" TriggerId="a7cbb600-9ee0-4006-afbe-f2825a6ba875" ActionType="Trigger" />
-                  <Action OrderNumber="30" TriggerId="98d06820-a6cb-491b-a1aa-597079bf0186" TriggerForce="regexp,conditions" Enabled="False" ActionType="Trigger" />
-                  <Action OrderNumber="31" TriggerOp="EnableTrigger" TriggerId="4f790051-e2c7-4ddf-8a47-f33ba9634e59" ActionType="Trigger" />
-                  <Action OrderNumber="32" VariableName="two_sport_count" ActionType="Variable" />
-                  <Action OrderNumber="33" TriggerOp="DisableTrigger" TriggerId="0386c410-004d-4011-901d-82cd2b8c0814" ActionType="Trigger" />
-                  <Action OrderNumber="34" TriggerOp="DisableTrigger" TriggerId="bc6a002f-91e5-40cc-8b3b-93ceec742af4" ActionType="Trigger" />
-                  <Action OrderNumber="35" TriggerOp="DisableTrigger" TriggerId="9b72befd-fb04-43ba-856f-6aad25b5d796" ActionType="Trigger" />
-                  <Action OrderNumber="36" VariableName="第二次安全点" VariableExpression="0" ActionType="Variable" Asynchronous="False">
-                    <Condition Enabled="false" Grouping="And">
-                      <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="69DE" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                      <ConditionSingle Enabled="true" ExpressionL="${var:p4sta}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="37" VariableOp="UnsetRegex" VariableName=".+?池" VariableExpression="0" ActionType="Variable" Asynchronous="False">
-                    <Condition Enabled="false" Grouping="And">
-                      <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="69DE" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                      <ConditionSingle Enabled="true" ExpressionL="${var:p4sta}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="38" VariableName="times" VariableExpression="0" ActionType="Variable" />
-                  <Action OrderNumber="39" VariableName="changdi" VariableExpression="0" ActionType="Variable" Asynchronous="False">
-                    <Condition Enabled="false" Grouping="And">
-                      <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="69DE" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                      <ConditionSingle Enabled="true" ExpressionL="${var:p4sta}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="40" TriggerOp="DisableTrigger" TriggerId="b3e9bad0-2921-4075-8c7c-a67ec9330712" ActionType="Trigger" />
-                  <Action OrderNumber="41" TriggerOp="DisableTrigger" TriggerId="ec1b2ce7-a3c0-48fe-8c36-96a366998e8d" ActionType="Trigger" />
-                  <Action OrderNumber="42" TriggerOp="DisableTrigger" TriggerId="bcc32e97-9eea-49b2-91b0-1c0312115c39" ActionType="Trigger" />
-                  <Action OrderNumber="43" ListVariableExpressionType="Numeric" ListVariableName="格子" ListVariableExpression="3" ListVariableIndex="${numeric:hex2dec(${index})+1}" ActionType="ListVariable" />
-                  <Action OrderNumber="44" VariableName="P1S_组合技" VariableExpression="1" ActionType="Variable" />
-                  <Action OrderNumber="45" VariableName="惩罚击" VariableExpression="1" ActionType="Variable" />
-                  <Action OrderNumber="46" TriggerOp="EnableTrigger" TriggerId="bac307cf-5400-47b3-a144-8e00b629d2d3" ActionType="Trigger" />
-                  <Action OrderNumber="47" TriggerOp="DisableTrigger" TriggerId="dde2cbd2-f9ba-47f1-9c5c-64d6dd4f3ad7" ActionType="Trigger" />
-                  <Action OrderNumber="48" VariableName="香波" VariableExpression="四边" ActionType="Variable" />
-                  <Action OrderNumber="49" ListVariableName="p8enrage" ActionType="ListVariable" />
-                  <Action OrderNumber="50" ListVariableName="inverseCast" ActionType="ListVariable" />
-                  <Action OrderNumber="51" VariableName="biansnake" VariableExpression="${var:biansnake}+1" ActionType="Variable" />
-                  <Action OrderNumber="52" VariableName="分摊标记" VariableExpression="一" ActionType="Variable">
-                    <Condition Enabled="false" Grouping="Or">
-                      <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="53" FolderOp="DisableFolder" FolderId="9c71ee0d-d5ca-470b-a6b1-8b3e62b1123a" TriggerOp="EnableTrigger" ActionType="Folder" />
-                  <Action OrderNumber="54" FolderOp="DisableFolder" FolderId="8461de63-31d1-4d96-b3cc-6218e70934c2" TriggerOp="EnableTrigger" ActionType="Folder" />
-                  <Action OrderNumber="55" FolderOp="DisableFolder" FolderId="79705f96-5aab-4abb-8020-003b1bac9b19" ActionType="Folder" />
-                  <Action OrderNumber="56" ListVariableName="P8s_四人移动塔坐标" ActionType="ListVariable" Asynchronous="False">
-                    <Condition Enabled="false" Grouping="Or">
-                      <ConditionSingle Enabled="true" ExpressionL="${lvar:P8s_四人移动塔坐标.size}" ExpressionTypeL="String" ExpressionR="4" ExpressionTypeR="String" ConditionType="NumericEqual" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="57" VariableOp="UnsetRegex" VariableName=".{2}_易伤" VariableExpression="0" ActionType="Variable">
-                    <Condition Enabled="false" Grouping="Or">
-                      <ConditionSingle Enabled="true" ExpressionL="${Name}" ExpressionTypeL="String" ExpressionR="${var:d1_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="58" ListVariableName="p8s_易伤标记" VariableOp="UnsetRegex" VariableName=".{2}_死宣" VariableExpression="0" ActionType="ListVariable">
-                    <Condition Enabled="false" Grouping="Or">
-                      <ConditionSingle Enabled="true" ExpressionL="${Name}" ExpressionTypeL="String" ExpressionR="${var:d1_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="59" VariableOp="UnsetRegex" VariableName=".{2}_无buff" VariableExpression="0" ActionType="Variable">
-                    <Condition Enabled="false" Grouping="Or">
-                      <ConditionSingle Enabled="true" ExpressionL="${Name}" ExpressionTypeL="String" ExpressionR="${var:d1_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="60" ListVariableName="p8s_无点名标记" ActionType="ListVariable" />
-                  <Action OrderNumber="61" VariableOp="UnsetRegex" VariableName=".{2}_毒" VariableExpression="0" ActionType="Variable">
-                    <Condition Enabled="false" Grouping="Or">
-                      <ConditionSingle Enabled="true" ExpressionL="${Name}" ExpressionTypeL="String" ExpressionR="${var:d1_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="62" FolderOp="DisableFolder" FolderId="6ecae8ba-bc27-4b99-a70f-ee2004d5aca7" ActionType="Folder" />
-                  <Action OrderNumber="63" TriggerOp="EnableTrigger" TriggerId="7fd876f4-6b2a-4db8-9c0c-4e46c844e085" ActionType="Trigger" />
-                  <Action OrderNumber="64" TriggerOp="EnableTrigger" TriggerId="c6fab990-b9d2-4e30-9e28-aa5d4bb7eb90" ActionType="Trigger" />
+                  <Action OrderNumber="4" SystemBeepFreqExpression="2000" UseTTSTextExpression="111" />
+                  <Action OrderNumber="5" ListVariableOp="UnsetRegex" ListVariableName="omg_.{1}连线" ActionType="ListVariable" />
+                  <Action OrderNumber="6" SystemBeepFreqExpression="1500" PlaySoundFileExpression="C:\Users\Administrator\Desktop\act轮椅\nyan.wav" UseTTSTextExpression="111" ExecutionDelayExpression="200" />
+                  <Action OrderNumber="7" UseTTSTextExpression="111" ExecutionDelayExpression="200" />
                 </Actions>
               </Trigger>
               <Trigger Enabled="true" Name="机制字幕提示（可diy修改文字样式，不用可以不勾）" Id="6a468a21-8391-42cb-8c9b-489be1cdd7ce" RegularExpression="Tip_Subtitle:(?&lt;text&gt;\S+):(?&lt;time&gt;[\d\.]+):(?&lt;offset_x&gt;[\d\.-]+):(?&lt;offset_y&gt;[\d\.-]+):(?&lt;id&gt;\S+)" Description="1">
@@ -2466,217 +2679,28 @@
               </Trigger>
               <Trigger Enabled="true" Name="团灭初始" Id="b52074f1-d82f-4b5c-8333-95a6a1e44cfd" RegularExpression="^.{14} (?:\w+ )21:.{8}:400000(03|1[026]|05)|任务结束了。|has ended\.|「[^:]*」の攻略を終了した。">
                 <Actions>
-                  <Action OrderNumber="1" DiskFileOp="ReadCSVIntoTableVariable" DiskFileOpName="https://momo-1255907292.cos.ap-nanjing.myqcloud.com/job.csv" DiskFileOpVar="job_list" DiskPersist="True" ActionType="DiskFile">
+                  <Action OrderNumber="1" TriggerId="5058771f-ef48-4189-a17b-0fb16ef5ff28" ActionType="Trigger">
                     <Condition Enabled="true" Grouping="Or">
-                      <ConditionSingle Enabled="true" ExpressionL="${eptvar:job_list}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                      <ConditionSingle Enabled="true" ExpressionL="${var:指挥模式}" ExpressionTypeL="String" ExpressionR="开启" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
                   </Action>
-                  <Action OrderNumber="2" TTSRouting="Triggernometry" UseTTSTextExpression="${var:Souma_Team_Role}" TextAuraOp="DeactivateAuraRegex" TextAuraEffect="Bold" TextAuraFontSize="18" TextAuraForeground="Red" TextAuraName="AT_Subtitle_.+" TextAuraExpression="${text}" TextAuraXIniExpression="0.5*(${_screenwidth}-1000)+${offset_x}" TextAuraYIniExpression="0.5*(${_screenwidth}-1000)+${offset_y}" TextAuraWIniExpression="1000" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${time}*1000-${_sincems}" TextAuraFontName="微软雅黑" ActionType="TextAura" Asynchronous="False" />
-                  <Action OrderNumber="3" FolderOp="DisableFolder" FolderId="0fc53e4d-a900-46cf-b455-62af94bb17ba" ActionType="Folder" />
-                  <Action OrderNumber="4" TTSRouting="Triggernometry" UseTTSTextExpression="二二分摊" UseTTSRateExpression="2" VariableName="蜜蜂" VariableExpression="分散" ActionType="Variable">
-                    <Condition Enabled="false" Grouping="Or">
-                      <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="4" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="5" ListVariableName="p12s_fenshen" ActionType="ListVariable" />
-                  <Action OrderNumber="6" VariableName="time" VariableExpression="${var:time}+1" ActionType="Variable">
-                    <Condition Enabled="false" Grouping="And">
-                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="7" TTSRouting="Triggernometry" UseTTSTextExpression="去左边踩上2塔" UseTTSRateExpression="2" VariableName="二轮踩塔" VariableExpression="1" ActionType="Variable">
-                    <Condition Enabled="false" Grouping="Or">
-                      <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="8" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                      <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="9" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="8" TTSRouting="Triggernometry" UseTTSTextExpression="二二分摊" UseTTSRateExpression="2" VariableOp="UnsetRegex" VariableName="z3s_(上|下|左|右)" VariableExpression="1" ActionType="Variable">
-                    <Condition Enabled="false" Grouping="Or">
-                      <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="107.95:100.00" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="9" FolderOp="DisableFolder" FolderId="3efcc32a-e2f8-4408-958c-7212a66481a3" TTSRouting="Triggernometry" UseTTSTextExpression="刘雪AOE" UseTTSRateExpression="2" VariableOp="SetNumeric" VariableName="fanshi" VariableExpression="${var:fanshi}+1" ActionType="Folder">
-                    <Condition Enabled="false" Grouping="Or">
-                      <ConditionSingle Enabled="true" ExpressionL="0" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="10" VariableOp="UnsetRegex" VariableName=".{2}_(暗|光)点名" VariableExpression="1" ActionType="Variable">
+                  <Action OrderNumber="2" VariableOp="UnsetRegex" VariableName=".{2}_光点名" VariableExpression="1" ActionType="Variable">
                     <Condition Enabled="false" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d4_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
                   </Action>
-                  <Action OrderNumber="11" VariableName="p2s_marker_offset" ActionType="Variable" />
-                  <Action OrderNumber="12" ListVariableExpressionType="Numeric" ListVariableName="格子" ListVariableExpression="3" ListVariableIndex="${numeric:hex2dec(${index})+1}" ActionType="ListVariable" />
-                  <Action OrderNumber="13" ListVariableName="蛇位置" ListVariableExpression="右上" ActionType="ListVariable">
-                    <Condition Enabled="false" Grouping="And">
-                      <ConditionSingle Enabled="true" ExpressionL="${numeric:abs(${x}-110.61)}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="String" ConditionType="NumericLessEqual" />
-                      <ConditionSingle Enabled="true" ExpressionL="${numeric:abs(${y}-89.39)}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="String" ConditionType="NumericLessEqual" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="14" VariableName="Bloodrake" VariableExpression="0" ActionType="Variable" Asynchronous="False" />
-                  <Action OrderNumber="15" VariableName="第二次安全点" VariableExpression="0" ActionType="Variable" Asynchronous="False">
-                    <Condition Enabled="false" Grouping="And">
-                      <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="69DE" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                      <ConditionSingle Enabled="true" ExpressionL="${var:p4sta}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="16" VariableName="概念支配" VariableExpression="${var:概念支配}+1" ActionType="Variable" />
-                  <Action OrderNumber="17" VariableName="颜色点名" VariableExpression="1" ActionType="Variable" />
-                  <Action OrderNumber="18" VariableName="分摊标记" VariableExpression="一" ActionType="Variable">
-                    <Condition Enabled="false" Grouping="Or">
-                      <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="19" VariableName="光炎监狱" VariableExpression="1" ActionType="Variable" />
-                  <Action OrderNumber="20" ListVariableName="四连车" ListVariableExpression="冲锋击退" TTSRouting="Triggernometry" UseTTSTextExpression="去两鞭" UseTTSRateExpression="2" VariableOp="SetString" VariableName="四连车" VariableExpression="冲锋击退" ActionType="ListVariable">
-                    <Condition Enabled="true" Grouping="Or">
-                      <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="B" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="21" VariableName="silianche" VariableExpression="${var:silianche}+1" ActionType="Variable" />
-                  <Action OrderNumber="22" ListVariableName="四连车" ListVariableExpression="大跳击退" TTSRouting="Triggernometry" UseTTSTextExpression="去两鞭" UseTTSRateExpression="2" VariableOp="SetString" VariableName="四连车" VariableExpression="冲锋击退" ActionType="ListVariable">
-                    <Condition Enabled="false" Grouping="Or">
-                      <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="C" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="23" VariableOp="UnsetRegex" VariableName=".+?池" VariableExpression="0" ActionType="Variable" Asynchronous="False">
-                    <Condition Enabled="false" Grouping="And">
-                      <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="69DE" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                      <ConditionSingle Enabled="true" ExpressionL="${var:p4sta}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="24" VariableName="changdi" VariableExpression="0" ActionType="Variable" Asynchronous="False">
-                    <Condition Enabled="false" Grouping="And">
-                      <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="69DE" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                      <ConditionSingle Enabled="true" ExpressionL="${var:p4sta}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="25" VariableName="惩罚击" VariableExpression="1" ActionType="Variable" />
-                  <Action OrderNumber="26" TriggerOp="EnableTrigger" TriggerId="bac307cf-5400-47b3-a144-8e00b629d2d3" ActionType="Trigger" />
-                  <Action OrderNumber="27" TriggerOp="DisableTrigger" TriggerId="dde2cbd2-f9ba-47f1-9c5c-64d6dd4f3ad7" ActionType="Trigger" />
-                  <Action OrderNumber="28" VariableName="P1S_组合技" VariableExpression="1" ActionType="Variable" />
-                  <Action OrderNumber="29" VariableName="储存台词" VariableExpression="分摊" ActionType="Variable" />
-                  <Action OrderNumber="30" VariableName="times" VariableExpression="${var:times}+1" ActionType="Variable" />
-                  <Action OrderNumber="31" FolderOp="DisableFolder" FolderId="8461de63-31d1-4d96-b3cc-6218e70934c2" TriggerOp="EnableTrigger" ActionType="Folder" />
-                  <Action OrderNumber="32" FolderOp="DisableFolder" FolderId="9c71ee0d-d5ca-470b-a6b1-8b3e62b1123a" TriggerOp="EnableTrigger" ActionType="Folder" />
-                  <Action OrderNumber="33" FolderOp="DisableFolder" FolderId="cdeb1e3f-f00c-4630-81b9-fd25acc612a9" TriggerOp="EnableTrigger" ActionType="Folder" />
-                  <Action OrderNumber="34" FolderOp="DisableFolder" FolderId="4b08cd6d-dd51-490e-b3f4-aea2c9dc56c0" TriggerOp="EnableTrigger" ActionType="Folder" />
-                  <Action OrderNumber="35" ListVariableName="p8enrage" ActionType="ListVariable" />
-                  <Action OrderNumber="36" ListVariableName="p8hw2" ActionType="ListVariable" />
-                  <Action OrderNumber="37" ListVariableName="inverseCast" ActionType="ListVariable" />
-                  <Action OrderNumber="38" VariableName="biansnake" VariableExpression="${var:biansnake}+1" ActionType="Variable" />
-                  <Action OrderNumber="39" TriggerOp="CancelTrigger" TriggerId="49b0594c-68a0-4e7c-b2c7-4e3261c3799d" ActionType="Trigger" />
-                  <Action OrderNumber="40" TriggerOp="CancelTrigger" TriggerId="6c6f0d16-16f2-4655-a49d-be7035832ed5" ActionType="Trigger" />
-                  <Action OrderNumber="41" TriggerOp="CancelTrigger" TriggerId="4c4a94b2-4483-493b-a233-b818b2683aec" ActionType="Trigger" />
-                  <Action OrderNumber="42" TriggerOp="CancelTrigger" TriggerId="07fb5a30-ffdc-4d8a-a08e-1b64fffc13cb" ActionType="Trigger" />
-                  <Action OrderNumber="43" TriggerOp="CancelTrigger" TriggerId="cada3f32-b8d7-41db-ad72-dab337e04d57" ActionType="Trigger" />
-                  <Action OrderNumber="44" TriggerOp="CancelTrigger" TriggerId="7c51b84e-4e1f-414e-a908-0f6459ddafe1" ActionType="Trigger" />
-                  <Action OrderNumber="45" TriggerOp="CancelTrigger" TriggerId="11907f1b-f443-47d6-a59c-676041f5675a" ActionType="Trigger" />
-                  <Action OrderNumber="46" TriggerOp="CancelTrigger" TriggerId="5629078c-b892-4a06-9806-f91e54cb7062" ActionType="Trigger" />
-                  <Action OrderNumber="47" TriggerOp="CancelTrigger" TriggerId="7215a737-b8f3-4d1f-95af-30bfe49a7154" ActionType="Trigger" />
-                  <Action OrderNumber="48" TriggerOp="CancelTrigger" TriggerId="f7f49884-59af-44a3-b34d-5c2941c98f3c" ActionType="Trigger" />
-                  <Action OrderNumber="49" TriggerOp="CancelTrigger" TriggerId="2bf0d242-c3d3-4a84-8a16-1a3b961f88fe" ActionType="Trigger" />
-                  <Action OrderNumber="50" TriggerOp="CancelTrigger" TriggerId="56cb9e84-10d4-44c7-a801-22e86cd56bbd" ActionType="Trigger" />
-                  <Action OrderNumber="51" TriggerOp="CancelTrigger" TriggerId="7fd876f4-6b2a-4db8-9c0c-4e46c844e085" ActionType="Trigger" />
-                  <Action OrderNumber="52" TriggerOp="CancelTrigger" TriggerId="171493bd-d88d-4515-9d46-8763e7232171" ActionType="Trigger" />
-                  <Action OrderNumber="53" TriggerOp="CancelTrigger" TriggerId="c6fab990-b9d2-4e30-9e28-aa5d4bb7eb90" ActionType="Trigger" />
-                  <Action OrderNumber="54" TriggerOp="CancelTrigger" TriggerId="3d92b7fa-8ab3-4b18-b027-0e4503227334" ActionType="Trigger" />
-                  <Action OrderNumber="55" TriggerOp="CancelTrigger" TriggerId="d7da6b97-f339-4fce-b93d-4a0f67aff2cd" ActionType="Trigger" />
-                  <Action OrderNumber="56" ListVariableName="P8s_四人移动塔坐标" ActionType="ListVariable" Asynchronous="False">
-                    <Condition Enabled="false" Grouping="Or">
-                      <ConditionSingle Enabled="true" ExpressionL="${lvar:P8s_四人移动塔坐标.size}" ExpressionTypeL="String" ExpressionR="4" ExpressionTypeR="String" ConditionType="NumericEqual" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="57" NamedCallbackName="command" NamedCallbackParam="/p TH第一次分散，DPS分摊" VariableOp="UnsetRegex" VariableName="sifeng.{1}" VariableExpression="T奶分散,DPS分摊" ActionType="Variable">
-                    <Condition Enabled="false" Grouping="And">
-                      <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="40" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                      <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${playerId}].role}" ExpressionTypeL="String" ExpressionR="Tank|Heal" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="58" NamedCallbackName="command" NamedCallbackParam="/p TH第一次分散，DPS分摊" VariableOp="UnsetRegex" VariableName="erfeng.{1}" VariableExpression="T奶分散,DPS分摊" ActionType="Variable">
-                    <Condition Enabled="false" Grouping="And">
-                      <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="40" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                      <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${playerId}].role}" ExpressionTypeL="String" ExpressionR="Tank|Heal" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="59" FolderOp="DisableFolder" FolderId="79705f96-5aab-4abb-8020-003b1bac9b19" ActionType="Folder" />
-                  <Action OrderNumber="60" AuraOp="DeactivateAura" AuraImageMode="Zoom" AuraName="yundonghui1" AuraImage="https://i0.hdslb.com/bfs/new_dyn/1fe9a95807e04780162f30f5472a1a72220756407.png" AuraXIniExpression="2135" AuraYIniExpression="309" AuraWIniExpression="370" AuraHIniExpression="270" AuraOIniExpression="100" ActionType="Aura" />
-                  <Action OrderNumber="61" AuraOp="DeactivateAura" AuraImageMode="Zoom" AuraName="yundonghui2" AuraImage="https://i0.hdslb.com/bfs/new_dyn/1fe9a95807e04780162f30f5472a1a72220756407.png" AuraXIniExpression="2135" AuraYIniExpression="309" AuraWIniExpression="370" AuraHIniExpression="270" AuraOIniExpression="100" ActionType="Aura" />
-                  <Action OrderNumber="62" AuraOp="DeactivateAura" AuraImageMode="Zoom" AuraName="yundonghui3" AuraImage="https://i0.hdslb.com/bfs/new_dyn/1fe9a95807e04780162f30f5472a1a72220756407.png" AuraXIniExpression="2135" AuraYIniExpression="309" AuraWIniExpression="370" AuraHIniExpression="270" AuraOIniExpression="100" ActionType="Aura" />
-                  <Action OrderNumber="63" VariableOp="UnsetRegex" VariableName=".{2}_易伤" VariableExpression="0" ActionType="Variable">
-                    <Condition Enabled="false" Grouping="Or">
-                      <ConditionSingle Enabled="true" ExpressionL="${Name}" ExpressionTypeL="String" ExpressionR="${var:d1_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="64" FolderOp="DisableFolder" FolderId="6ecae8ba-bc27-4b99-a70f-ee2004d5aca7" ActionType="Folder" />
-                  <Action OrderNumber="65" VariableOp="UnsetRegex" VariableName=".{2}_无buff" VariableExpression="0" ActionType="Variable">
-                    <Condition Enabled="false" Grouping="Or">
-                      <ConditionSingle Enabled="true" ExpressionL="${Name}" ExpressionTypeL="String" ExpressionR="${var:d1_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="66" ListVariableOp="UnsetRegex" ListVariableName="p8s_.+" ActionType="ListVariable" />
-                  <Action OrderNumber="67" VariableOp="UnsetRegex" VariableName=".{2}_毒" VariableExpression="0" ActionType="Variable">
-                    <Condition Enabled="false" Grouping="Or">
-                      <ConditionSingle Enabled="true" ExpressionL="${Name}" ExpressionTypeL="String" ExpressionR="${var:d1_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="68" AuraOp="DeactivateAuraRegex" AuraImageMode="Zoom" AuraName=".{1}画图" AuraImage="https://momo-1255907292.cos.ap-nanjing.myqcloud.com/%E5%86%B0%E7%81%AB/D1D2%E5%86%B0.jpg" AuraXIniExpression="${var:_AT_图片X坐标}" AuraYIniExpression="${var:_AT_图片Y坐标}" AuraWIniExpression="300" AuraHIniExpression="150" AuraOIniExpression="90" ActionType="Aura">
-                    <Condition Enabled="false" Grouping="And">
-                      <ConditionSingle Enabled="true" ExpressionL="${var:d1_毒}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                      <ConditionSingle Enabled="true" ExpressionL="${var:d2_毒}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="69" OBSEndPoint="" VariableOp="UnsetRegex" VariableName=".{2}_毒" ActionType="Variable" />
-                  <Action OrderNumber="70" OBSEndPoint="" VariableOp="UnsetRegex" VariableName=".{2}_石化" ActionType="Variable" />
-                  <Action OrderNumber="71" OBSEndPoint="" VariableOp="UnsetRegex" VariableName=".{2}_炸蛇" ActionType="Variable" />
-                  <Action OrderNumber="72" OBSEndPoint="" VariableOp="UnsetRegex" VariableName=".{2}_石化眼" ActionType="Variable" />
-                  <Action OrderNumber="73" ListVariableOp="UnsetRegex" ListVariableName="p9s_.+" ListVariableExpression="${name}" ActionType="ListVariable" />
-                  <Action OrderNumber="74" TriggerOp="EnableTrigger" TriggerId="c6fab990-b9d2-4e30-9e28-aa5d4bb7eb90" ActionType="Trigger" />
-                  <Action OrderNumber="75" ListVariableOp="UnsetRegex" ListVariableName="p10s_.+" ListVariableExpression="${name}" VariableOp="UnsetRegex" VariableName="p10s_.+" ActionType="Variable" />
-                  <Action OrderNumber="76" ListVariableName="p10s_44职业" ListVariableExpression="${ptvarrl:job_list[${_ffxiventity[${name}].jobid}][7]}" VariableOp="SetString" VariableName="攻击1" VariableExpression="${ptvarrl:job_list[${_ffxiventity[${name}].jobid}][7]}" ActionType="ListVariable">
-                    <Condition Enabled="false" Grouping="Or">
-                      <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="E70" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="77" ListVariableOp="UnsetRegex" ListVariableName="p10s_.+" ListVariableExpression="${name}" VariableOp="UnsetRegex" VariableName="p12s_.+" ActionType="Variable" />
-                  <Action OrderNumber="78" ListVariableOp="UnsetRegex" ListVariableName="p10s_.+" ListVariableExpression="${name}" VariableOp="UnsetRegex" VariableName="z4s_.+" ActionType="Variable" />
-                  <Action OrderNumber="79" ListVariableOp="UnsetRegex" ListVariableName="p12s_.+?" ListVariableExpression="${ptvarrl:job_list[${_ffxiventity[${name}].jobid}][7]}" VariableOp="SetString" VariableName="攻击1" VariableExpression="${ptvarrl:job_list[${_ffxiventity[${name}].jobid}][7]}" ActionType="ListVariable">
-                    <Condition Enabled="false" Grouping="Or">
-                      <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="E70" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="80" ListVariableOp="UnsetRegex" ListVariableName="p10s_.+" ListVariableExpression="${name}" VariableOp="UnsetRegex" VariableName="P12s[12]_.+" ActionType="Variable" />
-                  <Action OrderNumber="81" ListVariableOp="UnsetRegex" ListVariableName="P12s[12]_.+?" ListVariableExpression="${ptvarrl:job_list[${_ffxiventity[${name}].jobid}][7]}" VariableOp="SetString" VariableName="攻击1" VariableExpression="${ptvarrl:job_list[${_ffxiventity[${name}].jobid}][7]}" ActionType="ListVariable">
-                    <Condition Enabled="false" Grouping="Or">
-                      <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="E70" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="82" FolderOp="DisableFolder" FolderId="6f339efd-8cf7-484b-8702-208efbfebb3d" ActionType="Folder" />
-                  <Action OrderNumber="83" TriggerOp="DisableTrigger" TriggerId="7b675cbb-29ce-45ec-a72d-4ee00caf3806" ActionType="Trigger" />
-                  <Action OrderNumber="84" VariableOp="UnsetRegex" VariableName=".{2}_(火分摊|风分散)点名" VariableExpression="1" ActionType="Variable">
+                  <Action OrderNumber="3" VariableOp="UnsetRegex" VariableName=".{2}_暗点名" VariableExpression="1" ActionType="Variable">
                     <Condition Enabled="false" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d4_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
                   </Action>
-                  <Action OrderNumber="85" VariableOp="UnsetRegex" VariableName=".{2}_(火|风)标记点名" VariableExpression="1" ActionType="Variable">
-                    <Condition Enabled="false" Grouping="Or">
-                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d4_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="86" VariableOp="UnsetRegex" VariableName="temp_.+?" VariableExpression="1" ActionType="Variable">
-                    <Condition Enabled="false" Grouping="Or">
-                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d4_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="87" ListVariableOp="UnsetRegex" ListVariableName="(.{2}_Debuff1)" ActionType="ListVariable" />
-                  <Action OrderNumber="88" TriggerOp="EnableTrigger" TriggerId="fc7a00ea-565c-4463-853a-a0d302689924" ActionType="Trigger" />
-                  <Action OrderNumber="89" VariableOp="UnsetRegex" VariableName=".{2}_.{1}连线" VariableExpression="0" ActionType="Variable">
+                  <Action OrderNumber="4" VariableOp="UnsetRegex" VariableName=".{2}_.{1}连线" VariableExpression="0" ActionType="Variable">
                     <Condition Enabled="false" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${HuoxianName}" ExpressionTypeL="String" ExpressionR="${var:d1_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
                   </Action>
-                  <Action OrderNumber="90" ListVariableOp="UnsetRegex" ListVariableName="omg_.{1}连线" ActionType="ListVariable" />
-                  <Action OrderNumber="91" ActionType="ActInteraction" ExecutionDelayExpression="3000" />
+                  <Action OrderNumber="5" ListVariableOp="UnsetRegex" ListVariableName="omg_.{1}连线" ActionType="ListVariable" />
+                  <Action OrderNumber="6" ActionType="ActInteraction" ExecutionDelayExpression="3000" />
                 </Actions>
               </Trigger>
               <Trigger Enabled="true" Name="字幕提示2（兼容空格）" Id="96e6cd70-de14-48b9-adcf-a027ae9824eb" RegularExpression="^AT_Subtitle:(?&lt;text&gt;[^:]+):(?&lt;time&gt;[0-9][^:]+):(?&lt;offset_x&gt;[^:]+):(?&lt;offset_y&gt;[^:]+):(?&lt;id&gt;[^:]+)">
@@ -2708,7 +2732,7 @@
               </Trigger>
               <Trigger Enabled="true" Name="获取版本号" Id="b40f737b-b969-44ef-917a-bf64e1065b01" RegularExpression="^." PeriodRefire="Deny" RefirePeriodExpression="86400000" EditAutofire="True">
                 <Actions>
-                  <Action OrderNumber="1" DiskFileOpName="https://momo-1255907292.cos.ap-nanjing.myqcloud.com/6.0bb" DiskFileOpVar="零式版本" ActionType="DiskFile" />
+                  <Action OrderNumber="1" DiskFileOpName="https://momo-1255907292.cos.ap-nanjing.myqcloud.com/6.0bb" DiskFileOpVar="零式版本" Enabled="False" ActionType="DiskFile" />
                   <Action OrderNumber="2" MessageBoxText="${var:零式版本}" Enabled="False" ActionType="MessageBox" ExecutionDelayExpression="5000" />
                 </Actions>
               </Trigger>
@@ -2745,6 +2769,319 @@
                   <Action OrderNumber="7" LogMessageText="[17:36:43.172] 273 111:4000F336:0197:11D9:0:0:0" LogProcess="True" ActionType="LogMessage" />
                   <Action OrderNumber="8" LogMessageText="[17:36:43.172] 273 111:4000F337:0197:11D9:0:0:0" LogProcess="True" ActionType="LogMessage" />
                 </Actions>
+              </Trigger>
+            </Triggers>
+          </Folder>
+          <Folder Id="7ee5f5cd-f4f5-4c42-8ac4-8fbed0c5be04" Name="2.5运头顶标记 优先级THD" Enabled="false">
+            <Folders>
+              <Folder Id="8240617b-2bdc-4bed-8efc-472908b02fc0" Name="分摊分散标记（指挥标记必须开指挥模式）" Enabled="true">
+                <Folders />
+                <Triggers>
+                  <Trigger Enabled="true" Sequential="True" Name="分散标记" Id="08a25d02-9924-457e-9035-671d10539b9d" RegularExpression="^.{14} (?:\w+ )1A:D61:[^:]*:(?&lt;second&gt;[^:]*):.{8}::(?&lt;pid&gt;.{8}):(?&lt;name&gt;[^:]*):" PeriodRefire="Deny" RefirePeriodExpression="9000" Description="原地 AC3&#xD;&#xA;正对boss AC4&#xD;&#xA;背对boss AC5">
+                    <Actions>
+                      <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:mt_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback" ExecutionDelayExpression="200">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:mt_暗点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:st_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:st_暗点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="3" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:h1_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:h1_暗点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="4" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:h2_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:h2_暗点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="5" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:d1_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d1_暗点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="6" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:d2_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d2_暗点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="7" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:d3_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d3_暗点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="8" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk attack &lt;${var:${var:d4_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d4_暗点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="9" VariableOp="UnsetRegex" VariableName=".{2}_暗点名" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="7000">
+                        <Condition Enabled="false" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d4_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:指挥模式}" ExpressionTypeL="String" ExpressionR="开启" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Trigger>
+                  <Trigger Enabled="true" Sequential="True" Name="分摊标记" Id="8a4aad39-7e53-42a6-b62f-8b69adc41598" RegularExpression="^.{14} (?:\w+ )1A:D62:[^:]*:(?&lt;second&gt;[^:]*):.{8}::(?&lt;pid&gt;.{8}):(?&lt;name&gt;[^:]*):" PeriodRefire="Deny" RefirePeriodExpression="9000" Description="原地 AC3&#xD;&#xA;正对boss AC4&#xD;&#xA;背对boss AC5">
+                    <Actions>
+                      <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk bind &lt;${var:${var:mt_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback" ExecutionDelayExpression="200">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:mt_光点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk bind &lt;${var:${var:st_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:st_光点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="3" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk bind &lt;${var:${var:h1_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:h1_光点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="4" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk bind &lt;${var:${var:h2_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:h2_光点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="5" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk bind &lt;${var:${var:d1_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d1_光点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="6" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk bind &lt;${var:${var:d2_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d2_光点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="7" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk bind &lt;${var:${var:d3_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d3_光点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="8" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk bind &lt;${var:${var:d4_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d4_光点名}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="9" VariableOp="UnsetRegex" VariableName=".{2}_光点名" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="7000">
+                        <Condition Enabled="false" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d4_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:指挥模式}" ExpressionTypeL="String" ExpressionR="开启" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Trigger>
+                  <Trigger Enabled="true" Sequential="True" Name="无点名标记" Id="d1b9f0df-887b-487e-afcd-1dc35a2a7548" RegularExpression="^.{14} (?:\w+ )1A:D61:[^:]*:(?&lt;second&gt;[^:]*):.{8}::(?&lt;pid&gt;.{8}):(?&lt;name&gt;[^:]*):" PeriodRefire="Deny" RefirePeriodExpression="10000" Description="[16:54:05.623] StatusAdd 1A:AC7:_rsv_2759_-1_4_C0_0Status:23.00:E0000000::23333333:埃斯蒂尼安:00:62514:&#xD;&#xA;[16:54:05.623] StatusAdd 1A:AC7:_rsv_2758_-1_4_C0_0Status:23.00:E0000000::23333333:阿莉塞:00:62659:&#xD;&#xA;[16:54:05.623] StatusAdd 1A:AC6:_rsv_2758_-1_4_C0_0Status:23.00:E0000000::23333333:古·拉哈·提亚:00:90215:&#xD;&#xA;[16:54:05.623] StatusAdd 1A:AC6:_rsv_2758_-1_4_C0_0Status:23.00:E0000000::23333333:桑克瑞德:00:56391:&#xD;&#xA;[16:54:05.623] StatusAdd 1A:AC6:_rsv_2759_-1_4_C0_0Status:23.00:E0000000::23333333:于里昂热:00:56585:&#xD;&#xA;[16:54:05.623] StatusAdd 1A:AC6:_rsv_2758_-1_4_C0_0Status:23.00:E0000000::23333333:阿尔菲诺:00:62713:">
+                    <Actions>
+                      <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:mt_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback" ExecutionDelayExpression="800">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:mt_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:mt_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:st_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:st_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:st_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="3" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:h1_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:h1_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:h1_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="4" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:h2_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:h2_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:h2_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="5" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:d1_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d1_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d1_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="6" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:d2_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d2_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d2_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="7" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:d3_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d3_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d3_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="8" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk stop &lt;${var:${var:d4_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d4_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d4_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="9" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${var:${var:mt_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:mt_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:mt_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="10" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${var:${var:st_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:st_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:st_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="11" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${var:${var:h1_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:h1_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:h1_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="12" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${var:${var:h2_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:h2_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:h2_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="13" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${var:${var:d1_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d1_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d1_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="14" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${var:${var:d2_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d2_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d2_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="15" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${var:${var:d3_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d3_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d3_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="16" JsonEndpointExpression="http://127.0.0.1:${var:鲶鱼精邮差监听端口}/command" JsonPayloadExpression="/mk attack &lt;${var:${var:d1_name}_no}&gt;" NamedCallbackName="command" NamedCallbackParam="/mk ignore &lt;${var:${var:d4_name}_no}&gt;" UseTTSTextExpression="准备组内截球" ActionType="NamedCallback">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d4_光点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:d4_暗点名}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                        </Condition>
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:指挥模式}" ExpressionTypeL="String" ExpressionR="开启" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Trigger>
+                </Triggers>
+              </Folder>
+            </Folders>
+            <Triggers>
+              <Trigger Enabled="true" Name="分散标记设置变量" Id="8e55ae2c-c1b5-4dda-a106-d15a4f96eebc" RegularExpression="^.{14} (?:\w+ )1A:D61:[^:]*:(?&lt;second&gt;[^:]*):.{8}::(?&lt;pid&gt;.{8}):(?&lt;name&gt;[^:]*):" Description="原地 AC3&#xD;&#xA;正对boss AC4&#xD;&#xA;背对boss AC5">
+                <Actions>
+                  <Action OrderNumber="1" ListVariableOp="Remove" ListVariableName="p6_id_list" ListVariableIndex="${lvar:p6_id_list.indexof(${pid})}" Enabled="False" ActionType="ListVariable" />
+                  <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="mt_暗点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:mt_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="3" VariableOp="SetNumeric" VariableName="st_暗点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:st_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="4" VariableOp="SetNumeric" VariableName="h1_暗点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:h1_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="5" VariableOp="SetNumeric" VariableName="h2_暗点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:h2_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="6" VariableOp="SetNumeric" VariableName="d1_暗点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d1_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="7" VariableOp="SetNumeric" VariableName="d2_暗点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d2_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="8" VariableOp="SetNumeric" VariableName="d3_暗点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d3_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="9" VariableOp="SetNumeric" VariableName="d4_暗点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d4_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                </Actions>
+                <Condition Enabled="false" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:指挥模式}" ExpressionTypeL="String" ExpressionR="开启" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="分摊标记设置变量" Id="ade76f37-c156-49ef-961e-b0555262f850" RegularExpression="^.{14} (?:\w+ )1A:D62:[^:]*:(?&lt;second&gt;[^:]*):.{8}::(?&lt;pid&gt;.{8}):(?&lt;name&gt;[^:]*):" Description="原地 AC3&#xD;&#xA;正对boss AC4&#xD;&#xA;背对boss AC5">
+                <Actions>
+                  <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="mt_光点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:mt_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="st_光点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:st_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="3" VariableOp="SetNumeric" VariableName="h1_光点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:h1_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="4" VariableOp="SetNumeric" VariableName="h2_光点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:h2_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="5" VariableOp="SetNumeric" VariableName="d1_光点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d1_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="6" VariableOp="SetNumeric" VariableName="d2_光点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d2_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="7" VariableOp="SetNumeric" VariableName="d3_光点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d3_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                  <Action OrderNumber="8" VariableOp="SetNumeric" VariableName="d4_光点名" VariableExpression="1" ActionType="Variable">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:d4_name}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Action>
+                </Actions>
+                <Condition Enabled="false" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:指挥模式}" ExpressionTypeL="String" ExpressionR="开启" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
               </Trigger>
             </Triggers>
           </Folder>
