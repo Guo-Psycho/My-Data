@@ -65,17 +65,34 @@
           </Trigger>
         </Triggers>
       </Folder>
+      <Folder Id="c5126327-3357-40b1-a2ce-690c32bede51" Name="杂项" Enabled="true">
+        <Folders />
+        <Triggers>
+          <Trigger Enabled="true" Name="分摊" Id="d9f52cc3-12fb-4ca2-9a3a-6b0bf73b1a03" RegularExpression="^.{15}\S+ 14:4.{7}:[^:]+:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="分摊" UseTTSRateExpression="2" ActionType="UseTTS" />
+              <Action OrderNumber="2" TriggerId="24a8eca0-b72d-4e47-b3ba-4f863cc58a7d" TriggerText="Tip_Subtitle:防击退:5:0:0:main" Enabled="False" ActionType="Trigger" />
+            </Actions>
+          </Trigger>
+          <Trigger Enabled="true" Name="防击退" Id="b4ece1ed-2060-45e2-a4d5-a134ded29e1a" RegularExpression="^.{15}\S+ 14:4.{7}:[^:]+:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="防击退" UseTTSRateExpression="2" ActionType="UseTTS" />
+              <Action OrderNumber="2" TriggerId="24a8eca0-b72d-4e47-b3ba-4f863cc58a7d" TriggerText="Tip_Subtitle:防击退:5:0:0:main" ActionType="Trigger" />
+            </Actions>
+          </Trigger>
+          <Trigger Enabled="true" Name="分散" Id="14c8b2fe-1739-459a-90fb-db3782508b3a" RegularExpression="^.{15}\S+ 14:4.{7}:[^:]+:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="分散" UseTTSRateExpression="2" ActionType="UseTTS" />
+              <Action OrderNumber="2" TriggerId="24a8eca0-b72d-4e47-b3ba-4f863cc58a7d" TriggerText="Tip_Subtitle:防击退:5:0:0:main" Enabled="False" ActionType="Trigger" />
+            </Actions>
+          </Trigger>
+        </Triggers>
+      </Folder>
     </Folders>
     <Triggers>
       <Trigger Enabled="true" Name="机制字幕提示（可diy修改文字样式，不用可以不勾）" Id="24a8eca0-b72d-4e47-b3ba-4f863cc58a7d" RegularExpression="Tip_Subtitle:(?&lt;text&gt;\S+):(?&lt;time&gt;[\d\.]+):(?&lt;offset_x&gt;[\d\.-]+):(?&lt;offset_y&gt;[\d\.-]+):(?&lt;id&gt;\S+)" Description="1">
         <Actions>
           <Action OrderNumber="1" UseTTSTextExpression="${var:Souma_Team_Role}" TextAuraEffect="Bold" TextAuraFontSize="26.25" TextAuraForeground="White" TextAuraOutline="Fuchsia" TextAuraName="Tip_Subtitle_${id}" TextAuraExpression="${text}" TextAuraXIniExpression="1100" TextAuraYIniExpression="290" TextAuraWIniExpression="400" TextAuraHIniExpression="200" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${time}*1000-${_sincems}" TextAuraFontName="微软雅黑" ActionType="TextAura" Asynchronous="False" />
-        </Actions>
-      </Trigger>
-      <Trigger Enabled="true" Name="防击退" Id="d9f52cc3-12fb-4ca2-9a3a-6b0bf73b1a03" RegularExpression="^.{15}\S+ 14:4.{7}:[^:]+:">
-        <Actions>
-          <Action OrderNumber="1" UseTTSTextExpression="防击退" UseTTSRateExpression="2" ActionType="UseTTS" />
-          <Action OrderNumber="2" TriggerId="24a8eca0-b72d-4e47-b3ba-4f863cc58a7d" TriggerText="Tip_Subtitle:防击退:5:0:0:main" ActionType="Trigger" />
         </Actions>
       </Trigger>
     </Triggers>
