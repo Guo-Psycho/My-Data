@@ -2,7 +2,7 @@
 <TriggernometryExport PluginVersion="1.2.0.713">
   <ExportedFolder Id="ef6f1d6c-f10f-4ef3-8af5-99c5fb0705ec" Name="01文库自用最新日期：11.7" Enabled="true">
     <Folders>
-      <Folder Id="ddedb082-2b30-4d78-9a23-4b3699cede06" Name="通用依赖功能" Enabled="true">
+      <Folder Id="ddedb082-2b30-4d78-9a23-4b3699cede06" Name="通用依赖功能" Enabled="false">
         <Folders>
           <Folder Id="088ee114-f6ce-4e86-b9a3-fb4feabfa7e0" Name="小队初始化[测试功能DLC]" Enabled="true">
             <Folders>
@@ -6410,7 +6410,7 @@
             <Triggers>
               <Trigger Enabled="true" Name="队长记录" Id="e228fb81-8a9e-452f-bcc6-bd743ff12960" RegularExpression="^.[^M]*M[1234] .{1}Savage.{1} has ended">
                 <Actions>
-                  <Action OrderNumber="1" TTSRouting="Triggernometry" UseTTSTextExpression="去左下" UseTTSRateExpression="2" TriggerId="4aeabd48-9337-44f1-8ba3-82eddc3bb590" TriggerText="Tip_Subtitle:记得截图装备分配:20:0:0:main" ActionType="Trigger">
+                  <Action OrderNumber="1" TTSRouting="Triggernometry" UseTTSTextExpression="去左下" UseTTSRateExpression="2" TriggerId="24398b0f-e58b-4ee4-be43-d1ec901b8c66" TriggerText="Tip_Subtitle:记得截图装备分配:20:0:0:main" ActionType="Trigger">
                     <Condition Enabled="false" Grouping="And">
                       <ConditionGroup Enabled="true" Grouping="Or">
                         <ConditionSingle Enabled="true" ExpressionL="${var:刀下分身技能}" ExpressionTypeL="String" ExpressionR="11D6" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
