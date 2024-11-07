@@ -1,2 +1,83 @@
-123123
-123123123
+<?xml version="1.0"?>
+<TriggernometryExport PluginVersion="1.2.0.712">
+  <ExportedFolder Id="d57a2d1c-541d-49c4-9745-0cfd0a2e365e" Name="02极永恒女王" Enabled="true">
+    <Folders>
+      <Folder Id="2daa9476-b597-4231-94dd-2d5b0d719e3b" Name="难逃一吸" Enabled="true">
+        <Folders />
+        <Triggers>
+          <Trigger Enabled="true" Name="吸右边" Id="849891ca-bf13-4084-a9b1-faa053f287b5" RegularExpression="^.{15}\S+ 14:4.{7}:[^:]+:999D">
+            <Actions>
+              <Action OrderNumber="1" TriggerId="24a8eca0-b72d-4e47-b3ba-4f863cc58a7d" TriggerText="Tip_Subtitle:左中安全:5:0:0:main" ActionType="Trigger" />
+              <Action OrderNumber="1" UseTTSTextExpression="左中安全" UseTTSRateExpression="2" ActionType="UseTTS" />
+            </Actions>
+          </Trigger>
+          <Trigger Enabled="true" Name="吸左边" Id="fa9772b2-69ab-4a52-b53c-f96f8541e9d1" RegularExpression="^.{15}\S+ 14:4.{7}:[^:]+:999D">
+            <Actions>
+              <Action OrderNumber="1" TriggerId="24a8eca0-b72d-4e47-b3ba-4f863cc58a7d" TriggerText="Tip_Subtitle:右中安全:5:0:0:main" ActionType="Trigger" />
+              <Action OrderNumber="1" UseTTSTextExpression="中右安全" UseTTSRateExpression="2" ActionType="UseTTS" />
+            </Actions>
+          </Trigger>
+          <Trigger Enabled="true" Name="吸中间" Id="c6f358ba-2f28-4097-bff7-56c7f6cbb446" RegularExpression="^.{15}\S+ 14:4.{7}:[^:]+:999D">
+            <Actions>
+              <Action OrderNumber="1" TriggerId="24a8eca0-b72d-4e47-b3ba-4f863cc58a7d" TriggerText="Tip_Subtitle:两侧安全:5:0:0:main" ActionType="Trigger" />
+              <Action OrderNumber="1" UseTTSTextExpression="两侧安全" UseTTSRateExpression="2" ActionType="UseTTS" />
+            </Actions>
+          </Trigger>
+        </Triggers>
+      </Folder>
+      <Folder Id="6a03de8d-ac77-4f74-8626-7da259ae5680" Name="左右刀繁琐分离变量" Enabled="true">
+        <Folders />
+        <Triggers>
+          <Trigger Enabled="true" Name="一刀变量获取" Id="5d80456d-ca32-49e5-9c82-f79c4d29c7b0" RegularExpression="^.{15}\S+ 14:4.{7}:[^:]+:999D">
+            <Actions />
+          </Trigger>
+          <Trigger Enabled="true" Name="二刀变量获取" Id="a22e8fe3-dcb4-4b4b-9a98-32a3eef6d5bc" RegularExpression="^.{15}\S+ 14:4.{7}:[^:]+:999D">
+            <Actions />
+          </Trigger>
+        </Triggers>
+      </Folder>
+      <Folder Id="57d5b4fe-f3f7-441c-b01e-556b645202e4" Name="左右刀" Enabled="true">
+        <Folders />
+        <Triggers>
+          <Trigger Enabled="true" Name="先左边再右边" Id="2c3d5a80-0a38-4e6c-9891-0d76b363459f" RegularExpression="^.{15}\S+ 14:4.{7}:[^:]+:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="先左边再右边" UseTTSRateExpression="2" ActionType="UseTTS" />
+              <Action OrderNumber="2" TriggerId="24a8eca0-b72d-4e47-b3ba-4f863cc58a7d" TriggerText="Tip_Subtitle:先左边再右边:5:0:0:main" ActionType="Trigger" />
+            </Actions>
+          </Trigger>
+          <Trigger Enabled="true" Name="先右边再左边" Id="c296b66c-5fce-426f-a1d1-44ccf3b5be73" RegularExpression="^.{15}\S+ 14:4.{7}:[^:]+:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="先右边再左边" UseTTSRateExpression="2" ActionType="UseTTS" />
+              <Action OrderNumber="2" TriggerId="24a8eca0-b72d-4e47-b3ba-4f863cc58a7d" TriggerText="Tip_Subtitle:先右边再左边:5:0:0:main" ActionType="Trigger" />
+            </Actions>
+          </Trigger>
+          <Trigger Enabled="true" Name="一直左边" Id="25004997-1b1f-4bbd-8709-0b9915624b93" RegularExpression="^.{15}\S+ 14:4.{7}:[^:]+:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="一直左边" UseTTSRateExpression="2" ActionType="UseTTS" />
+              <Action OrderNumber="2" TriggerId="24a8eca0-b72d-4e47-b3ba-4f863cc58a7d" TriggerText="Tip_Subtitle:一直左边:5:0:0:main" ActionType="Trigger" />
+            </Actions>
+          </Trigger>
+          <Trigger Enabled="true" Name="一直右边" Id="3835ff98-886b-4524-88e6-434edf42cac1" RegularExpression="^.{15}\S+ 14:4.{7}:[^:]+:">
+            <Actions>
+              <Action OrderNumber="1" UseTTSTextExpression="一直右边" UseTTSRateExpression="2" ActionType="UseTTS" />
+              <Action OrderNumber="2" TriggerId="24a8eca0-b72d-4e47-b3ba-4f863cc58a7d" TriggerText="Tip_Subtitle:一直右边:5:0:0:main" ActionType="Trigger" />
+            </Actions>
+          </Trigger>
+        </Triggers>
+      </Folder>
+    </Folders>
+    <Triggers>
+      <Trigger Enabled="true" Name="机制字幕提示（可diy修改文字样式，不用可以不勾）" Id="24a8eca0-b72d-4e47-b3ba-4f863cc58a7d" RegularExpression="Tip_Subtitle:(?&lt;text&gt;\S+):(?&lt;time&gt;[\d\.]+):(?&lt;offset_x&gt;[\d\.-]+):(?&lt;offset_y&gt;[\d\.-]+):(?&lt;id&gt;\S+)" Description="1">
+        <Actions>
+          <Action OrderNumber="1" UseTTSTextExpression="${var:Souma_Team_Role}" TextAuraEffect="Bold" TextAuraFontSize="26.25" TextAuraForeground="White" TextAuraOutline="Fuchsia" TextAuraName="Tip_Subtitle_${id}" TextAuraExpression="${text}" TextAuraXIniExpression="1100" TextAuraYIniExpression="290" TextAuraWIniExpression="400" TextAuraHIniExpression="200" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${time}*1000-${_sincems}" TextAuraFontName="微软雅黑" ActionType="TextAura" Asynchronous="False" />
+        </Actions>
+      </Trigger>
+      <Trigger Enabled="true" Name="防击退" Id="d9f52cc3-12fb-4ca2-9a3a-6b0bf73b1a03" RegularExpression="^.{15}\S+ 14:4.{7}:[^:]+:">
+        <Actions>
+          <Action OrderNumber="1" UseTTSTextExpression="防击退" UseTTSRateExpression="2" ActionType="UseTTS" />
+          <Action OrderNumber="2" TriggerId="24a8eca0-b72d-4e47-b3ba-4f863cc58a7d" TriggerText="Tip_Subtitle:防击退:5:0:0:main" ActionType="Trigger" />
+        </Actions>
+      </Trigger>
+    </Triggers>
+  </ExportedFolder>
+</TriggernometryExport>
