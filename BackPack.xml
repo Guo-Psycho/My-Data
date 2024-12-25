@@ -5855,6 +5855,239 @@
         </Folders>
         <Triggers />
       </Folder>
+      <Folder Id="2e52a150-8153-45a0-84c4-3c804c046504" Name="伊甸Debug" Enabled="true">
+        <Folders>
+          <Folder Id="b9a3848d-18b0-44af-bb53-0223a616ffc8" Name="P4一运" Enabled="true">
+            <Folders />
+            <Triggers>
+              <Trigger Enabled="true" Name="Debug Log D1 H T H2 水T D3要换" Id="6f3194e2-01a0-455b-b440-8c5a646bc2b8" RegularExpression="">
+                <Actions>
+                  <Action OrderNumber="1" LogMessageText="[17:02:28.506] StatusAdd 1A:99D:Spell-in-Waiting: Dark Water III:19.00:E0000000::103080C6:Thancred:00:142328:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="2" LogMessageText="[17:02:28.506] StatusAdd 1A:99D:Spell-in-Waiting: Dark Water III:19.00:E0000000::1027D50D:Y'shtola:00:142389:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="3" LogMessageText="[17:02:29.352] StatusAdd 1A:8CD:Refulgent Chain:7.00:E0000000::103080C6:Alphinaud:00:142328:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.8 * 1000" />
+                  <Action OrderNumber="4" LogMessageText="[17:02:29.352] StatusAdd 1A:8CD:Refulgent Chain:7.00:E0000000::1021F6D0:Estinien:00:225846:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="5" LogMessageText="[17:02:29.352] StatusAdd 1A:8CD:Refulgent Chain:7.00:E0000000::102F94BB:Thancred:00:142328:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="6" LogMessageText="[17:02:29.352] StatusAdd 1A:8CD:Refulgent Chain:7.00:E0000000::102ED904:Guo Psycho:00:156987:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="7" LogMessageText="[17:02:29.352] Tether 23:103080C6:Thancred:1021F6D0:Alphinaud:0000:0000:006E:1021F6D0:000F:0000" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="8" LogMessageText="[17:02:29.352] Tether 23:1021F6D0:Estinien:102F94BB:Thancred:0000:0000:006E:102F94BB:000F:0000" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="9" LogMessageText="[17:02:29.352] Tether 23:102F94BB:Alphinaud:102ED904:Guo Psycho:0000:0000:006E:102ED904:000F:0000" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="10" LogMessageText="[17:02:29.352] Tether 23:102ED904:Guo Psycho:103080C6:Estinien:0000:0000:006E:103080C6:000F:0000" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                </Actions>
+              </Trigger>
+              <Trigger Enabled="false" Name="Debug Log T D1 H D4  水 ST D4不换" Id="7024787d-c834-472e-9935-03a4ff64e362" RegularExpression="">
+                <Actions>
+                  <Action OrderNumber="1" LogMessageText="[17:02:28.506] StatusAdd 1A:99D:Spell-in-Waiting: Dark Water III:19.00:E0000000::103080C6:G'raha Tia:00:142328:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="2" LogMessageText="[17:02:28.506] StatusAdd 1A:99D:Spell-in-Waiting: Dark Water III:19.00:E0000000::1027D50D:Guo Psycho:00:142389:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="3" LogMessageText="[17:02:29.352] StatusAdd 1A:8CD:Refulgent Chain:7.00:E0000000::103080C6:Alphinaud:00:142328:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.8 * 1000" />
+                  <Action OrderNumber="4" LogMessageText="[17:02:29.352] StatusAdd 1A:8CD:Refulgent Chain:7.00:E0000000::1021F6D0:Estinien:00:225846:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="5" LogMessageText="[17:02:29.352] StatusAdd 1A:8CD:Refulgent Chain:7.00:E0000000::102F94BB:Thancred:00:142328:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="6" LogMessageText="[17:02:29.352] StatusAdd 1A:8CD:Refulgent Chain:7.00:E0000000::102ED904:Guo Psycho:00:156987:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="7" LogMessageText="[17:02:29.352] Tether 23:103080C6:Thancred:1021F6D0:Alphinaud:0000:0000:006E:1021F6D0:000F:0000" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="8" LogMessageText="[17:02:29.352] Tether 23:1021F6D0:Guo Psycho:102F94BB:Thancred:0000:0000:006E:102F94BB:000F:0000" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="9" LogMessageText="[17:02:29.352] Tether 23:102F94BB:Alphinaud:102ED904:Estinien:0000:0000:006E:102ED904:000F:0000" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="10" LogMessageText="[17:02:29.352] Tether 23:102ED904:Guo Psycho:103080C6:Estinien:0000:0000:006E:103080C6:000F:0000" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                </Actions>
+              </Trigger>
+              <Trigger Enabled="false" Name="Debug Log T D1 H D4 水D3D4要换" Id="3b63c40e-87bf-4039-88ac-fae0d3f81123" RegularExpression="">
+                <Actions>
+                  <Action OrderNumber="1" LogMessageText="[17:02:28.506] StatusAdd 1A:99D:Spell-in-Waiting: Dark Water III:19.00:E0000000::103080C6:Guo Psycho:00:142328:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="2" LogMessageText="[17:02:28.506] StatusAdd 1A:99D:Spell-in-Waiting: Dark Water III:19.00:E0000000::1027D50D:Y'shtola:00:142389:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="3" LogMessageText="[17:02:29.352] StatusAdd 1A:8CD:Refulgent Chain:7.00:E0000000::103080C6:Thancred:00:142328:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.8 * 1000" />
+                  <Action OrderNumber="4" LogMessageText="[17:02:29.352] StatusAdd 1A:8CD:Refulgent Chain:7.00:E0000000::1021F6D0:Alphinaud:00:225846:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="5" LogMessageText="[17:02:29.352] StatusAdd 1A:8CD:Refulgent Chain:7.00:E0000000::102F94BB:Estinien:00:142328:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="6" LogMessageText="[17:02:29.352] StatusAdd 1A:8CD:Refulgent Chain:7.00:E0000000::102ED904:Guo Psycho:00:156987:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="7" LogMessageText="[17:02:29.352] Tether 23:103080C6:Thancred:1021F6D0:Alphinaud:0000:0000:006E:1021F6D0:000F:0000" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="8" LogMessageText="[17:02:29.352] Tether 23:1021F6D0:Guo Psycho:102F94BB:Thancred:0000:0000:006E:102F94BB:000F:0000" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="9" LogMessageText="[17:02:29.352] Tether 23:102F94BB:Alphinaud:102ED904:Estinien:0000:0000:006E:102ED904:000F:0000" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="10" LogMessageText="[17:02:29.352] Tether 23:102ED904:Guo Psycho:103080C6:Estinien:0000:0000:006E:103080C6:000F:0000" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                </Actions>
+              </Trigger>
+              <Trigger Enabled="false" Name="Debug Log THDD 不换水" Id="f3e66150-ad51-4cce-b1e4-839dc96c8038" RegularExpression="">
+                <Actions>
+                  <Action OrderNumber="1" LogMessageText="[17:02:28.506] StatusAdd 1A:99D:Spell-in-Waiting: Dark Water III:19.00:E0000000::103080C6:G'raha Tia:00:142328:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="2" LogMessageText="[17:02:28.506] StatusAdd 1A:99D:Spell-in-Waiting: Dark Water III:19.00:E0000000::1027D50D:Estinien:00:142389:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="3" LogMessageText="[17:02:29.352] StatusAdd 1A:8CD:Refulgent Chain:7.00:E0000000::103080C6:Alphinaud:00:142328:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.8 * 1000" />
+                  <Action OrderNumber="4" LogMessageText="[17:02:29.352] StatusAdd 1A:8CD:Refulgent Chain:7.00:E0000000::1021F6D0:Estinien:00:225846:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="5" LogMessageText="[17:02:29.352] StatusAdd 1A:8CD:Refulgent Chain:7.00:E0000000::102F94BB:Thancred:00:142328:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="6" LogMessageText="[17:02:29.352] StatusAdd 1A:8CD:Refulgent Chain:7.00:E0000000::102ED904:Guo Psycho:00:156987:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="7" LogMessageText="[17:02:29.352] Tether 23:103080C6:Thancred:1021F6D0:Estinien:0000:0000:006E:1021F6D0:000F:0000" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="8" LogMessageText="[17:02:29.352] Tether 23:1021F6D0:Estinien:102F94BB:Alphinaud:0000:0000:006E:102F94BB:000F:0000" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="9" LogMessageText="[17:02:29.352] Tether 23:102F94BB:Alphinaud:102ED904:Guo Psycho:0000:0000:006E:102ED904:000F:0000" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="10" LogMessageText="[17:02:29.352] Tether 23:102ED904:Guo Psycho:103080C6:Thancred:0000:0000:006E:103080C6:000F:0000" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                </Actions>
+              </Trigger>
+              <Trigger Enabled="false" Name="Debug Log左上右下，水分摊要换" Id="73a0a55e-90da-4e68-8a6c-c82282c64a28" RegularExpression="">
+                <Actions>
+                  <Action OrderNumber="1" LogMessageText="[04:53:24.466] StatusAdd 1A:99D:Spell-in-Waiting: Dark Water III:19.00:E0000000::1023F810:Alphinaud:00:225889:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="2" LogMessageText="[04:53:24.466] StatusAdd 1A:99D:Spell-in-Waiting: Dark Water III:19.00:E0000000::1035FCDF:Thancred:00:225846:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="3" LogMessageText="[04:53:25.314] StatusAdd 1A:8CD:Refulgent Chain:7.00:E0000000::1023F810:G'raha Tia:00:225889:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.8 * 1000" />
+                  <Action OrderNumber="4" LogMessageText="[04:53:25.314] StatusAdd 1A:8CD:Refulgent Chain:7.00:E0000000::10351408:Alphinaud:00:142328:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="5" LogMessageText="[04:53:25.314] StatusAdd 1A:8CD:Refulgent Chain:7.00:E0000000::1024E1E2:Alisaie:00:142328:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="6" LogMessageText="[04:53:25.314] StatusAdd 1A:8CD:Refulgent Chain:7.00:E0000000::1024375B:Cammy Bartle:00:156987:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="7" LogMessageText="[04:53:25.314] Tether 23:1023F810:G'raha Tia:10351408:Alphinaud:0000:0000:006E:10351408:000F:0000" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="8" LogMessageText="[04:53:25.314] Tether 23:10351408:Alphinaud:1024E1E2:Alisaie:0000:0000:006E:1024E1E2:000F:0000" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="9" LogMessageText="[04:53:25.314] Tether 23:1024E1E2:Alisaie:1024375B:Cammy Bartle:0000:0000:006E:1024375B:000F:0000" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="10" LogMessageText="[04:53:25.314] Tether 23:1024375B:Cammy Bartle:1023F810:G'raha Tia:0000:0000:006E:1023F810:000F:0000" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                </Actions>
+              </Trigger>
+            </Triggers>
+          </Folder>
+          <Folder Id="cce87f4b-a552-4beb-bc43-3c224987a878" Name="P4二运" Enabled="true">
+            <Folders />
+            <Triggers>
+              <Trigger Enabled="true" Name="Debug Log" Id="f7a08516-574d-4ccc-8bb4-340cde0e85df" RegularExpression="">
+                <Actions>
+                  <Action OrderNumber="1" LogMessageText="[23:44:54.066] StatusAdd 1A:CBF:Wyrmclaw:17.00:E0000000::10352F1C:Estinien:00:157217:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="2" LogMessageText="[23:44:54.066] StatusAdd 1A:CBF:Wyrmclaw:17.00:E0000000::101DD068:G'raha Tia:00:225846:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="3" LogMessageText="[23:44:54.066] StatusAdd 1A:CBF:Wyrmclaw:40.00:E0000000::1002B745:Guo Psycho:00:157167:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="4" LogMessageText="[23:44:54.066] StatusAdd 1A:CBF:Wyrmclaw:40.00:E0000000::100AB933:Thancred:00:225932:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="5" LogMessageText="[23:44:54.066] StatusAdd 1A:99E:Spell-in-Waiting: Dark Blizzard III:14.00:E0000000::101DD068:Guo Psycho:00:225846:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="6" LogMessageText="[23:44:54.066] StatusAdd 1A:99E:Spell-in-Waiting: Dark Blizzard III:14.00:E0000000::10352F1C:Estinien:00:157217:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="7" LogMessageText="[23:44:54.066] StatusAdd 1A:99E:Spell-in-Waiting: Dark Blizzard III:14.00:E0000000::10308326:Alisaie:00:157017:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="8" LogMessageText="[23:44:54.066] StatusAdd 1A:CC0:Wyrmfang:40.00:E0000000::1029BAFB:Guo Psycho:00:142328:" LogProcess="True" Enabled="False" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="9" LogMessageText="[23:44:54.066] StatusAdd 1A:CC0:Wyrmfang:40.00:E0000000::10308326:Guo Psycho:00:157017:" LogProcess="True" Enabled="False" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="10" LogMessageText="[23:44:54.066] StatusAdd 1A:CC0:Wyrmfang:40.00:E0000000::102DD31A:Urianger:00:136369:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="11" LogMessageText="[23:44:54.066] StatusAdd 1A:CC0:Wyrmfang:40.00:E0000000::10271A9A:Alphinaud:00:142479:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="12" LogMessageText="[23:44:54.066] StatusAdd 1A:996:Spell-in-Waiting: Dark Water III:12.00:E0000000::10271A9A:Y'shtola:00:142479:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="13" LogMessageText="[23:44:54.066] StatusAdd 1A:99D:Spell-in-Waiting: Unholy Darkness:17.00:E0000000::1029BAFB:Alphinaud:00:142328:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="14" LogMessageText="[23:44:54.066] StatusAdd 1A:99C:Spell-in-Waiting: Dark Eruption:14.00:E0000000::102DD31A:Urianger:00:136369:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="15" VariableOp="SetString" VariableName="二运减速灯" VariableExpression="一三" Enabled="False" ActionType="Variable" ExecutionDelayExpression="3000" />
+                  <Action OrderNumber="16" VariableOp="SetString" VariableName="二运减速灯" VariableExpression="二四" ActionType="Variable" ExecutionDelayExpression="3000" />
+                  <Action OrderNumber="17" LogMessageText="短红排序好了" LogProcess="True" ActionType="LogMessage" />
+                  <Action OrderNumber="18" LogMessageText="长红排序好了" LogProcess="True" ActionType="LogMessage" />
+                  <Action OrderNumber="19" LogMessageText="贡品组播报吧" LogProcess="True" ActionType="LogMessage" />
+                </Actions>
+              </Trigger>
+              <Trigger Enabled="false" Name="Debug Log" Id="dd252013-6f7e-4018-bfd3-ba518bb61167">
+                <Actions>
+                  <Action OrderNumber="1" LogMessageText="[23:44:54.066] StatusAdd 1A:CBF:Wyrmclaw:17.00:E0000000::10352F1C:Estinien:00:157217:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="2" LogMessageText="[23:44:54.066] StatusAdd 1A:CBF:Wyrmclaw:17.00:E0000000::101DD068:G'raha Tia:00:225846:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="3" LogMessageText="[23:44:54.066] StatusAdd 1A:CBF:Wyrmclaw:40.00:E0000000::1002B745:Y'shtola:00:157167:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="4" LogMessageText="[23:44:54.066] StatusAdd 1A:CBF:Wyrmclaw:40.00:E0000000::100AB933:Thancred:00:225932:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="5" LogMessageText="[23:44:54.066] StatusAdd 1A:99E:Spell-in-Waiting: Dark Blizzard III:14.00:E0000000::101DD068:G'raha Tia:00:225846:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="6" LogMessageText="[23:44:54.066] StatusAdd 1A:99E:Spell-in-Waiting: Dark Blizzard III:14.00:E0000000::10352F1C:Estinien:00:157217:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="7" LogMessageText="[23:44:54.066] StatusAdd 1A:99E:Spell-in-Waiting: Dark Blizzard III:14.00:E0000000::10308326:Alisaie:00:157017:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="8" LogMessageText="[23:44:54.066] StatusAdd 1A:CC0:Wyrmfang:40.00:E0000000::1029BAFB:Guo Psycho:00:142328:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="9" LogMessageText="[23:44:54.066] StatusAdd 1A:CC0:Wyrmfang:40.00:E0000000::10308326:Alisaie:00:157017:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="10" LogMessageText="[23:44:54.066] StatusAdd 1A:CC0:Wyrmfang:40.00:E0000000::102DD31A:Urianger:00:136369:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="11" LogMessageText="[23:44:54.066] StatusAdd 1A:CC0:Wyrmfang:40.00:E0000000::10271A9A:Alphinaud:00:142479:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="12" LogMessageText="[23:44:54.066] StatusAdd 1A:99D:Spell-in-Waiting: Dark Water III:12.00:E0000000::10271A9A:Alphinaud:00:142479:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="13" LogMessageText="[23:44:54.066] StatusAdd 1A:996:Spell-in-Waiting: Unholy Darkness:17.00:E0000000::1029BAFB:Guo Psycho:00:142328:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="14" LogMessageText="[23:44:54.066] StatusAdd 1A:99C:Spell-in-Waiting: Dark Eruption:14.00:E0000000::102DD31A:Urianger:00:136369:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                </Actions>
+              </Trigger>
+            </Triggers>
+          </Folder>
+          <Folder Id="6e621806-4bb9-4da6-afb3-c3cf72ac4aab" Name="P3一运" Enabled="true">
+            <Folders />
+            <Triggers>
+              <Trigger Enabled="true" Sequential="True" Name="Debug Log" Id="7a95680f-bdb2-4995-a86b-0a50a86824c8" RegularExpression="">
+                <Actions>
+                  <Action OrderNumber="1" LogMessageText="[23:39:31.875] StartsCasting 14:4001ADD0:Oracle of Darkness:9D4A:Ultimate Relativity:4001ADD0:Oracle of Darkness:9.700:99.99:99.99:0.00:3.14" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="2" LogMessageText="[23:45:51.250] StatusAdd 1A:997:Spell-in-Waiting: Dark Fire III:31.00:E0000000::10271A9A:Urianger:00:142479:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="2 * 1000" />
+                  <Action OrderNumber="3" LogMessageText="[23:45:51.250] StatusAdd 1A:99D:Spell-in-Waiting: Dark Water III:43.00:E0000000::102E6F9E:123o:00:152029:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="4" LogMessageText="[23:45:51.250] StatusAdd 1A:99E:Spell-in-Waiting: Dark Blizzard III:21.00:E0000000::10308326:123123:00:157017:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="5" LogMessageText="[23:45:51.250] StatusAdd 1A:997:Spell-in-Waiting: Dark Fire III:21.00:E0000000::102DD31A:Guo Psycho:00:142479:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                </Actions>
+              </Trigger>
+            </Triggers>
+          </Folder>
+          <Folder Id="1a056188-f77c-48c7-a1f2-b357f2e0d1ca" Name="P3二运" Enabled="true">
+            <Folders />
+            <Triggers>
+              <Trigger Enabled="true" Name="Debug Log1" Id="a267777a-2b2e-459f-9763-28b2c66fe680" RegularExpression="">
+                <Actions>
+                  <Action OrderNumber="1" LogMessageText="[22:27:00.151] ActionEffect 15:40009C3A:Oracle of Darkness:9D62:unknown_9d62:100AB933:Nicomeow Hudini:730003:C0644003:1B:9D628000:0:0:0:0:0:0:0:0:0:0:0:0:140237:225932:7800:10000:::108.54:97.38:0.00:-1.28:21799063:30909445:10000:10000:::99.99:99.99:0.00:-0.41:00003650:0:1:00::01:9D62:9D62:3.100:CC0F" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="2" LogMessageText="[22:27:18.021] StatusAdd 1A:99D:Spell-in-Waiting: Dark Water III:10.00:E0000000::1029BAFB:Guo Psycho:00:142328:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="4000" />
+                  <Action OrderNumber="3" LogMessageText="[22:27:18.021] StatusAdd 1A:99D:Spell-in-Waiting: Dark Water III:10.00:E0000000::10308326:Warriors Ko:00:157017:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="4" LogMessageText="[22:27:18.021] StatusAdd 1A:99D:Spell-in-Waiting: Dark Water III:29.00:E0000000::1002B745:Xjffs Zhed:00:157167:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="5" LogMessageText="[22:27:18.021] StatusAdd 1A:99D:Spell-in-Waiting: Dark Water III:29.00:E0000000::102DD31A:Dummy Clockz:00:142479:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="6" LogMessageText="[22:27:18.021] StatusAdd 1A:99D:Spell-in-Waiting: Dark Water III:38.00:E0000000::102E6F9E:Cloudy Fish:00:158140:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="7" LogMessageText="[22:27:18.021] StatusAdd 1A:99D:Spell-in-Waiting: Dark Water III:38.00:E0000000::10271A9A:Hela Ahtsek:00:142479:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                </Actions>
+              </Trigger>
+              <Trigger Enabled="true" Name="Debug Log2" Id="b5bad4bc-4728-4445-9df0-88f3e3960278" RegularExpression="">
+                <Actions>
+                  <Action OrderNumber="1" LogMessageText="[23:45:54.194] StartsCasting 14:4000C963:Oracle of Darkness:9D62:unknown_9d62:101DD068:Larafael Intheriver:4.700:99.99:99.99:0.00:-0.10" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="2" LogMessageText="[23:45:59.295] ActionEffect 15:4000C963:Oracle of Darkness:9D62:unknown_9d62:E0000000::0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:::::::::::23330888:30909445:10000:10000:::99.99:99.99:0.00:-0.10:000094B3:0:0:00::01:9D62:9D62:3.100:6AB8" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="5.1 * 1000" />
+                  <Action OrderNumber="3" LogMessageText="[23:46:17.165] StatusAdd 1A:99D:Spell-in-Waiting: Dark Water III:10.00:E0000000::1029BAFB:Guo Psycho:00:142328:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="17.9 * 1000" />
+                  <Action OrderNumber="4" LogMessageText="[23:46:17.165] StatusAdd 1A:99D:Spell-in-Waiting: Dark Water III:10.00:E0000000::10271A9A:Hela Ahtsek:00:142479:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="5" LogMessageText="[23:46:17.165] StatusAdd 1A:99D:Spell-in-Waiting: Dark Water III:29.00:E0000000::1002B745:Xjffs Zhed:00:157167:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="6" LogMessageText="[23:46:17.165] StatusAdd 1A:99D:Spell-in-Waiting: Dark Water III:29.00:E0000000::101DD068:Larafael Intheriver:00:225846:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="7" LogMessageText="[23:46:17.165] StatusAdd 1A:99D:Spell-in-Waiting: Dark Water III:38.00:E0000000::102E6F9E:Cloudy Fish:00:158140:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="8" LogMessageText="[23:46:17.165] StatusAdd 1A:99D:Spell-in-Waiting: Dark Water III:38.00:E0000000::10308326:Warriors Ko:00:157017:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                </Actions>
+              </Trigger>
+              <Trigger Enabled="true" Sequential="True" Name="Debug Log 海德林" Id="f36e3de9-c38d-4ea3-b0b7-7a0673ab159d" RegularExpression="">
+                <Actions>
+                  <Action OrderNumber="1" LogMessageText="[01:00:32.503] ActionEffect 15:4001A46D:Oracle of Darkness:9D62:unknown_9d62:102BC570:Final Heaven:730203:9C774006:1B:9D628000:0:0:0:0:0:0:0:0:0:0:0:0:166023:225889:1000:10000:::99.93:92.60:0.00:-2.02:14963109:30909445:10000:10000:::99.99:99.99:0.00:-1.54:0000BF57:0:1:00::01:9D62:9D62:3.100:0063" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="2" LogMessageText="[01:00:50.366] StatusAdd 1A:99D:Spell-in-Waiting: Dark Water III:29.00:E0000000::102BC570:Thancred:00:225889:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="5000" />
+                  <Action OrderNumber="3" LogMessageText="[01:00:50.366] StatusAdd 1A:99D:Spell-in-Waiting: Dark Water III:29.00:E0000000::102A713C:G'raha Tia:00:157107:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="4" LogMessageText="[01:00:50.366] StatusAdd 1A:99D:Spell-in-Waiting: Dark Water III:38.00:E0000000::102F94BB:Urianger:142328:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="5" LogMessageText="[01:00:50.366] StatusAdd 1A:99D:Spell-in-Waiting: Dark Water III:38.00:E0000000::102ED904:Alphinaud:00:156987:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="6" LogMessageText="[01:00:50.366] StatusAdd 1A:99D:Spell-in-Waiting: Dark Water III:10.00:E0000000::103080C6:Estinien:00:142328:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="7" LogMessageText="[01:00:50.366] StatusAdd 1A:99D:Spell-in-Waiting: Dark Water III:10.00:E0000000::1033960B:Y'shtola:00:142328:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                </Actions>
+              </Trigger>
+            </Triggers>
+          </Folder>
+          <Folder Id="1b665704-afd9-4818-9667-091d43a38b5b" Name="P2光爆" Enabled="true">
+            <Folders />
+            <Triggers>
+              <Trigger Enabled="false" Name="" Id="9d256e2e-688f-4212-b670-d3ff40e6cd5c" RegularExpression="">
+                <Actions>
+                  <Action OrderNumber="1" LogMessageText="[23:52:52.178] StartsCasting 14:4000DE3C:Usurper of Frost:9D14:unknown_9d14:4000DE3C:Usurper of Frost:4.700:99.99:99.99:0.00:1.36" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="2" LogMessageText="[23:52:58.009] StatusAdd 1A:103D:Unknown_103D:10.00:E0000000::102DD31A:Urianger:00:136369:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="3" LogMessageText="[23:52:58.009] StatusAdd 1A:103D:Unknown_103D:10.00:E0000000::1002B745:Alphinaud:00:157167:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="4" LogMessageText="[23:52:58.009] StatusAdd 1A:103D:Unknown_103D:10.00:E0000000::10308326:G'raha Tia:00:157017:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="5" LogMessageText="[23:52:58.009] StatusAdd 1A:103D:Unknown_103D:10.00:E0000000::101DD068:Estinien:00:225846:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="6" LogMessageText="[23:52:58.009] StatusAdd 1A:103D:Unknown_103D:10.00:E0000000::102E6F9E:Y'shtola:00:158140:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="7" LogMessageText="[23:52:58.009] StatusAdd 1A:103D:Unknown_103D:10.00:E0000000::1029BAFB:Guo Psycho:00:142328:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                </Actions>
+              </Trigger>
+              <Trigger Enabled="true" Name="Debug Log" Id="0eef5f5d-a953-4258-92c2-dfe50607118a" RegularExpression="">
+                <Actions>
+                  <Action OrderNumber="1" LogMessageText="[16:56:34.010] StartsCasting 14:4001FFBB:Usurper of Frost:9D14:Light Rampant:4001FFBB:Usurper of Frost:4.700:99.99:99.99:0.00:0.31" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="1" LogMessageText="[16:56:39.831] StatusAdd 1A:8D1:Lightsteeped:36.00:E0000000::1027D50D:G'raha Tia:02:142389:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="5.8 * 1000" />
+                  <Action OrderNumber="2" LogMessageText="[16:56:39.831] StatusAdd 1A:8D1:Lightsteeped:36.00:E0000000::102F94BB:Alphinaud:01:142328:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="3" LogMessageText="[16:56:39.831] StatusAdd 1A:8D1:Lightsteeped:36.00:E0000000::1021F6D0:Thancred:02:225846:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="4" LogMessageText="[16:56:39.831] StatusAdd 1A:8D1:Lightsteeped:36.00:E0000000::103080C6:Urianger:01:142328:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="5" LogMessageText="[16:56:39.831] StatusAdd 1A:103D:Unknown_103D:10.00:E0000000::102F94BB:Urianger:00:142328:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="6" LogMessageText="[16:56:39.831] StatusAdd 1A:103D:Unknown_103D:10.00:E0000000::102BC570:Alphinaud:00:225889:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="7" LogMessageText="[16:56:39.831] StatusAdd 1A:103D:Unknown_103D:10.00:E0000000::102ED904:Estinien:00:156987:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="8" LogMessageText="[16:56:39.831] StatusAdd 1A:103D:Unknown_103D:10.00:E0000000::103080C6:Y'shtola:00:142328:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="9" LogMessageText="[16:56:39.831] StatusAdd 1A:103D:Unknown_103D:10.00:E0000000::102A713C:Alisaie:00:157107:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="10" LogMessageText="[16:56:39.831] StatusAdd 1A:103D:Unknown_103D:10.00:E0000000::1033960B:Guo Psycho:00:142328:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="11" LogMessageText="[16:56:55.790] StatusRemove 1E:103F:Unknown_103F:0.00:E0000000::102ED904:Urianger:00:156987:" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="16.0 * 1000" />
+                  <Action OrderNumber="12" LogMessageText="[23:38:19.420] StatusAdd 1A:8D1:Lightsteeped:36.00:4001FF78:Usurper of Frost:10308326:Guo Psycho:03:157017:44" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="3.0 * 1000" />
+                </Actions>
+              </Trigger>
+            </Triggers>
+          </Folder>
+          <Folder Id="3ba02c5f-d06f-4ca3-93b7-595b39ec9480" Name="P1四连线" Enabled="true">
+            <Folders />
+            <Triggers>
+              <Trigger Enabled="false" Name="Debug Log" Id="254ed070-fb07-4e2b-a976-3a51a4870593" RegularExpression="">
+                <Actions>
+                  <Action OrderNumber="1" LogMessageText="[00:14:10.039] Tether 23:4001ED2C:フェイトブレイカー:102A4160:Thancred:0000:0000:00F9:102A4160:000F:0000" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="2" LogMessageText="[00:14:13.198] Tether 23:4001ED17:フェイトブレイカーの幻影:103098DC:Urianger:0000:0000:00F9:103098DC:000F:0000" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="3.2 * 1000" />
+                  <Action OrderNumber="3" LogMessageText="[00:14:15.735] Tether 23:4001ED16:フェイトブレイカーの幻影:102478A2:Alphinaud:0000:0000:00F9:102478A2:000F:0000" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="2.5 * 1000" />
+                  <Action OrderNumber="4" LogMessageText="[00:14:18.267] Tether 23:4001ED15:フェイトブレイカーの幻影:102CBF5A:Alisaie:0000:0000:00F9:102CBF5A:000F:0000" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="2.5 * 1000" />
+                </Actions>
+              </Trigger>
+              <Trigger Enabled="false" Name="Debug Log" Id="69b3738a-6e47-477e-9eeb-ac978bc7bed8" RegularExpression="">
+                <Actions>
+                  <Action OrderNumber="1" LogMessageText="[00:14:10.039] Tether 23:4001ED2C:フェイトブレイカー:102A4160:Thancred:0000:0000:00F9:102A4160:000F:0000" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="0.0 * 1000" />
+                  <Action OrderNumber="2" LogMessageText="[00:14:13.198] Tether 23:4001ED17:フェイトブレイカーの幻影:103098DC:Urianger:0000:0000:00F9:103098DC:000F:0000" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="3.2 * 1000" />
+                  <Action OrderNumber="3" LogMessageText="[00:14:15.735] Tether 23:4001ED16:フェイトブレイカーの幻影:102478A2:Alphinaud:0000:0000:00F9:102478A2:000F:0000" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="2.5 * 1000" />
+                  <Action OrderNumber="4" LogMessageText="[00:14:18.267] Tether 23:4001ED15:フェイトブレイカーの幻影:102CBF5A:Alisaie:0000:0000:00F9:102CBF5A:000F:0000" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="2.5 * 1000" />
+                </Actions>
+              </Trigger>
+            </Triggers>
+          </Folder>
+        </Folders>
+        <Triggers />
+      </Folder>
     </Folders>
     <Triggers>
       <Trigger Enabled="true" Name="调试" Id="05af342a-3908-4f59-9e9c-7f266b525739" RegularExpression="">
