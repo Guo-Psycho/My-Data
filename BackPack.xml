@@ -16,7 +16,7 @@
                   <Action OrderNumber="5" NamedCallbackName="command" NamedCallbackParam="/e Buff Hunter标量获取成功 BuffName &lt;${var:BuffName}&gt; Buff ID：&lt;${var:BuffID}&gt; Buff Time：&lt;${var:Bufftime}&gt; To:&lt;${var:BuffTarget}&gt;" ActionType="NamedCallback" />
                 </Actions>
                 <Condition Enabled="true" Grouping="Or">
-                  <ConditionSingle Enabled="true" ExpressionL="${var:hunterTime}" ExpressionTypeL="String" ExpressionR="开启" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:HunterTime}" ExpressionTypeL="String" ExpressionR="开启" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                 </Condition>
               </Trigger>
               <Trigger Enabled="true" Sequential="True" Name="Skill Hunter" Id="45ba507b-9017-457a-ad3a-5a9b3d67e75c" RegularExpression="^.{14} (?:\w+ )14:.{8}:(?&lt;BossName1&gt;[^:]*):(?&lt;SkillID&gt;[^:]*):(?&lt;SkillName&gt;[^:]*):">
