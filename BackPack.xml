@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
-<TriggernometryExport PluginVersion="1.2.0.718">
-  <ExportedFolder Id="ef6f1d6c-f10f-4ef3-8af5-99c5fb0705ec" Name="01文库自用最新日期：12.25" Enabled="true">
+<TriggernometryExport PluginVersion="1.2.0.735">
+  <ExportedFolder Id="ef6f1d6c-f10f-4ef3-8af5-99c5fb0705ec" Name="01文库自用最新日期：3.29" Enabled="true">
     <Folders>
       <Folder Id="188f49ae-e42e-49f4-8c68-b411eb7b70b6" Name="01妙妙工具" Enabled="true">
         <Folders>
-          <Folder Id="1c84179a-06d9-44fb-a426-c9752c6f8d7a" Name="01Hock Hunter" Enabled="false">
+          <Folder Id="1c84179a-06d9-44fb-a426-c9752c6f8d7a" Name="01Hock Hunter" Enabled="true">
             <Folders />
             <Triggers>
-              <Trigger Enabled="true" Name="Buff Hunter" Id="aba75561-b1c1-464d-91e0-080923f7a366" RegularExpression="^.{14} StatusAdd 1A:(?&lt;BuffID&gt;[^:]*):(?&lt;BuffName&gt;[^:]*):(?&lt;Bufftime&gt;[^:]*):E0000000::.{8}:(?&lt;BuffTarget&gt;[^:]*)">
+              <Trigger Enabled="true" Name="Buff Hunter" Id="aba75561-b1c1-464d-91e0-080923f7a366" RegularExpression="^.{14} StatusAdd 1A:(?&lt;BuffID&gt;[^:]*):(?&lt;BuffName&gt;[^:]*):(?&lt;Bufftime&gt;[^:]*):E0000000::.{8}:(?&lt;BuffTarget&gt;[^:]*):(?&lt;BuffType&gt;[^:]*)">
                 <Actions>
-                  <Action OrderNumber="1" VariableOp="SetString" VariableName="BuffID" VariableExpression="${BuffID}" ActionType="Variable" />
-                  <Action OrderNumber="2" VariableOp="SetString" VariableName="BuffName" VariableExpression="${BuffName}" ActionType="Variable" />
-                  <Action OrderNumber="3" VariableOp="SetString" VariableName="BuffTarget" VariableExpression="${BuffTarget}" ActionType="Variable" />
-                  <Action OrderNumber="4" VariableOp="SetString" VariableName="Bufftime" VariableExpression="${Bufftime}" ActionType="Variable" />
-                  <Action OrderNumber="5" NamedCallbackName="command" NamedCallbackParam="/e Buff Hunter标量获取成功 BuffName &lt;${var:BuffName}&gt; Buff ID：&lt;${var:BuffID}&gt; Buff Time：&lt;${var:Bufftime}&gt; To:&lt;${var:BuffTarget}&gt;" ActionType="NamedCallback" />
+                  <Action OrderNumber="1" VariableOp="SetString" VariableName="BuffID" VariableExpression="${BuffID}" Enabled="False" ActionType="Variable" />
+                  <Action OrderNumber="2" VariableOp="SetString" VariableName="BuffName" VariableExpression="${BuffName}" Enabled="False" ActionType="Variable" />
+                  <Action OrderNumber="3" VariableOp="SetString" VariableName="BuffTarget" VariableExpression="${BuffTarget}" Enabled="False" ActionType="Variable" />
+                  <Action OrderNumber="4" VariableOp="SetString" VariableName="Bufftime" VariableExpression="${Bufftime}" Enabled="False" ActionType="Variable" />
+                  <Action OrderNumber="5" NamedCallbackName="command" NamedCallbackParam="/e Buff Hunter标量获取成功 BuffName &lt;${BuffName}&gt; Buff ID：&lt;${BuffID}&gt; Buff Time：&lt;${Bufftime}&gt; To:&lt;${BuffTarget}&gt; BuffType&lt;${BuffType}&gt; " ActionType="NamedCallback" ExecutionDelayExpression="200" />
                 </Actions>
                 <Condition Enabled="true" Grouping="Or">
                   <ConditionSingle Enabled="true" ExpressionL="${var:HunterTime}" ExpressionTypeL="String" ExpressionR="开启" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
@@ -48,7 +48,7 @@
               </Trigger>
             </Triggers>
           </Folder>
-          <Folder Id="e1c96391-7d74-40d0-a828-b47f31340caf" Name="01滅殺舞者" Enabled="true">
+          <Folder Id="e1c96391-7d74-40d0-a828-b47f31340caf" Name="01滅殺舞者" Enabled="false">
             <Folders>
               <Folder Id="2b2d4f21-e138-43a0-ad85-7593aa95ca7e" Name="舞者滅杀" Enabled="true">
                 <Folders />
