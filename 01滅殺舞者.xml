@@ -1,38 +1,50 @@
 <?xml version="1.0"?>
-<TriggernometryExport PluginVersion="1.2.0.715">
+<TriggernometryExport PluginVersion="1.2.0.749">
   <ExportedFolder Id="e1c96391-7d74-40d0-a828-b47f31340caf" Name="01滅殺舞者" Enabled="false">
     <Folders>
-      <Folder Id="2b2d4f21-e138-43a0-ad85-7593aa95ca7e" Name="舞者滅杀" Enabled="true">
+      <Folder Id="2b2d4f21-e138-43a0-ad85-7593aa95ca7e" Name="舞者滅杀" Enabled="false">
         <Folders />
         <Triggers>
-          <Trigger Enabled="true" Name="滅殺标准舞步结束代码" Id="b7cc4c16-a1cc-45e4-a760-98353a7e847f" RegularExpression="^.{14} StatusAdd 1A:839:[^:]*[^:]*.*:[^:]*:[^:]*:.{8}:([^:]*Psycho):">
+          <Trigger Enabled="true" Sequential="True" Name="滅殺标准舞步结束代码" Id="b7cc4c16-a1cc-45e4-a760-98353a7e847f" RegularExpression="^.{14} StatusAdd 1A:839:[^:]*[^:]*.*:[^:]*:[^:]*:.{8}:(?&lt;name&gt;[^:]*):">
             <Actions>
               <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/e 滅殺成功" ActionType="NamedCallback" />
-              <Action OrderNumber="2" KeyPressExpression="{F4}" NamedCallbackName="command" NamedCallbackParam="/statusoff Standard Finish" ActionType="KeyPress" ExecutionDelayExpression="100" />
+              <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/statusoff 标准舞步结束" ActionType="NamedCallback" />
             </Actions>
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
           </Trigger>
-          <Trigger Enabled="true" Name="滅殺进攻之探戈代码" Id="fa19d00e-78e4-4ed0-a38c-9d573f548009" RegularExpression="^.{14} StatusAdd 1A:721:[^:]*[^:]*.*:[^:]*:[^:]*:.{8}:([^:]*Psycho):">
+          <Trigger Enabled="true" Name="滅殺进攻之探戈代码" Id="fa19d00e-78e4-4ed0-a38c-9d573f548009" RegularExpression="^.{14} StatusAdd 1A:721:[^:]*[^:]*.*:[^:]*:[^:]*:.{8}:(?&lt;name&gt;[^:]*):">
             <Actions>
               <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/e 滅殺成功" ActionType="NamedCallback" />
-              <Action OrderNumber="2" KeyPressExpression="{F4}" NamedCallbackName="command" NamedCallbackParam="/statusoff Standard Finish" ActionType="KeyPress" ExecutionDelayExpression="100" />
+              <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/statusoff 进攻之探戈" ActionType="NamedCallback" />
             </Actions>
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
           </Trigger>
         </Triggers>
       </Folder>
-      <Folder Id="3bad4a31-5efa-47b8-a404-6d9feeb7ad28" Name="撕碎卡片" Enabled="true">
+      <Folder Id="3bad4a31-5efa-47b8-a404-6d9feeb7ad28" Name="撕碎卡片" Enabled="false">
         <Folders />
         <Triggers>
-          <Trigger Enabled="true" Name="撕碎太阳神代码" Id="2b1c1211-35dd-4b1e-ad12-da3ff079993f" RegularExpression="^.{14} StatusAdd 1A:F2F:[^:]*[^:]*.*:[^:]*:[^:]*:.{8}:([^:]*Psycho):">
+          <Trigger Enabled="true" Name="撕碎太阳神代码" Id="2b1c1211-35dd-4b1e-ad12-da3ff079993f" RegularExpression="^.{14} StatusAdd 1A:F2F:[^:]*[^:]*.*:[^:]*:[^:]*:.{8}:(?&lt;name&gt;[^:]*):">
             <Actions>
               <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/e 撕碎卡片" ActionType="NamedCallback" />
-              <Action OrderNumber="2" KeyPressExpression="{F5}" NamedCallbackName="command" NamedCallbackParam="/statusoff Standard Finish" ActionType="KeyPress" ExecutionDelayExpression="100" />
+              <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/statusoff 太阳神之衡" ActionType="NamedCallback" />
             </Actions>
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
           </Trigger>
-          <Trigger Enabled="true" Name="撕碎战争神代码" Id="4447edd7-6959-4f36-bc46-44333c5bf2d4" RegularExpression="^.{14} StatusAdd 1A:F31:[^:]*[^:]*.*:[^:]*:[^:]*:.{8}:([^:]*Psycho):">
+          <Trigger Enabled="true" Name="撕碎战争神代码" Id="4447edd7-6959-4f36-bc46-44333c5bf2d4" RegularExpression="^.{14} StatusAdd 1A:F31:[^:]*[^:]*.*:[^:]*:[^:]*:.{8}:(?&lt;name&gt;[^:]*):">
             <Actions>
               <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/e 撕碎卡片" ActionType="NamedCallback" />
-              <Action OrderNumber="2" KeyPressExpression="{F5}" NamedCallbackName="command" NamedCallbackParam="/statusoff Standard Finish" ActionType="KeyPress" ExecutionDelayExpression="100" />
+              <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/statusoff 战争神之枪 " ActionType="NamedCallback" />
             </Actions>
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
           </Trigger>
         </Triggers>
       </Folder>
